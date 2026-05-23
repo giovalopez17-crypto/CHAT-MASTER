@@ -63,6 +63,197 @@ const SCENARIOS = [
             }
         ]
     },
+    {
+  "id": "c6",
+  "category": "Travel & Booking",
+  "title": "Changing a Flight Date Due to an Emergency",
+  "difficulty": "A2 Foundation",
+  "description": "Un cliente nativo llama para cambiar la fecha de su vuelo debido a una situación imprevista. El agente debe ser evaluado en su capacidad para resolver el problema de forma rápida y empática, manteniendo sus respuestas con estructuras gramaticales limpias y evitando la jerga compleja del sistema de reservas de aerolíneas.",
+  "vocabulary": {
+    "booking confirmation": {
+      "meaning": "A document or code that proves a travel reservation is official and paid for.",
+      "examples": [
+        "Please show your booking confirmation at the desk.",
+        "I received my booking confirmation in my email."
+      ]
+    },
+    "change fee": {
+      "meaning": "An extra amount of money you must pay to modify the date or time of your ticket.",
+      "examples": [
+        "The airline charges a fifty-dollar change fee for economy tickets.",
+        "Can you waive the change fee because of my situation?"
+      ]
+    },
+    "fare difference": {
+      "meaning": "The price variation between your original ticket and the new ticket you want to buy.",
+      "examples": [
+        "If the new flight is more expensive, you must pay the fare difference.",
+        "There is no fare difference for the morning flight."
+      ]
+    },
+    "carry-on bag": {
+      "meaning": "A small piece of luggage that you can bring inside the airplane cabin with you for free or a small cost.",
+      "examples": [
+        "Make sure your carry-on bag fits under the seat.",
+        "Is a carry-on bag included in this basic rate?"
+      ]
+    },
+    "window seat": {
+      "meaning": "A passenger seat next to the side window of the airplane.",
+      "examples": [
+        "I prefer a window seat so I can see the clouds.",
+        "Is there a window seat available on the next flight?"
+      ]
+    },
+    "boarding pass": {
+      "meaning": "The official document or digital QR code that allows a passenger to get onto the airplane.",
+      "examples": [
+        "You need to print your boarding pass at the airport kiosk.",
+        "I have my digital boarding pass on my smartphone."
+      ]
+    }
+  },
+  "steps": [
+    {
+      "customer": "Hi. I'm supposed to fly to Chicago tomorrow, but my sister just got into a bad car accident. I need to push my trip back to next week. Can you look at my booking confirmation and see if we can change it?",
+      "options": [
+        {
+          "text": "I am so sorry to hear about your sister. I hope she is okay. I can certainly help you change your flight date right now. May I have your name and confirmation code, please?",
+          "points": 10,
+          "roleInvertedPoints": 2,
+          "feedback": "Excellent empathy and clear modulation. Validates the family emergency immediately and keeps the instructions direct and easy to follow."
+        },
+        {
+          "text": "In order to modify an active reservation within the twenty-four hour departure window, I must access our global distribution network to verify availability. State your flight credentials.",
+          "points": 7,
+          "roleInvertedPoints": 6,
+          "feedback": "Too robotic. Words like 'modify an active reservation', 'global distribution network', and 'credentials' are overly complex for an A2 foundation context."
+        },
+        {
+          "text": "Oh my god, a car accident? That is terrifying! Is there blood everywhere? Don't worry about the flight, let's look at photos of the crash online together!",
+          "points": 1,
+          "roleInvertedPoints": 10,
+          "feedback": "Completely inappropriate and shocking. Asking graphic questions about an accident and ignoring the business request violates all safety and professional protocols."
+        }
+      ]
+    },
+    {
+      "customer": "Thank you, I appreciate it. My name is Robert Evans and the code is X-Y-7-2-B. I want to leave next Tuesday morning instead if that's possible.",
+      "options": [
+        {
+          "text": "Thank you, Mr. Evans. I see your plan here. I have a flight next Tuesday morning at 8:00 AM. Does that time work well for you?",
+          "points": 10,
+          "roleInvertedPoints": 2,
+          "feedback": "Perfect. Acknowledges the data, gives a clear, direct choice for the new flight, and maintains a highly accessible language structure."
+        },
+        {
+          "text": "Data confirmed. I am currently scanning the inventory manifest for next Tuesday's morning rotation. There is one open seat on flight 402 departing at 0800 hours. Confirm your authorization.",
+          "points": 7,
+          "roleInvertedPoints": 6,
+          "feedback": "Reads like backend logs. Explaining 'scanning the inventory manifest' and using military time like '0800 hours' is unnecessarily technical."
+        },
+        {
+          "text": "Robert, Tuesday is a bad luck day to fly! The stars say you shouldn't travel on Tuesdays. Let's change your flight to a magical spaceship on Friday instead!",
+          "points": 2,
+          "roleInvertedPoints": 10,
+          "feedback": "Absurd. Offering completely unrealistic alternatives based on superstitions and astrology destroys professional credibility."
+        }
+      ]
+    },
+    {
+      "customer": "Yes, 8:00 AM is perfect. Now, my original ticket said something about a $150 change fee for modifications. Is there any way you can waive that because of this emergency?",
+      "options": [
+        {
+          "text": "Yes, Mr. Evans. Because this is a medical emergency for your family, I can remove that change fee for you completely. You will not have to pay that $150.",
+          "points": 10,
+          "roleInvertedPoints": 2,
+          "feedback": "Masterful de-escalation. Clearly states the resolution and confirms the financial favor ('remove that change fee', 'you will not have to pay') without administrative friction."
+        },
+        {
+          "text": "Standard tariff regulations mandate a penalty ledger item for late modifications. However, I can perform a medical contingency override to nullify the baseline transaction cost.",
+          "points": 7,
+          "roleInvertedPoints": 6,
+          "feedback": "Too sterile and complex. Phrases like 'penalty ledger item' and 'medical contingency override to nullify' are overly dense legalistic speech."
+        },
+        {
+          "text": "Sure! Let's just tell the computer that you are the president of the airline, and then the computer will give us all the flights for free forever!",
+          "points": 1,
+          "roleInvertedPoints": 10,
+          "feedback": "Ridiculous and non-compliant. Suggesting a fraudulent manipulation to the system is a severe breach of company policy."
+        }
+      ]
+    },
+    {
+      "customer": "Oh, that is wonderful news, thank you so much. But wait, what about the fare difference? Is the price of the new ticket exactly the same as my old one?",
+      "options": [
+        {
+          "text": "The new flight is actually $30 cheaper than your old one. This means there is no extra cost for the ticket, and you don't owe any money today.",
+          "points": 10,
+          "roleInvertedPoints": 2,
+          "feedback": "Excellent clarity. Instead of explaining credit vouchers or complex corporate ledger returns, it directly tells the customer they owe $0."
+        },
+        {
+          "text": "The price matrix shows a negative variance of thirty dollars. This creates a residual credit value on the secondary ledger, meaning your immediate liability is completely clear.",
+          "points": 7,
+          "roleInvertedPoints": 6,
+          "feedback": "Too industrial. Talking about 'negative variance' and 'residual credit value on the secondary ledger' confuses a simple zero-dollar balance situation."
+        },
+        {
+          "text": "The new ticket costs one million dollars! But don't worry, you can pay us by giving me your car and your house right now over the phone!",
+          "points": 2,
+          "roleInvertedPoints": 10,
+          "feedback": "Absurd distraction. Inventing an impossible price and asking for a customer's personal property is highly inappropriate and unprofessional."
+        }
+      ]
+    },
+    {
+      "customer": "Excellent. Now, does this new ticket still include my carry-on bag and my window seat? I really need that extra space for my laptop during the flight.",
+      "options": [
+        {
+          "text": "Yes, everything stays the same. I have selected a window seat for you on the new plane, and your carry-on bag is still included for free.",
+          "points": 10,
+          "roleInvertedPoints": 2,
+          "feedback": "Clear, reassuring, and concise. Confirms both services are safe using standard, everyday words without exposing booking codes."
+        },
+        {
+          "text": "The ancillary seat mapping assignment has been successfully cloned into the new aircraft hull template, and your luggage allowance token remains active in the backend profile.",
+          "points": 7,
+          "roleInvertedPoints": 6,
+          "feedback": "Heavy backend speak. Explaining 'ancillary seat mapping assignment' and 'luggage allowance token cloned into the aircraft hull template' sounds robotic."
+        },
+        {
+          "text": "No, on Tuesdays we don't have windows on our planes! The walls are completely solid metal, so you will have to fly in complete darkness!",
+          "points": 1,
+          "roleInvertedPoints": 10,
+          "feedback": "Completely ridiculous. Telling a customer a fake, scary story about an airplane structure destroys trust and professional rapport."
+        }
+      ]
+    },
+    {
+      "customer": "Perfect, I just received the email with the update. Will this same email work as my boarding pass at the gate next week, or do I need to print something else?",
+      "options": [
+        {
+          "text": "The email is just your receipt. Next week, you can check in online 24 hours before the flight to get your official boarding pass on your phone or at the airport.",
+          "points": 10,
+          "roleInvertedPoints": 2,
+          "feedback": "Excellent professional closure for an A2 foundation level. Explains the exact next step clearly and prevents check-in confusion at the airport."
+        },
+        {
+          "text": "Negative. This document is a transactional confirmation token. You must initiate a digital check-in sequence on our platform to generate the authorized QR code link.",
+          "points": 7,
+          "roleInvertedPoints": 6,
+          "feedback": "Sterile closing response. Using terms like 'transactional confirmation token' and 'digital check-in sequence' sounds machine-generated."
+        },
+        {
+          "text": "Yes, just show the security guards a drawing of a happy smiley face on a paper towel, and they will let you onto the plane immediately!",
+          "points": 2,
+          "roleInvertedPoints": 10,
+          "feedback": "Absurd and dangerous advice. Suggesting that airport security checks can be bypassed with a joke drawing violates international aviation safety standards."
+        }
+      ]
+    }
+  ]
+},
     // --- LEVEL B1 / B2 ---
     {
         id: "c4",
