@@ -131,6 +131,204 @@ const SCENARIOS = [
             }
         ]
     },
+    {
+  "id": "c5",
+  "category": "Retention / Billing",
+  "title": "Handling an Unexpected Hidden Surcharge",
+  "difficulty": "B1 Intermediate",
+  "description": "Un cliente nativo llama frustrado tras notar un cargo inesperado etiquetado como tasa de mantenimiento regulatoria. El agente debe de-escalar la llamada modulando su lenguaje de manera clara, empática y directa, evitando tecnicismos complejos del sistema de facturación.",
+  "vocabulary": {
+    "billing cycle": {
+      "meaning": "The recurring period of time for which a customer is invoiced for a service.",
+      "examples": [
+        "The new feature will appear on your next billing cycle.",
+        "My billing cycle resets on the first day of every month."
+      ]
+    },
+    "hidden surcharge": {
+      "meaning": "An extra fee or cost added to a bill that was not clearly stated or expected.",
+      "examples": [
+        "I was shocked to find a hidden surcharge on my hotel invoice.",
+        "Our company policy ensures there is never a hidden surcharge on your plan."
+      ]
+    },
+    "flat rate": {
+      "meaning": "A fixed price or charge that remains the same and does not vary with usage or extra factors.",
+      "examples": [
+        "They offered me a flat rate of forty dollars for unlimited data.",
+        "Is this package a flat rate or are there extra variable costs?"
+      ]
+    },
+    "waived": {
+      "meaning": "Officially removed or forgiven so that a customer does not have to pay it.",
+      "examples": [
+        "The representative waived the activation fee as a courtesy.",
+        "Can this late payment penalty be completely waived?"
+      ]
+    },
+    "itemized statement": {
+      "meaning": "A detailed list or bill showing every single individual charge broken down by line items.",
+      "examples": [
+        "Please send me an itemized statement so I can review every single fee.",
+        "The itemized statement clearly shows the standard maintenance cost."
+      ]
+    },
+    "paperless billing": {
+      "meaning": "An option where bills are sent to the customer electronically via email or app instead of physical mail.",
+      "examples": [
+        "Switching to paperless billing saves paper and prevents delivery delays.",
+        "Is there a discount if I sign up for paperless billing today?"
+      ]
+    },
+    "credit line item": {
+      "meaning": "A specific entry on an invoice showing an amount of money returned or added back to an account.",
+      "examples": [
+        "You will see a twenty-dollar credit line item on your next statement.",
+        "The agent applied a credit line item to correct the overcharge."
+      ]
+    }
+  },
+  "steps": [
+    {
+      "customer": "Hi. I'm calling because I just looked at my latest billing cycle and I see a $15 fee listed as a regulatory maintenance fee. Nobody ever told me about this hidden surcharge when I signed up.",
+      "options": [
+        {
+          "text": "I can completely understand why seeing a surprise fee like that would be frustrating. Let's look into this regulatory maintenance fee together right now so I can explain what it is and see how we can fix this. May I have your name, please?",
+          "points": 10,
+          "roleInvertedPoints": 2,
+          "feedback": "Excellent de-escalation. Validates the frustration immediately, speaks clearly and sets up a collaborative environment using simple words."
+        },
+        {
+          "text": "Per corporate compliance protocols, all residential accounts are subject to regional adjustments. The automated invoice generator applies this tariff based on localized backend infrastructure data. Give me your account number.",
+          "points": 7,
+          "roleInvertedPoints": 6,
+          "feedback": "Too robotic and defensive. Relying heavily on heavy jargon like 'compliance protocols' and 'automated invoice generator' alienates a B1 tier conversation."
+        },
+        {
+          "text": "Oh, wow! That is awful! Our system is always making mistakes and lying to people about prices. Let's just delete that fee and pretend our billing department doesn't exist!",
+          "points": 1,
+          "roleInvertedPoints": 10,
+          "feedback": "Absurd and highly unprofessional. Saying the company lies and making unrealistic claims about deleting system rules breaks compliance."
+        }
+      ]
+    },
+    {
+      "customer": "My name is David Miller. Look, the salesman told me I would be paying a flat rate of $45 a month, period. If my bill changes every time, I don't want to keep this service.",
+      "options": [
+        {
+          "text": "Thank you, Mr. Miller. You are entirely right to expect the price you were promised. The $45 is your base price, but this fee was added by the system. Let me check your profile right now to see how we can get this fee removed.",
+          "points": 10,
+          "roleInvertedPoints": 2,
+          "feedback": "Perfect. Validates the agreement, confirms the promised price, and takes direct action to investigate a solution with plain language."
+        },
+        {
+          "text": "The flat rate you are referencing only covers the base subscription parameters. It does not encompass ancillary regulatory line items generated by system cron-jobs during the billing calculation phase.",
+          "points": 7,
+          "roleInvertedPoints": 6,
+          "feedback": "Highly mechanical. Terms like 'base subscription parameters' and 'ancillary regulatory line items generated by system cron-jobs' are confusing backend talk."
+        },
+        {
+          "text": "I completely agree, David! Money is a social construct anyway, so why should we care? Let's just change your bill to $0 forever so you can be completely happy!",
+          "points": 2,
+          "roleInvertedPoints": 10,
+          "feedback": "Completely ridiculous. Offering to drop a subscription cost to zero dollars forever is an impossible, non-compliant distraction."
+        }
+      ]
+    },
+    {
+      "customer": "I appreciate that. I just want this specific $15 fee waived for this month, and I need a guarantee that it won't show up again on my next statement.",
+      "options": [
+        {
+          "text": "I can absolutely remove that $15 fee for you today as a courtesy. To make sure it doesn't come back, I am going to apply a special bundle discount to your profile that offsets this cost permanently. Your monthly total will stay at $45.",
+          "points": 10,
+          "roleInvertedPoints": 2,
+          "feedback": "Masterful adjustment. Grants the immediate waiver and provides a permanent, practical solution to lock in the customer's expected rate."
+        },
+        {
+          "text": "I have the administrative authorization to apply a one-time ledger adjustment for the $15. However, the system architecture will re-evaluate the account profile next month and may re-apply the standard fee automatically.",
+          "points": 7,
+          "roleInvertedPoints": 6,
+          "feedback": "Provides a temporary fix but leaves the root problem open, telling the customer that the system might just create the exact same issue next month."
+        },
+        {
+          "text": "Don't worry, David, I will write a giant sticky note and paste it onto our company's main server room door so the computers never charge you again!",
+          "points": 1,
+          "roleInvertedPoints": 10,
+          "feedback": "Childish and absurd. Proposing a physical sticky note on a server door as a system solution is completely unrealistic."
+        }
+      ]
+    },
+    {
+      "customer": "That sounds fair. Can you send me an itemized statement right now showing that the $15 has been taken off? I like to keep everything in writing for my personal records.",
+      "options": [
+        {
+          "text": "Of course. I am updating your account right now. I will email you a new, clear summary within the next two minutes showing the credit and your correct total. Let's make sure it arrives safely.",
+          "points": 10,
+          "roleInvertedPoints": 2,
+          "feedback": "Excellent response. Confirms immediate execution, provides a very clear timeline (two minutes), and focuses on keeping the client informed."
+        },
+        {
+          "text": "An inventory PDF manifest has been queued for data compilation. The backend server will broadcast an electronic confirmation packet containing the modified spreadsheet to your primary email routing node.",
+          "points": 7,
+          "roleInvertedPoints": 6,
+          "feedback": "Too industrial and technical. Phrases like 'inventory PDF manifest', 'data compilation', and 'email routing node' sound like an automated machine speech."
+        },
+        {
+          "text": "Oh, I can't send emails today because our internet lines are being used to download a massive video game right now. Can I just read the numbers out loud fifty times instead?",
+          "points": 2,
+          "roleInvertedPoints": 10,
+          "feedback": "Highly unprofessional. Inventing a fake excuse about downloading games on company bandwidth is completely unacceptable."
+        }
+      ]
+    },
+    {
+      "customer": "Got it, the email just popped up and the total is back to $45. Now, the email mentions something about paperless billing. Am I going to get charged extra if I don't sign up for that?",
+      "options": [
+        {
+          "text": "That is a great question. No, you will not be charged extra, but signing up for paperless billing actually gives you a small $2 monthly discount. Would you like me to turn that on to save you a bit more money?",
+          "points": 10,
+          "roleInvertedPoints": 2,
+          "feedback": "Perfect. Answers the direct question clearly and turns an informational inquiry into an upsell opportunity that saves the customer money."
+        },
+        {
+          "text": "Paperless billing is an automated system default recommendation. Non-compliance with electronic statement delivery protocols does not currently trigger a negative tariff, though policy adjustments are subject to change.",
+          "points": 7,
+          "roleInvertedPoints": 6,
+          "feedback": "Cold and sterile. Explaining 'non-compliance with electronic statement delivery protocols' is overly formal and misses the chance to offer a discount."
+        },
+        {
+          "text": "Yes! If you don't sign up for paperless billing, our company sends a giant truck to dump thousands of old newspapers directly onto your front lawn every single morning!",
+          "points": 1,
+          "roleInvertedPoints": 10,
+          "feedback": "Absurd threat. Using a ridiculous and completely false story about dumping garbage on a customer's lawn destroys any remaining rapport."
+        }
+      ]
+    },
+    {
+      "customer": "Sure, let's do it. If it saves me another $2 and keeps my bill simple, go ahead and turn it on. Does that show up on this statement or next month?",
+      "options": [
+        {
+          "text": "I have turned that on for you. Since this month's bill is already processed, you will see that new discount start on your next statement. Is there anything else I can double-check for you today?",
+          "points": 10,
+          "roleInvertedPoints": 2,
+          "feedback": "Clear and concise. Sets proper expectations for when the new discount applies and finishes with a proactive offer of further assistance."
+        },
+        {
+          "text": "The paperless discount token has been injected into the next pending batch cycle. It will manifest as a recurring credit line item upon the generation of the subsequent invoice document.",
+          "points": 7,
+          "roleInvertedPoints": 6,
+          "feedback": "Too robotic. Using expressions like 'discount token has been injected' and 'subsequent invoice document' makes a simple process sound unnecessarily complex."
+        },
+        {
+          "text": "It will show up in exactly one second! Look at your phone right now! If it's not there, it means a digital ghost stole your discount code!",
+          "points": 1,
+          "roleInvertedPoints": 10,
+          "feedback": "Ridiculous and unprofessional. Setting an impossible timeline and talking about 'digital ghosts' is completely unacceptable for a professional agent."
+        }
+      ]
+    }
+  ]
+},
     // --- LEVEL C1 ---
     {
         id: "c1",
