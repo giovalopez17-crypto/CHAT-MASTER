@@ -323,6 +323,197 @@ const SCENARIOS = [
         ]
     },
     {
+  "id": "c7",
+  "category": "Food Delivery & Customer Support",
+  "title": "Resolving a Delayed Delivery and Order Discrepancy",
+  "difficulty": "B1 Intermediate",
+  "description": "Un cliente nativo llama frustrado porque su pedido de pizza llegó con más de cuarenta minutos de retraso y con los ingredientes equivocados. El agente debe de-escalar la llamada y resolver la situación de manera empática y directa, modulando su lenguaje sin recurrir a tecnicismos del sistema de despacho o de la app de delivery.",
+  "vocabulary": {
+    "delivery window": {
+      "meaning": "The estimated timeframe during which a courier or driver is scheduled to arrive with an order.",
+      "examples": [
+        "The application showed a thirty-minute delivery window for my food.",
+        "Your order arrived outside the promised delivery window due to heavy traffic."
+      ]
+    },
+    "order confirmation": {
+      "meaning": "A digital receipt or notification showing that a purchase was successfully placed and listing the items bought.",
+      "examples": [
+        "Please check your order confirmation to verify if you selected extra cheese.",
+        "I received the order confirmation on my smartphone right after paying."
+      ]
+    },
+    "store credit": {
+      "meaning": "A digital balance or voucher given to a customer that can only be spent at that specific business for future purchases.",
+      "examples": [
+        "We can add a fifteen-dollar store credit to your profile as an apology.",
+        "I used my store credit to get a free order of garlic knots today."
+      ]
+    },
+    "full refund": {
+      "meaning": "The return of all the money a customer spent on a transaction because of a major problem or mistake.",
+      "examples": [
+        "The manager approved a full refund for the cold food.",
+        "It takes three business days for a full refund to appear on your bank statement."
+      ]
+    },
+    "delivery courier": {
+      "meaning": "The person responsible for picking up the food from the restaurant and bringing it to the customer's address.",
+      "examples": [
+        "The delivery courier is currently on his way to your apartment building.",
+        "We need to contact the delivery courier to see why he is delayed."
+      ]
+    },
+    "billing department": {
+      "meaning": "The specific team or sector within a company that manages payments, transactions, and monetary adjustments.",
+      "examples": [
+        "Our billing department will reverse the charge on your credit card today.",
+        "The agent escalated the double-charge dispute to the billing department."
+      ]
+    }
+  },
+  "steps": [
+    {
+      "customer": "Hi. I'm calling because I placed a large order over an hour ago. The app showed a thirty-minute delivery window, but the driver just got here forty minutes late, and to make things worse, the food is completely cold.",
+      "options": [
+        {
+          "text": "I am incredibly sorry to hear that your food arrived so late and cold. That is definitely not the experience we want you to have. Let's look into your order details right away so I can make this right for you. May I have your name or phone number, please?",
+          "points": 10,
+          "roleInvertedPoints": 2,
+          "feedback": "Excellent de-escalation. Validates the frustration immediately, expresses genuine apology, and moves directly to active troubleshooting with simple, professional phrasing."
+        },
+        {
+          "text": "Per our operational protocols, estimated arrival parameters fluctuate based on real-time logistical constraints. The automated dispatch application calculates logistical variances independently. State your user identifier metadata.",
+          "points": 7,
+          "roleInvertedPoints": 6,
+          "feedback": "Too robotic and defensive. Blaming 'real-time logistical constraints' and 'automated dispatch applications' sounds mechanical and ignores the customer's immediate hunger and frustration."
+        },
+        {
+          "text": "Oh wow, an hour late? That driver must be sleeping on the side of the road or eating your food! Let's call his phone together right now and scream at him until he cries!",
+          "points": 1,
+          "roleInvertedPoints": 10,
+          "feedback": "Completely absurd and unprofessional. Encouraging a customer to harass a delivery worker violates basic corporate ethics, safety rules, and operational guidelines."
+        }
+      ]
+    },
+    {
+      "customer": "My name is Jason Briggs. And look, it gets worse. I just opened the boxes, and this isn't even what I paid for. My order confirmation clearly shows a large pepperoni and mushroom pizza, but I got a small veggie pizza instead. I can't even eat this.",
+      "options": [
+        {
+          "text": "Thank you, Mr. Briggs. I see your account now, and you are completely right; your order confirmation shows a large pepperoni and mushroom. I apologize for this mix-up at the kitchen. Let me organize a solution for you right now.",
+          "points": 10,
+          "roleInvertedPoints": 2,
+          "feedback": "Perfect validation. Directly cross-references the customer's proof, takes complete ownership of the kitchen's mistake, and avoids making excuses about the system backend."
+        },
+        {
+          "text": "The inventory preparation manifest appears to have suffered a localized human error during the assembly phase. The physical items delivered do not correlate with the digital SKU items registered in our database architecture.",
+          "points": 7,
+          "roleInvertedPoints": 6,
+          "feedback": "Highly mechanical. Talking about 'inventory preparation manifests' suffering errors during the 'assembly phase' and matching 'SKU items' is internal industrial jargon that alienates the client."
+        },
+        {
+          "text": "Wow, Jason, a veggie pizza is a sign from the universe that you need to go on a diet! You should be thanking us for protecting your health today! Let's do some push-ups together!",
+          "points": 2,
+          "roleInvertedPoints": 10,
+          "feedback": "Insulting and ridiculous. Commenting on a customer's health or diet and ignoring a completely incorrect order is highly offensive and unprofessional."
+        }
+      ]
+    },
+    {
+      "customer": "I don't need a diet, I need the food I actually paid for. At this point, my family is starving and we don't want to wait another hour for a redelivery. I just want a full refund back to my card immediately.",
+      "options": [
+        {
+          "text": "I completely understand. Waiting again is not fair to your family. I am processing a full refund for the entire order right now. You will see that money back on your card in 2 to 3 business days, and you can keep or discard the veggie pizza.",
+          "points": 10,
+          "roleInvertedPoints": 2,
+          "feedback": "Masterful mitigation. Respects the customer's time and choice, executes the financial resolution instantly, provides a clear timeline, and gives instructions on what to do with the wrong food."
+        },
+        {
+          "text": "Standard store policy dictates that transactional reversals require the physical retrieval of the incorrect product items first. I can queue a reverse-logistics request for a driver to reclaim the small veggie pizza before authorizing a credit.",
+          "points": 7,
+          "roleInvertedPoints": 6,
+          "feedback": "Too industrial and rigid. Demanding a 'reverse-logistics request' to physically retrieve a wrong, cheap item from a starving family before helping them ensures a severe escalation."
+        },
+        {
+          "text": "No refunds! Refunds are banned because our pizza chef needs that money to buy new shoes. But if you walk to our kitchen right now, I can let you look at our ovens for five minutes for free!",
+          "points": 1,
+          "roleInvertedPoints": 10,
+          "feedback": "Absurd and deceptive. Lying about refund bans and offering a bizarre look at restaurant machinery does nothing to fix the customer's financial dispute."
+        }
+      ]
+    },
+    {
+      "customer": "Okay, I appreciate you moving fast on the money. But since our Friday dinner plans are completely ruined, is there any way you can offer a store credit or something for the massive inconvenience? We order from you guys every week.",
+      "options": [
+        {
+          "text": "You are a loyal customer, Mr. Briggs, and we really value that. To make up for this ruined dinner, I am adding a $25 store credit to your account right now. You can use it on your next order whenever you are ready to give us another chance.",
+          "points": 10,
+          "roleInvertedPoints": 2,
+          "feedback": "Excellent customer service and retention. Recognizes loyalty, adds a specific value to the customer profile as an apology, and encourages a future purchase without being pushy."
+        },
+        {
+          "text": "I can deploy a secondary courtesy compensation voucher to your profile matrix. The system allows an administrative token allocation up to a maximum threshold of twenty-five units for localized service failures.",
+          "points": 7,
+          "roleInvertedPoints": 6,
+          "feedback": "Extremely robotic. Phrases like 'courtesy compensation voucher to your profile matrix' and 'administrative token allocation up to a maximum threshold' sound entirely cold."
+        },
+        {
+          "text": "I can't give you credits, but I can change our company's secret recipe and name the next pepperoni pizza after you! It will be called the 'Starving Jason Pizza' on our global menu!",
+          "points": 2,
+          "roleInvertedPoints": 10,
+          "feedback": "Completely ridiculous. Making a fake, joke promise about changing a corporate menu and naming a product after an angry customer is entirely unprofessional."
+        }
+      ]
+    },
+    {
+      "customer": "That's very generous of you, thanks. Now, I just want to double-check something. Is the delivery courier going to get in trouble or lose his job for this delay? It was raining hard out there, so I don't want him punished if it was just bad traffic.",
+      "options": [
+        {
+          "text": "That is very kind of you to look out for the driver, Mr. Briggs. Don't worry, we always take weather conditions into account. This incident is marked as a weather delay, so the delivery courier will not face any penalties.",
+          "points": 10,
+          "roleInvertedPoints": 2,
+          "feedback": "Clear and reassuring. Addresses the customer's empathetic concern directly, explains how weather delays are handled using simple language, and provides total peace of mind."
+        },
+        {
+          "text": "The courier's performance metrics are evaluated by an automated backend algorithm that factors in external environmental variables. Human intervention cannot override the algorithmic scoring system calculation for this delivery window.",
+          "points": 7,
+          "roleInvertedPoints": 6,
+          "feedback": "Too sterile. Explaining how an 'automated backend algorithm' and 'algorithmic scoring systems' manage employee performance sounds like a dystopian machine response."
+        },
+        {
+          "text": "Oh, yes! We are actually going to put the driver in a tiny digital jail inside our computer network for the next three years as a punishment! He will only eat electronic bread!",
+          "points": 1,
+          "roleInvertedPoints": 10,
+          "feedback": "Absurd and childish fiction. Telling a customer a bizarre story about a 'digital jail' destroys professional communication standards completely."
+        }
+      ]
+    },
+    {
+      "customer": "Good, I'm glad to hear that. I just checked my app and I see the $25 credit is active, and I got the notification about the return payment. Thanks for handling this so well, you've been great.",
+      "options": [
+        {
+          "text": "You are very welcome, Mr. Briggs. I am glad everything is showing up correctly on your app. I hope you and your family have a wonderful weekend despite the rough start. Thank you for calling us!",
+          "points": 10,
+          "roleInvertedPoints": 2,
+          "feedback": "Perfect C1 professional tone modulated to an intermediate B1 structure. Friendly, efficient, summarizes the successful outcome, and closes the call with a warm wish."
+        },
+        {
+          "text": "The transaction ticket has achieved a successful status confirmation. This session is now closed in our CRM database. You are authorized to terminate the communication link.",
+          "points": 7,
+          "roleInvertedPoints": 6,
+          "feedback": "Terribly cold and mechanical closing. Treats a human call like a data packet and reads off database statuses instead of providing a polite, professional goodbye."
+        },
+        {
+          "text": "Awesome! Since I did a great job, can you text me your personal Netflix password so I can watch movies at my desk for the rest of my shift? I'm so bored!",
+          "points": 2,
+          "roleInvertedPoints": 10,
+          "feedback": "Severe violation of privacy and corporate code of conduct. Asking a customer for their personal streaming passwords or benefits is highly inappropriate and a fireable offense."
+        }
+      ]
+    }
+  ]
+},
+    {
   "id": "c5",
   "category": "Retention / Billing",
   "title": "Handling an Unexpected Hidden Surcharge",
@@ -521,6 +712,204 @@ const SCENARIOS = [
   ]
 },
     // --- LEVEL C1 ---
+          {
+  "id": "c8",
+  "category": "Billing & Enterprise Retention",
+  "title": "Mitigating High-Value Corporate Account Attrition",
+  "difficulty": "C1 Advanced",
+  "description": "Un cliente corporativo de alto valor (B2B) llama para cancelar su infraestructura de servidores dedicada debido a errores de facturación recurrentes y a la falta de respuesta del equipo de cuentas asignado. El agente debe demostrar un nivel excepcional de modulación del lenguaje: el cliente es fluido e impaciente, por lo que la opción MAESTRA debe ser sumamente pulida, directa, asertiva y ejecutiva, eliminando tanto el parloteo corporativo inútil (opción ROBÓTICA) como soluciones condescendientes o absurdas (opción TRAMPA).",
+  "vocabulary": {
+    "recurring glitches": {
+      "meaning": "Repetitive, minor technical or systemic errors that cause unexpected malfunctions or incorrect data processing.",
+      "examples": [
+        "These recurring glitches in our payment gateway are hurting our quarterly revenue figures.",
+        "Management is demanding an audit due to the recurring glitches on our monthly statements."
+      ]
+    },
+    "service level agreement": {
+      "meaning": "A formal, legally binding commitment between a service provider and a client regarding service availability, quality, and responsibilities.",
+      "examples": [
+        "The network downtime yesterday was a clear violation of our service level agreement.",
+        "We are entitled to financial compensation if they fail to meet the service level agreement metrics."
+      ]
+    },
+    "account executive": {
+      "meaning": "A dedicated company representative responsible for managing the business relationship, sales, and issues of specific high-value clients.",
+      "examples": [
+        "Our assigned account executive hasn't responded to an urgent email in three business days.",
+        "The corporate client requested to speak with their account executive to discuss contract renewal terms."
+      ]
+    },
+    "legacy tier pricing": {
+      "meaning": "An older, discounted fee structure guaranteed to long-term clients that remains active even after rates increase for new users.",
+      "examples": [
+        "If we cancel our subscription now, we will completely forfeit our legacy tier pricing privileges.",
+        "They attempted to strip away our legacy tier pricing without prior written notification."
+      ]
+    },
+    "billing discrepancies": {
+      "meaning": "Inconsistencies, errors, or unexplained differences found when comparing financial records or invoices against contractual agreements.",
+      "examples": [
+        "We cannot approve payment on this invoice until the billing discrepancies are fully cleared.",
+        "The accountant discovered multiple billing discrepancies dating back to the previous fiscal quarter."
+      ]
+    },
+    "direct credit": {
+      "meaning": "A financial adjustment applied straight to an account balance, reducing the amount owed or returning funds without delay.",
+      "examples": [
+        "The supervisor issued a direct credit to settle the dispute over the overcharged features.",
+        "Instead of a bank transfer, they applied a direct credit to our next monthly invoice."
+      ]
+    },
+    "reconciliation phase": {
+      "meaning": "The process of verifying accounting records to ensure that financial figures match, balance, and reflect actual contractual agreements.",
+      "examples": [
+        "During the reconciliation phase, the system flagged an unauthorized maintenance surcharge.",
+        "We need to halt active service modifications until the current billing reconciliation phase is complete."
+      ]
+    }
+  },
+  "steps": [
+    {
+      "customer": "Look, I am completely done dealing with the recurring glitches on our enterprise bills. Your automatic system just overcharged our firm by $4,500 for dedicated server blades we decommissioned last quarter. This is a direct breach of our service level agreement, and I want our contract terminated immediately.",
+      "options": [
+        {
+          "text": "I see the discrepancy right here, and I completely agree that an unearned $4,500 charge is unacceptable at this level of business. Before we discuss termination, let's take immediate ownership of this error. I am initiating an investigation to reverse that specific charge right now. May I verify your corporate tax ID to ensure we are looking at the correct global profile?",
+          "points": 10,
+          "roleInvertedPoints": 2,
+          "feedback": "Superb C1 executive performance. Matches the customer's professional urgency, avoids corporate defensiveness, validates the SLA concern, and takes instant, structured action."
+        },
+        {
+          "text": "Please be advised that pursuant to clause 14 of the master service contract, all automated billing cycles utilize predictive provisioning algorithms that require a 60-day stabilization window. System parameters cannot be manually modified during an active batch processing cycle. State your credential sequence.",
+          "points": 7,
+          "roleInvertedPoints": 6,
+          "feedback": "Terribly robotic and defensive. Quoting internal algorithm behaviors like 'predictive provisioning' and 'stabilization windows' leaves a high-value corporate client furious and ignored."
+        },
+        {
+          "text": "Oh my goodness, $4,500 is a fortune! My heart is beating so fast right now! Let's just turn off all your servers immediately so you don't have to look at those mean, scary bills ever again!",
+          "points": 1,
+          "roleInvertedPoints": 10,
+          "feedback": "Completely absurd and non-compliant. Panicking over the financial amount and suggesting an immediate shutdown of critical corporate server infrastructure is catastrophic."
+        }
+      ]
+    },
+    {
+      "customer": "My tax ID is 94-3321-X. This isn't just about the money, it's about basic communication. Our assigned account executive hasn't returned a single email regarding these billing discrepancies all week. Why are we paying premium support fees if we have to call a generic helpline to get an answer?",
+      "options": [
+        {
+          "text": "Thank you for the verification, and you are entirely right to call us out on that. A dedicated account executive should be your primary line of defense, not someone you have to hunt down. While I have your profile open, I am bypassing the standard queue to handle this billing correction myself, and I will personally flag this to executive account management today.",
+          "points": 10,
+          "roleInvertedPoints": 2,
+          "feedback": "Excellent execution. Validates the breakdown in professional communication, takes absolute personal accountability to bypass standard delays, and protects the account relationship."
+        },
+        {
+          "text": "Account executive communication lapses fall outside the operational scope of this consumer-facing ticketing portal. I can log an administrative administrative friction report in our CRM system, which will route to their specific regional department within 72 standard business hours.",
+          "points": 7,
+          "roleInvertedPoints": 6,
+          "feedback": "Cold, fragmented, and overly bureaucratic. Telling an enterprise client that their issue is 'outside the operational scope' and offering a 72-hour delay is a guarantee of account loss."
+        },
+        {
+          "text": "Wow, your account executive sounds like a terrible person! I bet they are on a beach drinking margaritas instead of working. Let's send them a funny email with a bunch of angry emojis to wake them up!",
+          "points": 2,
+          "roleInvertedPoints": 10,
+          "feedback": "Highly unprofessional. Insulting a colleague to a corporate client and suggesting unprofessional communication completely degrades corporate credibility."
+        }
+      ]
+    },
+    {
+      "customer": "I don't want a friction report, I want results. If you are handling this yourself, tell me exactly how you plan to fix this $4,500 overcharge. I need a direct credit on our account profile before the end of the day, or our legal department is getting involved.",
+      "options": [
+        {
+          "text": "Understood. Let's look at the facts: the decommissioned server blades were officially logged out on March 12th, meaning this charge is completely invalid. I am bypass-approving a direct credit of $4,500 to your ledger right now. You will see this update reflected in your enterprise client portal within the next hour. No legal friction required.",
+          "points": 10,
+          "roleInvertedPoints": 2,
+          "feedback": "Masterful executive adjustment. Uses factual logged dates as professional leverage, executes the financial solution immediately, and confidently defuses the legal threat with concrete timelines."
+        },
+        {
+          "text": "Standard verification protocols dictate that financial exceptions exceeding three decimal thresholds must enter an advanced billing audit queue. This internal auditing reconciliation phase requires cross-departmental authorization before any ledger adjustment manifests physically.",
+          "points": 7,
+          "roleInvertedPoints": 6,
+          "feedback": "Too industrial and rigid. Hiding behind 'advanced billing audit queues' and 'cross-departmental authorization' when an enterprise client is threatening legal action shows zero commercial urgency."
+        },
+        {
+          "text": "Please don't call the lawyers! Lawyers are so expensive and they use scary words! How about I give you a secret promotional code for 10% off our cloud storage mobile app as a bribe?",
+          "points": 1,
+          "roleInvertedPoints": 10,
+          "feedback": "Absurd and highly non-compliant. Begging a customer to avoid legal action and offering an unrelated mobile app coupon as a 'bribe' is completely unacceptable."
+        }
+      ]
+    },
+    {
+      "customer": "Alright, I'm checking our corporate dashboard... Yes, I can see the pending $4,500 direct credit now. That's a start. However, this account is still on a legacy tier pricing structure from 2022. If we keep having to double-check our bills every month, the administrative cost outweighs the discount.",
+      "options": [
+        {
+          "text": "I completely understand that perspective; an unstable invoice destroys the value of any discount. Your 2022 legacy tier pricing is an incredibly high-value rate that you cannot get back if you cancel. To secure this account, I am setting up an automated pre-billing validation block. This means an enterprise analyst will manually check your invoice for correctness before it ever reaches your inbox.",
+          "points": 10,
+          "roleInvertedPoints": 2,
+          "feedback": "Brilliant retention logic. Acknowledges the administrative burden, reminds the client of the irreplaceable value of their legacy contract, and offers a premium, proactive operational solution."
+        },
+        {
+          "text": "Legacy accounts from the 2022 data matrix run on a deprecated database architecture that occasionally desynchronizes during regional server updates. System migration to modern billing modules would eliminate the glitches but will force a mandatory contract renewal at market rate.",
+          "points": 7,
+          "roleInvertedPoints": 6,
+          "feedback": "Too mechanical. Explaining database desynchronization and suggesting they pay higher market rates to fix a company system error gives the client a perfect reason to switch to a competitor."
+        },
+        {
+          "text": "Oh, legacy contracts are so old and dusty! You should throw that contract out the window. Let's create a brand new deal where you pay us in gold coins or physical stock certificates instead!",
+          "points": 1,
+          "roleInvertedPoints": 10,
+          "feedback": "Completely ridiculous. Suggesting alternative, non-compliant payment methods like gold or stock certificates belongs in a comedy sketch, not an enterprise B2B interaction."
+        }
+      ]
+    },
+    {
+      "customer": "A manual pre-billing validation block? That would actually solve the root of our problem. But I need to ensure this isn't just a temporary promise to stop me from cancelling today. How do I know this operational block is permanently active on our profile?",
+      "options": [
+        {
+          "text": "You will have it in writing immediately. I am generating an official account modification addendum right now. It explicitly details the manual pre-billing audit mandate attached to your tax ID. Furthermore, I am scheduling a quarterly review call between you, myself, and a senior billing supervisor to maintain absolute transparency.",
+          "points": 10,
+          "roleInvertedPoints": 2,
+          "feedback": "Flawless executive execution. Provides formal corporate documentation ('modification addendum') and establishes a long-term governance structure (quarterly reviews) to guarantee permanent retention."
+        },
+        {
+          "text": "The profile modification flag is hardcoded into the master user account table. The system logic does not generate a secondary external verification document for this specific administrative preference layer, but the data is securely saved in the mainframe.",
+          "points": 7,
+          "roleInvertedPoints": 6,
+          "feedback": "Too sterile and unhelpful. Telling an enterprise client 'the system does not generate a document' when they ask for security and peace of mind fails to lock in corporate trust."
+        },
+        {
+          "text": "You can trust me because I cross my fingers and make a pinky promise right now! Our company computers never forget a promise when an agent smiles at the monitor!",
+          "points": 2,
+          "roleInvertedPoints": 10,
+          "feedback": "Absurd and highly unprofessional. Using childish terms like 'pinky promise' and 'smiling at the monitor' in a multi-thousand dollar B2B contract discussion is insulting."
+        }
+      ]
+    },
+    {
+      "customer": "The addendum just hit my inbox, and the terms look completely solid. I appreciate you cutting through the standard red tape and getting this sorted out. If you can guarantee that our account executive gets replaced or reprimanded, we will keep the server infrastructure active.",
+      "options": [
+        {
+          "text": "I have already escalated the communication breakdown directly to the director of account management. While I cannot discuss internal personnel disciplinary actions, I can guarantee that a senior account manager will contact you at 9:00 AM tomorrow to officially introduce your new dedicated point of contact. Thank you for choosing to stay with us, Mr. Vance.",
+          "points": 10,
+          "roleInvertedPoints": 2,
+          "feedback": "Perfect C1 professional closing. Properly navigates HR privacy boundaries regarding internal employee reprimands, while delivering an absolute operational solution (new dedicated contact) and closing smoothly."
+        },
+        {
+          "text": "The human resources log entry has been executed successfully. This customer relationship ticket is now transitioning to a closed state inside our global CRM framework. You may now terminate this corporate audio connection link.",
+          "points": 7,
+          "roleInvertedPoints": 6,
+          "feedback": "Incredibly cold, mechanical closing. Treating a critical B2B account recovery conversation like a 'corporate audio connection link' that can be 'terminated' destroys any rapport built."
+        },
+        {
+          "text": "Yes! I am going to fire that account executive myself right now! I will print out their picture and rip it into a million pieces while dancing around the office to celebrate our victory!",
+          "points": 2,
+          "roleInvertedPoints": 10,
+          "feedback": "Completely ridiculous and highly unprofessional. Falsely claiming to terminate a colleague and describing an unhinged celebratory dance violates all employment and behavioral guidelines."
+        }
+      ]
+    }
+  ]
+},
     {
         id: "c1",
         category: "Billing & Account Retention",
