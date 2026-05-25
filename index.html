@@ -3,9 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Comprehension Master - Simulador de Call Center</title>
+    <title>Comprehension Master - Simulador de Call Center E4CC</title>
     
-    <!-- Carga automática de la base de datos externa local -->
+    <!-- Carga de la base de datos externa local -->
     <script src="scenarios.js"></script>
     
     <!-- Librerías Externas de UI -->
@@ -14,17 +14,178 @@
     <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://unpkg.com/lucide@latest"></script>
+    
+    <!-- Configuración personalizada de la paleta corporativa E4CC -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            blue: '#122c47',        /* Azul Oscuro Principal */
+                            orange: '#e9521d',      /* Naranja Intenso */
+                            orangeMed: '#d3781c',   /* Naranja Medio */
+                            orangeDark: '#c74b1b',  /* Naranja Claro/Óxido */
+                            orangeLight: '#fff2ed', /* Variante de fondo naranja muy suave */
+                            blueLight: '#f0f5fa'    /* Variante de fondo azul muy suave */
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;900&display=swap');
         body { font-family: 'Inter', sans-serif; }
         .cursor-help { cursor: help; }
+        /* Scrollbar styling */
+        ::-webkit-scrollbar {
+            width: 6px;
+        }
+        ::-webkit-scrollbar-track {
+            background: rgba(241, 241, 241, 0.5);
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #d3781c;
+            border-radius: 999px;
+        }
     </style>
 </head>
-<body class="bg-slate-50">
+<body class="bg-slate-50 text-slate-800">
     <div id="root"></div>
 
     <script type="text/babel">
         const { useState, useEffect, useRef } = React;
+
+        // Fallback de Escenarios interactivos de alta calidad si no se encuentra cargado scenarios.js
+        const FALLBACK_SCENARIOS = [
+            {
+                id: 1,
+                title: "Billing Discrepancy Premium",
+                category: "Financial Support",
+                difficulty: "B1/B2 Technical",
+                description: "De-escalate an upset customer who noticed a discrepancy with double subscription charges, and secure premium retention.",
+                vocabulary: {
+                    discrepancy: {
+                        meaning: "An unexpected difference or lack of compatibility between two or more facts.",
+                        examples: ["I found a critical discrepancy in my monthly premium bill.", "We resolved the financial discrepancy within minutes."]
+                    },
+                    premium: {
+                        meaning: "A high-quality level of service, or the amount paid for a subscription plan.",
+                        examples: ["Our premium membership offers unlimited professional coaching.", "The premium charge is automatically billed monthly."]
+                    },
+                    overcharge: {
+                        meaning: "An instance of charging someone too much money for a service or product.",
+                        examples: ["This overcharge must be refunded to my credit card immediately.", "We apologize sincerely for the accidental overcharge."]
+                    }
+                },
+                steps: [
+                    {
+                        customer: "Hello! I am furious. Your system charged me twice for my premium tier subscription! This is a major discrepancy and I want this overcharge refunded right away!",
+                        options: [
+                            {
+                                text: "I completely understand your frustration with this billing discrepancy. Let me review your premium charges immediately to issue a refund for this overcharge.",
+                                points: 10,
+                                feedback: "Perfect! Empathy, active vocabulary usage, and immediate action-oriented tone."
+                            },
+                            {
+                                text: "Calm down, please. It is probably just a small error. Can you give me your account number to see if there is an overcharge?",
+                                points: 4,
+                                feedback: "Be careful. Telling an angry customer to 'calm down' usually escalates their irritation."
+                            },
+                            {
+                                text: "Our billing system is secure. Are you sure you didn't buy two subscriptions by mistake?",
+                                points: 1,
+                                feedback: "Avoid shifting blame to the customer. This can trigger immediate cancellation."
+                            }
+                        ]
+                    },
+                    {
+                        customer: "Thank you for acknowledging the problem. Yes, I saw two separate forty-dollar charges on Tuesday. This is a clear overcharge and it has ruined my budget.",
+                        options: [
+                            {
+                                text: "I see the double transactions here. I have processed the refund for the overcharge, and it will clear in your account within 24 hours.",
+                                points: 10,
+                                feedback: "Excellent! You confirmed the transaction and provided a clear, fast resolution timeline."
+                            },
+                            {
+                                text: "I can see the Tuesday charges. I will send a note to our billing department to see if they can reverse it next week.",
+                                points: 5,
+                                feedback: "A bit too passive. Customers prefer immediate action and clear resolution steps."
+                            }
+                        ]
+                    },
+                    {
+                        customer: "I appreciate the quick refund, but honestly, this reliability issue makes me want to cancel my premium service altogether.",
+                        options: [
+                            {
+                                text: "We truly value your loyalty. To show our dedication, I will apply a full credit for your next month of premium service entirely free.",
+                                points: 10,
+                                feedback: "Brilliant save! Offering a retention credit keeps the customer engaged and restores brand trust."
+                            },
+                            {
+                                text: "Okay, if you really want to cancel, I can help you process that right now. Do you want me to proceed?",
+                                points: 5,
+                                feedback: "Too quick to let them go. You should always try to offer an alternative or credit to retain the user first."
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                id: 2,
+                title: "Irritated Flight Delay Assistance",
+                category: "Customer Service",
+                difficulty: "A1/A2 Foundation",
+                description: "Help a traveler find their gate and reschedule their delayed departure with clear, polite English instructions.",
+                vocabulary: {
+                    delayed: {
+                        meaning: "Happening or arriving later than planned, expected, or scheduled.",
+                        examples: ["The 3:00 PM flight to Chicago is delayed.", "Bad weather delayed our departure from the terminal."]
+                    },
+                    gate: {
+                        meaning: "The specific area at an airport where passengers board or exit their airplane.",
+                        examples: ["Please check your boarding pass for the correct gate number.", "We must run to gate twelve before the doors close."]
+                    }
+                },
+                steps: [
+                    {
+                        customer: "Excuse me! My flight is heavily delayed and now I am going to miss my connection. Where is the customer service gate?",
+                        options: [
+                            {
+                                text: "Hello! I am very sorry to hear your flight is delayed. The customer service gate is located right next to gate B15. Let me help you find it.",
+                                points: 10,
+                                feedback: "Great! Highly empathetic, clear directions, and reassures the customer."
+                            },
+                            {
+                                text: "Delays happen all the time. Just look at the screen monitors to find the nearest gate.",
+                                points: 2,
+                                feedback: "Slightly rude. Anxious travelers need friendly guidance, not dismissed."
+                            }
+                        ]
+                    },
+                    {
+                        customer: "Okay, I am at gate B15 now. Can you book me on the next available flight to Chicago?",
+                        options: [
+                            {
+                                text: "Yes, I found a seat on the flight leaving in one hour from gate C2. I have successfully booked it for you.",
+                                points: 10,
+                                feedback: "Fantastic! Prompt solution, direct information, and excellent customer service."
+                            },
+                            {
+                                text: "No, everything is fully booked. You'll just have to wait around until tomorrow.",
+                                points: 1,
+                                feedback: "Poor effort. You should always explore standby or alternative connections first."
+                            }
+                        ]
+                    }
+                ]
+            }
+        ];
 
         const Icon = ({ name, className }) => {
             useEffect(() => {
@@ -87,7 +248,7 @@
 
             const handleTimeOut = () => {
                 setScore((prev) => Math.max(0, prev - 5));
-                setChatHistory(prev => [...prev, { type: 'system', text: "AHT LIMIT BROKEN: Response SLA threshold breached. Customer satisfaction dropping." }]);
+                setChatHistory(prev => [...prev, { type: 'system', text: "AHT LIMIT BREKEN: Response SLA threshold breached. Customer satisfaction dropping." }]);
                 setFeedback({ points: 0, message: "AHT Exceeded! You took more than 15 seconds to evaluate the response strategy. (-5 Logic Points)" });
 
                 setTimeout(() => {
@@ -146,11 +307,29 @@
                 }
             };
 
+            const handleWordClick = (wordKey) => {
+                const vocabData = currentScenario?.vocabulary?.[wordKey];
+                if (vocabData) {
+                    const wordObj = {
+                        word: wordKey,
+                        meaning: vocabData.meaning,
+                        examples: vocabData.examples || []
+                    };
+                    setActiveWord(wordObj);
+                    
+                    // Add word to notebook if not already logged
+                    setVocabularyLog(prev => {
+                        if (prev.some(item => item.word === wordKey)) return prev;
+                        return [...prev, wordObj];
+                    });
+                }
+            };
+
             const renderInteractiveText = (text) => {
                 if (gameMode === 'ghostCall') {
                     return (
-                        <div className="flex items-center gap-2 text-indigo-600 font-bold italic py-2">
-                            <Icon name="audio-lines" className="w-5 h-5 animate-pulse text-indigo-500" />
+                        <div className="flex items-center gap-2 text-brand-orange font-bold italic py-2">
+                            <Icon name="audio-lines" className="w-5 h-5 animate-pulse text-brand-orange" />
                             <span>[ AUDIO INCOMING — Click the speaker icon to stream carefully ]</span>
                         </div>
                     );
@@ -159,48 +338,118 @@
                 return text.split(" ").map((word, idx) => {
                     const clean = word.toLowerCase().replace(/[.,!?;:()]/g, "");
                     const isKey = currentScenario?.vocabulary?.[clean];
-                    return <span key={idx} onClick={() => handleWordClick(clean)} className={`${isKey ? 'text-indigo-600 font-bold cursor-help underline decoration-dotted' : ''}`}>{word}{" "}</span>;
+                    return (
+                        <span 
+                            key={idx} 
+                            onClick={() => isKey && handleWordClick(clean)} 
+                            className={`${isKey ? 'text-brand-orange font-bold cursor-help underline decoration-dotted decoration-brand-orange hover:text-brand-orangeMed' : ''}`}
+                        >
+                            {word}{" "}
+                        </span>
+                    );
                 });
             };
 
             const getGrade = () => {
                 const percentage = (score / maxPossibleScore) * 100;
-                if (percentage >= 90) return { label: 'Elite Specialist', color: 'text-green-600', icon: 'award' };
-                if (percentage >= 75) return { label: 'Professional Portfolio', color: 'text-blue-600', icon: 'target' };
-                return { label: 'Needs Retraining', color: 'text-red-600', icon: 'shield-alert' };
+                if (percentage >= 90) return { label: 'Elite Specialist', color: 'text-emerald-600', icon: 'award' };
+                if (percentage >= 75) return { label: 'Professional Portfolio', color: 'text-brand-orangeMed', icon: 'target' };
+                return { label: 'Needs Retraining', color: 'text-rose-600', icon: 'shield-alert' };
             };
 
-            const activeScenarios = typeof SCENARIOS !== 'undefined' ? SCENARIOS : [];
+            // Use window.SCENARIOS if loaded from external file, otherwise use high-fidelity fallbacks
+            const activeScenarios = typeof SCENARIOS !== 'undefined' && SCENARIOS.length > 0 ? SCENARIOS : FALLBACK_SCENARIOS;
 
             return (
-                <div className="min-h-screen bg-slate-50 font-sans text-slate-900 flex flex-col relative overflow-hidden">
+                <div className="min-h-screen bg-slate-50 font-sans text-slate-800 flex flex-col relative overflow-hidden">
+                    
+                    {/* Modal interactivo de vocabulario */}
                     {activeWord && (
-                        <div className="fixed inset-0 bg-black/60 z-50 flex items-center justify-center p-4 animate-in fade-in duration-200">
-                            <div className="bg-white rounded-3xl p-8 max-w-sm w-full shadow-2xl space-y-4 relative">
-                                <button onClick={() => setActiveWord(null)} className="absolute top-4 right-4 text-slate-400 hover:text-slate-600"><Icon name="x" className="w-6 h-6" /></button>
-                                <div className="flex items-center gap-2 text-indigo-600"><Icon name="book-open" className="w-5 h-5" /><h3 className="text-2xl font-black uppercase tracking-tighter">{activeWord.word}</h3></div>
-                                <div className="space-y-2"><p className="text-[10px] font-bold text-slate-400 uppercase tracking-widest">Meaning</p><p className="text-slate-700 text-sm leading-relaxed">{activeWord.meaning}</p></div>
-                                <div className="space-y-2"><p className="text-[10px] font-bold text-slate-400 uppercase tracking-widest">Examples</p>
-                                    {activeWord.examples.map((ex, i) => (<p key={i} className="text-xs italic bg-slate-50 p-2 rounded-lg border-l-2 border-indigo-300">"{ex}"</p>))}
+                        <div className="fixed inset-0 bg-brand-blue/80 z-50 flex items-center justify-center p-4 animate-in fade-in duration-200">
+                            <div className="bg-white rounded-3xl p-8 max-w-sm w-full shadow-2xl space-y-5 relative border border-slate-100">
+                                <button onClick={() => setActiveWord(null)} className="absolute top-4 right-4 text-slate-400 hover:text-slate-600 transition-all">
+                                    <Icon name="x" className="w-6 h-6" />
+                                </button>
+                                <div className="flex items-center gap-2 text-brand-orange">
+                                    <Icon name="book-open" className="w-6 h-6" />
+                                    <h3 className="text-2xl font-black uppercase tracking-tighter">{activeWord.word}</h3>
+                                </div>
+                                <div className="space-y-2">
+                                    <p className="text-[10px] font-bold text-slate-400 uppercase tracking-widest">Meaning</p>
+                                    <p className="text-slate-700 text-sm leading-relaxed">{activeWord.meaning}</p>
+                                </div>
+                                <div className="space-y-2">
+                                    <p className="text-[10px] font-bold text-slate-400 uppercase tracking-widest">Examples</p>
+                                    {activeWord.examples.map((ex, i) => (
+                                        <p key={i} className="text-xs italic bg-brand-orangeLight p-3 rounded-xl border-l-4 border-brand-orange text-slate-700">
+                                            "{ex}"
+                                        </p>
+                                    ))}
                                 </div>
                             </div>
                         </div>
                     )}
 
-                    <header className="bg-slate-900 text-white p-4 shadow-xl flex items-center justify-between border-b-4 border-indigo-500 z-20">
-                        <div className="flex items-center gap-3"><div className="bg-indigo-500 p-2 rounded-lg"><Icon name="brain-circuit" className="w-6 h-6 text-white" /></div>
-                            <div><h1 className="text-xl font-black tracking-tighter uppercase leading-none italic">Comprehension Master</h1><p className="text-[10px] text-indigo-300 font-bold tracking-widest uppercase">Logic & Vocab Exam</p></div>
+                    {/* Encabezado Principal E4CC */}
+                    <header className="bg-brand-blue text-white p-4 shadow-xl flex items-center justify-between border-b-4 border-brand-orange z-20 transition-all duration-300">
+                        <div className="flex items-center gap-4">
+                            {/* Imagotipo circular con audífonos */}
+                            <img 
+                                src="image_196b82.png" 
+                                className="h-10 w-auto object-contain bg-white rounded-full p-0.5 shadow-md" 
+                                alt="E4CC Icon" 
+                                onError={(e) => { e.target.style.display = 'none'; }}
+                            />
+                            
+                            {/* Logotipo Completo al lado */}
+                            <img 
+                                src="image_196b8a.png" 
+                                className="h-10 w-auto object-contain hidden md:block" 
+                                alt="E4CC Logo" 
+                                onError={(e) => { e.target.style.display = 'none'; }}
+                            />
+                            
+                            {/* Resguardo tipográfico responsivo si falla imagen o en móviles */}
+                            <div className="flex flex-col justify-center">
+                                <h1 className="text-xl font-black tracking-tighter uppercase leading-none italic text-white flex items-center gap-2 md:hidden">
+                                    E4CC <span className="text-[10px] bg-brand-orange text-white px-1.5 py-0.5 rounded not-italic">SIM</span>
+                                </h1>
+                                <p className="text-[10px] text-brand-orange font-bold tracking-widest uppercase">
+                                    #1 en inglés para el trabajo
+                                </p>
+                            </div>
                         </div>
-                        {gameState !== 'menu' && <button onClick={() => { if ('speechSynthesis' in window) window.speechSynthesis.cancel(); clearInterval(timerRef.current); setGameState('menu'); }} className="bg-slate-800 hover:bg-slate-700 px-4 py-2 rounded-full text-xs font-bold border border-slate-700">MAIN MENU</button>}
+
+                        {gameState !== 'menu' && (
+                            <button 
+                                onClick={() => { 
+                                    if ('speechSynthesis' in window) window.speechSynthesis.cancel(); 
+                                    clearInterval(timerRef.current); 
+                                    setGameState('menu'); 
+                                }} 
+                                className="bg-brand-orange hover:bg-brand-orangeMed text-white px-5 py-2.5 rounded-full text-xs font-black tracking-wider transition-all shadow-md uppercase"
+                            >
+                                MAIN MENU
+                            </button>
+                        )}
                     </header>
 
+                    {/* Contenido Principal */}
                     <main className="flex-1 flex flex-col max-w-5xl mx-auto w-full p-4 md:p-6 overflow-hidden">
+                        
+                        {/* Menú de Módulos */}
                         {gameState === 'menu' && (
-                            <div className="flex-1 flex flex-col space-y-6 animate-in fade-in duration-500 overflow-y-auto">
-                                <div className="bg-white p-8 rounded-3xl shadow-sm border border-slate-200 flex flex-col md:flex-row md:items-center justify-between gap-6">
-                                    <div className="space-y-1"><h2 className="text-3xl font-black text-slate-800 uppercase italic">Training Modules</h2><p className="text-slate-500 font-medium">Curriculum CEFR progresivo. Todos los escenarios estructurados a 6+ pasos continuos.</p></div>
+                            <div className="flex-1 flex flex-col space-y-6 animate-in fade-in duration-500 overflow-y-auto pr-1">
+                                <div className="bg-white p-8 rounded-[2rem] shadow-sm border border-slate-200 flex flex-col md:flex-row md:items-center justify-between gap-6">
+                                    <div className="space-y-1">
+                                        <h2 className="text-3xl font-black text-brand-blue uppercase italic tracking-tight">Training Modules</h2>
+                                        <p className="text-slate-500 text-sm font-medium">Curriculum CEFR progresivo. Todos los escenarios estructurados para evaluación continua.</p>
+                                    </div>
                                     <div className="flex gap-3">
-                                        <select className="bg-slate-100 rounded-xl px-4 py-2 text-sm font-bold border" onChange={(e) => setFilter(e.target.value)}>
+                                        <select 
+                                            className="bg-brand-blueLight text-brand-blue rounded-2xl px-4 py-3 text-sm font-bold border-2 border-slate-200 focus:border-brand-orange focus:outline-none transition-all cursor-pointer" 
+                                            onChange={(e) => setFilter(e.target.value)}
+                                        >
                                             <option value="All">All Tiers (A1 to C1)</option>
                                             <option value="A1/A2 Foundation">A1 / A2 Foundation</option>
                                             <option value="B1/B2 Technical">B1 / B2 Technical</option>
@@ -211,20 +460,58 @@
 
                                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 pb-10">
                                     {activeScenarios.filter(s => filter === 'All' || s.difficulty === filter).map(scenario => (
-                                        <div key={scenario.id} className="bg-white border-2 border-slate-200 rounded-[2rem] p-6 shadow-sm hover:shadow-xl transition-all flex flex-col h-full">
+                                        <div key={scenario.id} className="bg-white border-2 border-slate-100 rounded-[2.5rem] p-6 shadow-sm hover:shadow-xl hover:border-brand-orange/35 transition-all flex flex-col h-full relative overflow-hidden group">
+                                            <div className="absolute top-0 left-0 w-full h-1.5 bg-brand-blue group-hover:bg-brand-orange transition-all duration-300"></div>
+                                            
                                             <div className="flex justify-between items-start mb-4">
-                                                <span className={`px-3 py-1 rounded-full text-[10px] font-black uppercase ${scenario.difficulty.startsWith('A') ? 'bg-green-100 text-green-700' : scenario.difficulty.startsWith('B') ? 'bg-blue-100 text-blue-700' : 'bg-red-100 text-red-700'}`}>{scenario.difficulty}</span>
+                                                <span className={`px-3 py-1 rounded-full text-[10px] font-black uppercase tracking-wider ${
+                                                    scenario.difficulty.startsWith('A') 
+                                                        ? 'bg-emerald-100 text-emerald-800' 
+                                                        : scenario.difficulty.startsWith('B') 
+                                                            ? 'bg-brand-blueLight text-brand-blue' 
+                                                            : 'bg-brand-orangeLight text-brand-orange'
+                                                }`}>
+                                                    {scenario.difficulty}
+                                                </span>
                                                 <span className="text-[10px] font-black text-slate-400 uppercase tracking-wider">{scenario.category}</span>
                                             </div>
-                                            <h3 className="text-xl font-black mb-1 uppercase italic leading-tight tracking-tight">{scenario.title}</h3>
-                                            <p className="text-slate-500 text-xs mb-6 flex-1 font-medium">{scenario.description}</p>
                                             
-                                            <div className="space-y-2 border-t pt-4">
-                                                <p className="text-[9px] font-black uppercase text-slate-400 mb-2">Select Target Deployment Mode:</p>
-                                                <div className="grid grid-cols-3 gap-1.5">
-                                                    <button onClick={() => startScenario(scenario, 'normal')} className="bg-indigo-50 hover:bg-indigo-600 text-indigo-700 hover:text-white font-black p-2.5 text-[10px] rounded-xl transition-all border border-indigo-100 uppercase tracking-tighter"><Icon name="play" className="w-3 h-3 block mx-auto mb-1" /> Normal</button>
-                                                    <button onClick={() => startScenario(scenario, 'timeAttack')} className="bg-amber-50 hover:bg-amber-600 text-amber-700 hover:text-white font-black p-2.5 text-[10px] rounded-xl transition-all border border-amber-100 uppercase tracking-tighter"><Icon name="timer" className="w-3 h-3 block mx-auto mb-1" /> Time Attack</button>
-                                                    <button onClick={() => startScenario(scenario, 'ghostCall')} className="bg-purple-50 hover:bg-purple-600 text-purple-700 hover:text-white font-black p-2.5 text-[10px] rounded-xl transition-all border border-purple-100 uppercase tracking-tighter"><Icon name="audio-lines" className="w-3 h-3 block mx-auto mb-1" /> Ghost Call</button>
+                                            <h3 className="text-xl font-black mb-1.5 uppercase italic text-brand-blue group-hover:text-brand-orange transition-colors duration-300 leading-tight tracking-tight">
+                                                {scenario.title}
+                                            </h3>
+                                            <p className="text-slate-500 text-xs mb-6 flex-1 font-medium leading-relaxed">{scenario.description}</p>
+                                            
+                                            <div className="space-y-2 border-t border-slate-100 pt-4 mt-auto">
+                                                <p className="text-[9px] font-black uppercase text-slate-400 mb-2 tracking-wider">Select Target Deployment Mode:</p>
+                                                <div className="grid grid-cols-3 gap-2">
+                                                    
+                                                    {/* Modo Normal: Azul Corporativo */}
+                                                    <button 
+                                                        onClick={() => startScenario(scenario, 'normal')} 
+                                                        className="bg-brand-blueLight hover:bg-brand-blue text-brand-blue hover:text-white font-black p-2.5 text-[10px] rounded-xl transition-all border border-brand-blue/10 uppercase tracking-tighter flex flex-col items-center justify-center gap-1 shadow-sm"
+                                                    >
+                                                        <Icon name="play" className="w-3 h-3" />
+                                                        <span>Normal</span>
+                                                    </button>
+                                                    
+                                                    {/* Modo Time Attack: Naranja Intenso */}
+                                                    <button 
+                                                        onClick={() => startScenario(scenario, 'timeAttack')} 
+                                                        className="bg-brand-orangeLight hover:bg-brand-orange text-brand-orange hover:text-white font-black p-2.5 text-[10px] rounded-xl transition-all border border-brand-orange/10 uppercase tracking-tighter flex flex-col items-center justify-center gap-1 shadow-sm"
+                                                    >
+                                                        <Icon name="timer" className="w-3 h-3" />
+                                                        <span>Time Attack</span>
+                                                    </button>
+                                                    
+                                                    {/* Modo Ghost Call: Naranja Medio */}
+                                                    <button 
+                                                        onClick={() => startScenario(scenario, 'ghostCall')} 
+                                                        className="bg-orange-50 hover:bg-brand-orangeMed text-brand-orangeMed hover:text-white font-black p-2.5 text-[10px] rounded-xl transition-all border border-brand-orangeMed/10 uppercase tracking-tighter flex flex-col items-center justify-center gap-1 shadow-sm"
+                                                    >
+                                                        <Icon name="audio-lines" className="w-3 h-3" />
+                                                        <span>Ghost Call</span>
+                                                    </button>
+                                                    
                                                 </div>
                                             </div>
                                         </div>
@@ -233,13 +520,16 @@
                             </div>
                         )}
 
+                        {/* Consola de Juego (Chat del Call Center) */}
                         {gameState === 'playing' && (
                             <div className="flex-1 flex flex-col bg-white rounded-[2.5rem] shadow-2xl border border-slate-200 overflow-hidden min-h-0">
-                                <div className="bg-slate-900 text-white px-6 py-4 flex flex-col gap-2 flex-shrink-0">
+                                
+                                {/* Info del Escenario actual */}
+                                <div className="bg-brand-blue text-white px-6 py-4 flex flex-col gap-2 flex-shrink-0 border-b-2 border-brand-orange">
                                     <div className="flex justify-between items-center">
                                         <div className="flex items-center gap-2">
-                                            <Icon name={gameMode === 'timeAttack' ? 'timer' : gameMode === 'ghostCall' ? 'audio-lines' : 'play'} className="w-4 h-4 text-indigo-400 animate-pulse" />
-                                            <p className="text-[10px] font-black uppercase tracking-widest text-indigo-100">
+                                            <Icon name={gameMode === 'timeAttack' ? 'timer' : gameMode === 'ghostCall' ? 'audio-lines' : 'play'} className="w-4 h-4 text-brand-orange animate-pulse" />
+                                            <p className="text-[10px] font-black uppercase tracking-widest text-brand-orangeLight">
                                                 {gameMode === 'normal' && "NORMAL METRIC ASSESSMENT"}
                                                 {gameMode === 'timeAttack' && "SILENT TIME ATTACK — 15S SLA LIMIT"}
                                                 {gameMode === 'ghostCall' && "GHOST CALL — PURE LOGISTICS AUDIO STREAM"}
@@ -247,35 +537,42 @@
                                         </div>
                                         <div className="flex items-center gap-6">
                                             {gameMode === 'timeAttack' && (
-                                                <div className="text-center bg-slate-800 px-3 py-1 rounded-xl border border-slate-700">
-                                                    <span className="font-mono text-base font-black text-white">{timeLeft}s</span>
+                                                <div className="text-center bg-brand-blue/80 px-3 py-1 rounded-xl border border-brand-orange/40">
+                                                    <span className="font-mono text-base font-black text-brand-orange">{timeLeft}s</span>
                                                 </div>
                                             )}
                                             <div className="text-right">
-                                                <p className="text-[9px] font-bold text-slate-400 uppercase tracking-tighter">Running Score</p>
-                                                <p className="font-mono text-xl font-black text-indigo-400 leading-none">{score}</p>
+                                                <p className="text-[9px] font-bold text-slate-300 uppercase tracking-tighter">Running Score</p>
+                                                <p className="font-mono text-xl font-black text-brand-orange leading-none">{score}</p>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
 
+                                {/* Ventana de Chat */}
                                 <div className="flex-1 overflow-y-auto p-8 space-y-6 bg-slate-50/50 relative min-h-0">
                                     {chatHistory.map((msg, i) => (
                                         <div key={i} className={`flex ${msg.type === 'customer' ? 'justify-start' : msg.type === 'agent' ? 'justify-end' : 'justify-center'} animate-in slide-in-from-bottom-4 duration-300`}>
                                             {msg.type === 'system' ? (
-                                                <div className="bg-red-50 border border-red-200 rounded-xl px-4 py-2 text-xs font-bold text-red-600">{msg.text}</div>
+                                                <div className="bg-red-50 border border-red-200 rounded-xl px-4 py-2 text-xs font-bold text-red-600 shadow-sm max-w-lg text-center">
+                                                    {msg.text}
+                                                </div>
                                             ) : (
                                                 <div className={`flex gap-4 max-w-[90%] ${msg.type === 'agent' ? 'flex-row-reverse' : ''} items-start`}>
-                                                    <div className={`w-10 h-10 rounded-2xl flex items-center justify-center flex-shrink-0 shadow-lg ${msg.type === 'customer' ? 'bg-white border text-slate-400' : 'bg-indigo-600 text-white'}`}>
-                                                        <Icon name={msg.type === 'customer' ? "user" : "headphones"} className="w-6 h-6" />
+                                                    
+                                                    {/* Avatar */}
+                                                    <div className={`w-10 h-10 rounded-2xl flex items-center justify-center flex-shrink-0 shadow-md ${msg.type === 'customer' ? 'bg-white border text-slate-400' : 'bg-brand-blue text-white'}`}>
+                                                        <Icon name={msg.type === 'customer' ? "user" : "headphones"} className="w-5 h-5" />
                                                     </div>
+                                                    
+                                                    {/* Burbuja de Texto */}
                                                     <div className="relative">
-                                                        <div className={`p-5 rounded-3xl text-sm leading-relaxed shadow-sm font-medium ${msg.type === 'customer' ? 'bg-white text-slate-800 rounded-tl-none border pr-12' : 'bg-indigo-600 text-white rounded-tr-none pr-12'}`}>
+                                                        <div className={`p-5 rounded-3xl text-sm leading-relaxed shadow-sm font-medium pr-12 ${msg.type === 'customer' ? 'bg-white text-slate-800 rounded-tl-none border border-slate-100' : 'bg-brand-blue text-white rounded-tr-none'}`}>
                                                             {msg.type === 'customer' ? renderInteractiveText(msg.text) : msg.text}
                                                         </div>
                                                         <button 
                                                             onClick={() => speakText(msg.text)} 
-                                                            className={`absolute right-3 top-4 p-1.5 rounded-xl transition-all border shadow-sm ${msg.type === 'customer' ? 'text-slate-400 hover:text-indigo-600 bg-slate-50 hover:bg-indigo-50 border-slate-100' : 'text-indigo-200 hover:text-white bg-indigo-700 hover:bg-indigo-800 border-indigo-500'}`}
+                                                            className={`absolute right-3 top-4 p-1.5 rounded-xl transition-all border shadow-sm ${msg.type === 'customer' ? 'text-slate-400 hover:text-brand-orange bg-slate-50 hover:bg-brand-orangeLight border-slate-100' : 'text-slate-300 hover:text-white bg-brand-blue/80 hover:bg-brand-blue border-slate-700'}`}
                                                             title="Listen audio"
                                                         >
                                                             <Icon name="volume-2" className="w-4 h-4" />
@@ -286,22 +583,41 @@
                                         </div>
                                     ))}
 
-                                    {feedback && <div className="flex justify-center my-4 animate-in zoom-in duration-300"><div className="bg-white border-2 border-indigo-100 rounded-2xl p-4 text-center max-w-md shadow-lg">
-                                        <p className="text-[10px] font-black uppercase text-indigo-600 mb-1">{feedback.points === 10 ? 'ANALISIS MAESTRO' : 'SOLUCIÓN SECA'}</p>
-                                        <p className="text-xs italic font-bold text-slate-700">"{feedback.message}"</p></div></div>}
+                                    {/* Caja de Feedback Temporal */}
+                                    {feedback && (
+                                        <div className="flex justify-center my-4 animate-in zoom-in duration-300">
+                                            <div className="bg-white border-2 border-brand-orange/30 rounded-2xl p-4 text-center max-w-md shadow-lg">
+                                                <p className="text-[10px] font-black uppercase text-brand-orange mb-1">
+                                                    {feedback.points === 10 ? 'EXCELENTE ANÁLISIS' : 'SITUACIÓN EVALUADA'}
+                                                </p>
+                                                <p className="text-xs italic font-bold text-slate-700">"{feedback.message}"</p>
+                                            </div>
+                                        </div>
+                                    )}
                                     <div ref={chatEndRef} />
                                 </div>
 
-                                <div className="p-8 bg-white border-t-2 flex-shrink-0">
+                                {/* Selección de Respuesta */}
+                                <div className="p-8 bg-white border-t-2 border-slate-100 flex-shrink-0">
                                     {!feedback ? (
                                         <div className="flex flex-col gap-3">
-                                            <p className="text-[10px] font-black text-slate-400 uppercase tracking-widest mb-2 flex items-center gap-2"><Icon name="target" className="w-3 h-3 text-indigo-500" /> CHOOSE RESPONSE STRATEGY:</p>
-                                            {shuffledOptions.map((opt, idx) => (<button key={idx} onClick={() => handleOptionClick(opt)} className="text-left p-4 text-sm font-bold bg-slate-50 hover:bg-indigo-600 hover:text-white border-2 border-slate-100 rounded-2xl transition-all shadow-sm">
-                                                {opt.text}</button>))}
+                                            <p className="text-[10px] font-black text-slate-400 uppercase tracking-widest mb-1 flex items-center gap-2">
+                                                <Icon name="target" className="w-3.5 h-3.5 text-brand-orange" /> 
+                                                CHOOSE RESPONSE STRATEGY:
+                                            </p>
+                                            {shuffledOptions.map((opt, idx) => (
+                                                <button 
+                                                    key={idx} 
+                                                    onClick={() => handleOptionClick(opt)} 
+                                                    className="text-left p-4 text-sm font-bold bg-slate-50 hover:bg-brand-blue hover:text-white border-2 border-slate-100 hover:border-brand-blue rounded-2xl transition-all shadow-sm"
+                                                >
+                                                    {opt.text}
+                                                </button>
+                                            ))}
                                         </div>
                                     ) : (
-                                        <div className="flex flex-col items-center justify-center py-6 text-slate-400 text-[10px] font-black uppercase tracking-widest gap-2">
-                                            <div className="w-5 h-5 border-2 border-indigo-600 border-t-transparent rounded-full animate-spin"></div>
+                                        <div className="flex flex-col items-center justify-center py-6 text-brand-orange text-[10px] font-black uppercase tracking-widest gap-3">
+                                            <div className="w-6 h-6 border-2 border-brand-orange border-t-transparent rounded-full animate-spin"></div>
                                             <span>Processing learning metrics...</span>
                                         </div>
                                     )}
@@ -309,43 +625,86 @@
                             </div>
                         )}
 
+                        {/* Pantalla de Resultados Finales */}
                         {gameState === 'results' && (
-                            <div className="flex-1 flex flex-col items-center justify-center animate-in zoom-in duration-500 overflow-y-auto py-10">
-                                <div className="bg-white p-12 rounded-[3.5rem] shadow-2xl border border-slate-100 max-w-2xl w-full text-center space-y-8 relative overflow-hidden">
-                                    <div className="absolute top-0 left-0 w-full h-3 bg-indigo-600"></div>
+                            <div className="flex-1 flex flex-col items-center justify-center animate-in zoom-in duration-500 overflow-y-auto py-10 pr-1">
+                                <div className="bg-white p-8 md:p-12 rounded-[3.5rem] shadow-2xl border border-slate-100 max-w-2xl w-full text-center space-y-8 relative overflow-hidden">
+                                    {/* Franja superior de marca */}
+                                    <div className="absolute top-0 left-0 w-full h-3 bg-brand-orange"></div>
+                                    
                                     <div className="space-y-4">
                                         <div className={`mx-auto w-24 h-24 rounded-3xl flex items-center justify-center bg-slate-50 border-2 ${getGrade().color} shadow-xl`}>
-                                            <Icon name={getGrade().icon} className="w-16 h-16" />
+                                            <Icon name={getGrade().icon} className="w-14 h-14" />
                                         </div>
-                                        <h2 className="text-5xl font-black text-slate-800 tracking-tighter uppercase italic">{getGrade().label}</h2>
+                                        <h2 className="text-4xl md:text-5xl font-black text-brand-blue tracking-tighter uppercase italic">
+                                            {getGrade().label}
+                                        </h2>
                                     </div>
+
+                                    {/* Grid de Métricas */}
                                     <div className="grid grid-cols-2 gap-4">
-                                        <div className="bg-slate-50 p-6 rounded-3xl border border-slate-200 flex flex-col justify-center"><p className="text-[10px] font-black text-slate-400 uppercase mb-1 tracking-widest">Final Mode Score</p><p className="text-4xl font-black text-indigo-600">{score}</p></div>
-                                        <div className="bg-slate-50 p-6 rounded-3xl border border-slate-200 flex flex-col justify-center"><p className="text-[10px] font-black text-slate-400 uppercase mb-1 tracking-widest">Accuracy Rate</p><p className="text-4xl font-black text-indigo-600">{Math.round((score/maxPossibleScore) * 100)}%</p></div>
-                                    </div>
-                                    <div className="bg-indigo-900 p-8 rounded-[2.5rem] shadow-xl text-white text-left space-y-6">
-                                        <div className="flex items-center justify-between border-b border-indigo-700 pb-4">
-                                            <div className="flex items-center gap-2"><Icon name="book-open" className="w-6 h-6 text-indigo-300" /><h3 className="text-lg font-black uppercase tracking-widest italic">Vocab Summary for Notebook</h3></div>
-                                            <button onClick={() => { 
-                                                const text = vocabularyLog.map(v => `${v.word.toUpperCase()}\nMeaning: ${v.meaning}\nEx: ${v.examples[0]}\nEx: ${v.examples[1]}`).join('\n---\n'); 
-                                                const el = document.createElement('textarea');
-                                                el.value = text;
-                                                document.body.appendChild(el);
-                                                el.select();
-                                                document.execCommand('copy');
-                                                document.body.removeChild(el);
-                                            }} className="bg-indigo-700 hover:bg-indigo-600 px-4 py-2 rounded-xl text-[10px] font-black transition-all flex items-center gap-2"><Icon name="copy" className="w-3 h-3" /> COPY LIST</button>
+                                        <div className="bg-slate-50 p-6 rounded-3xl border border-slate-200 flex flex-col justify-center">
+                                            <p className="text-[10px] font-black text-slate-400 uppercase mb-1 tracking-widest">Final Mode Score</p>
+                                            <p className="text-4xl font-black text-brand-orange">{score}</p>
                                         </div>
-                                        {vocabularyLog.length > 0 ? (
-                                            <div className="space-y-6 max-h-[300px] overflow-y-auto pr-4 scrollbar-thin">
-                                                {vocabularyLog.map((item, idx) => (
-                                                    <div key={idx} className="space-y-1"><p className="text-indigo-400 font-black uppercase text-xl">{item.word}</p><p className="text-xs font-medium text-slate-300">{item.meaning}</p>
-                                                        <p className="text-[10px] italic text-indigo-200 opacity-80 border-l-2 border-indigo-600 pl-3">"{item.examples[0]}"</p>
-                                                        <p className="text-[10px] italic text-indigo-200 opacity-80 border-l-2 border-indigo-600 pl-3">"{item.examples[1]}"</p></div>))}
-                                            </div>
-                                        ) : (<p className="text-center text-indigo-300 font-bold italic py-10 uppercase text-xs">No words consulted. Good job!</p>)}
+                                        <div className="bg-slate-50 p-6 rounded-3xl border border-slate-200 flex flex-col justify-center">
+                                            <p className="text-[10px] font-black text-slate-400 uppercase mb-1 tracking-widest">Accuracy Rate</p>
+                                            <p className="text-4xl font-black text-brand-blue">{Math.round((score/maxPossibleScore) * 100)}%</p>
+                                        </div>
                                     </div>
-                                    <button onClick={() => setGameState('menu')} className="w-full bg-indigo-600 hover:bg-indigo-700 text-white font-black py-5 rounded-2xl transition-all uppercase text-xs">Main Menu</button>
+
+                                    {/* Resumen de Vocabulario en Azul Oscuro E4CC */}
+                                    <div className="bg-brand-blue p-8 rounded-[2.5rem] shadow-xl text-white text-left space-y-6">
+                                        <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 border-b border-white/10 pb-4">
+                                            <div className="flex items-center gap-2">
+                                                <Icon name="book-open" className="w-6 h-6 text-brand-orange" />
+                                                <h3 className="text-lg font-black uppercase tracking-widest italic">Vocab Summary for Notebook</h3>
+                                            </div>
+                                            <button 
+                                                onClick={() => { 
+                                                    const text = vocabularyLog.map(v => `${v.word.toUpperCase()}\nMeaning: ${v.meaning}\nEx: ${v.examples[0]}\nEx: ${v.examples[1]}`).join('\n---\n'); 
+                                                    const el = document.createElement('textarea');
+                                                    el.value = text;
+                                                    document.body.appendChild(el);
+                                                    el.select();
+                                                    document.execCommand('copy');
+                                                    document.body.removeChild(el);
+                                                }} 
+                                                className="bg-brand-orange hover:bg-brand-orangeMed px-4 py-2.5 rounded-xl text-[10px] font-black tracking-wider transition-all flex items-center justify-center gap-2 shadow-md uppercase"
+                                            >
+                                                <Icon name="copy" className="w-3.5 h-3.5" /> 
+                                                COPY LIST
+                                            </button>
+                                        </div>
+
+                                        {vocabularyLog.length > 0 ? (
+                                            <div className="space-y-6 max-h-[250px] overflow-y-auto pr-2 scrollbar-thin">
+                                                {vocabularyLog.map((item, idx) => (
+                                                    <div key={idx} className="space-y-2 border-b border-white/5 pb-4 last:border-0 last:pb-0">
+                                                        <p className="text-brand-orange font-black uppercase text-lg tracking-tight">{item.word}</p>
+                                                        <p className="text-xs font-medium text-slate-300 leading-relaxed">{item.meaning}</p>
+                                                        <div className="space-y-1 pl-3 border-l-2 border-brand-orange/60">
+                                                            {item.examples.map((ex, i) => (
+                                                                <p key={i} className="text-[10px] italic text-brand-orangeLight/80">"{ex}"</p>
+                                                            ))}
+                                                        </div>
+                                                    </div>
+                                                ))}
+                                            </div>
+                                        ) : (
+                                            <p className="text-center text-slate-400 font-bold italic py-8 uppercase text-xs tracking-wider">
+                                                No vocabulary terms consulted in this session.
+                                            </p>
+                                        )}
+                                    </div>
+
+                                    {/* Botón para Reiniciar */}
+                                    <button 
+                                        onClick={() => setGameState('menu')} 
+                                        className="w-full bg-brand-orange hover:bg-brand-orangeMed text-white font-black py-4 rounded-2xl transition-all uppercase text-xs tracking-widest shadow-lg"
+                                    >
+                                        Back to Main Menu
+                                    </button>
                                 </div>
                             </div>
                         )}
