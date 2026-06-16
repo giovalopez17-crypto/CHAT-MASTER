@@ -5,17 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Comprehension Master - Simulador de Call Center E4CC</title>
     
-    <!-- Carga de la base de datos externa local -->
     <script src="scenarios.js"></script>
     
-    <!-- Librerías Externas de UI -->
     <script src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
     <script src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
     <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://unpkg.com/lucide@latest"></script>
     
-    <!-- Configuración personalizada de la paleta corporativa E4CC -->
     <script>
         tailwind.config = {
             theme: {
@@ -197,7 +194,6 @@
             if (!text) return "";
             
             const dictionary = {
-                // Mapeos exactos de QA de scenarios.js
                 "Perfect! Empathy, active vocabulary usage, and immediate action-oriented tone.": "¡Perfecto! Empatía, uso de vocabulario activo y tono orientado a la acción inmediata.",
                 "Be careful. Telling an angry customer to 'calm down' usually escalates their irritation.": "Ten cuidado. Decirle a un cliente enojado que se 'calme' generalmente aumenta su irritación.",
                 "Avoid shifting blame to the customer. This can trigger immediate cancellation.": "Evita transferir la culpa al cliente. Esto puede provocar una cancelación inmediata del servicio.",
@@ -214,7 +210,6 @@
 
             if (dictionary[text]) return dictionary[text];
 
-            // Heurística de detección secundaria por patrones de palabras clave si viene de scenarios.js externo
             const textLower = text.toLowerCase();
             if (textLower.includes("robotic") || textLower.includes("termination protocol") || textLower.includes("infrastructure availability")) {
                 return "Demasiado complejo y mecánico. Palabras como 'termination protocol', 'cross-reference' e 'infrastructure availability' sobrecargan la conversación.";
@@ -264,10 +259,7 @@
             const [filter, setFilter] = useState('All');
             const [vocabularyLog, setVocabularyLog] = useState([]);
             const [activeWord, setActiveWord] = useState(null);
-            
-            // Estado de carga para la búsqueda de vocabulario en API
             const [isSearchingVocab, setIsSearchingVocab] = useState(false);
-            
             const [timeLeft, setTimeLeft] = useState(15);
             const timerRef = useRef(null);
             const chatEndRef = useRef(null);
@@ -308,8 +300,6 @@
 
             const handleTimeOut = () => {
                 setScore((prev) => Math.max(0, prev - 5));
-                
-                // Mensajes de SLA completamente localizados en español
                 const timeOutText = "LÍMITE DE AHT INCUMPLIDO: Se ha superado el umbral de SLA de respuesta. La satisfacción del cliente está disminuyendo.";
                 const timeOutFeedback = "¡Tiempo de AHT Excedido! Tardaste más de 15 segundos en evaluar la estrategia de respuesta. (-5 Puntos de Lógica)";
                 
@@ -354,7 +344,6 @@
                 if (timerRef.current) clearInterval(timerRef.current);
                 if ('speechSynthesis' in window) window.speechSynthesis.cancel();
 
-                // Mecanismo de traducción / fallback para scenarios.js externos en tiempo de ejecución
                 const localSpanishFeedback = translateFeedbackText(option.feedback);
 
                 setChatHistory([...chatHistory, { 
@@ -531,7 +520,8 @@
                 };
             };
 
-            const activeScenarios = typeof SCENARIOS !== 'undefined' && SCENARIOS.length > 0 ? SCENARIOS : FALLBACK_SCENARIOS;
+            // MODIFICACIÓN DE LA LÍNEA 170 (Apunta directamente a window.SCENARIOS)
+            const activeScenarios = typeof window.SCENARIOS !== 'undefined' && window.SCENARIOS.length > 0 ? window.SCENARIOS : FALLBACK_SCENARIOS;
 
             return (
                 <div className="min-h-screen bg-slate-50 font-sans text-slate-800 flex flex-col relative overflow-hidden">
@@ -763,7 +753,6 @@
                                         </div>
                                     ))}
 
-                                    {/* Caja de Feedback Temporal Rediseñada (Soporte elástico y paddings responsivos) */}
                                     {feedback && (
                                         <div className="flex justify-center my-4 px-4 animate-in zoom-in duration-300 w-full">
                                             <div className="bg-white border-2 border-brand-orange/30 rounded-[2rem] p-5 sm:p-6 text-center w-full max-w-xl shadow-xl hover:shadow-2xl transition-all overflow-hidden">
@@ -838,7 +827,7 @@
                                         </div>
                                     </div>
 
-                                    {/* Chat Recap / Historial de Interacciones (Diseño elástico robusto) */}
+                                    {/* Chat Recap / Historial de Interacciones */}
                                     <div className="bg-slate-50 border border-slate-200 p-5 sm:p-6 rounded-[2.5rem] text-left space-y-4 overflow-hidden">
                                         <div className="border-b border-slate-200 pb-2">
                                             <h3 className="text-base font-black text-brand-blue uppercase tracking-tight flex items-center gap-2">
@@ -886,7 +875,6 @@
                                                             {msg.text}
                                                         </p>
                                                         
-                                                        {/* Tarjeta de corrección del Chat Recap elástica ante textos extensos */}
                                                         {isSuboptimalAgent && translatedTextFeedback && (
                                                             <div className="mt-2 bg-rose-50 border border-rose-100 text-rose-700 p-3.5 rounded-xl break-words whitespace-normal overflow-hidden max-w-full">
                                                                 <div className="flex items-center gap-1 mb-1.5">
