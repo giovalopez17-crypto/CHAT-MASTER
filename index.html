@@ -142,4 +142,1431 @@
                         options: [
                             { text: "I am so sorry to hear about your sister. I hope she is okay. I can certainly help you change your flight date right now. May I have your name and confirmation code, please?", points: 10, roleInvertedPoints: 2, feedback: "Excellent empathy and clear modulation. Validates the family emergency immediately and keeps the instructions direct and easy to follow." },
                             { text: "In order to modify an active reservation within the twenty-four hour departure window, I must access our global distribution network to verify availability. State your flight credentials.", points: 7, roleInvertedPoints: 6, feedback: "Too robotic. Words like 'modify an active reservation', 'global distribution network', and 'credentials' are overly complex for an A2 foundation context." },
-                            { text: "Oh my god, a car accident? That is terrifying! Is there blood everywhere? Don't worry about the flight, let's look at photos of the
+                            { text: "Oh my god, a car accident? That is terrifying! Is there blood everywhere? Don't worry about the flight, let's look at photos of the crash online together!", points: 1, roleInvertedPoints: 10, feedback: "Completely inappropriate and shocking. Asking graphic questions about an accident and ignoring the business request violates all safety and professional protocols." }
+                        ]
+                    },
+                    {
+                        customer: "Thank you, I appreciate it. My name is Robert Evans and the code is X-Y-7-2-B. I want to leave next Tuesday morning instead if that's possible.",
+                        options: [
+                            { text: "Thank you, Mr. Evans. I see your plan here. I have a flight next Tuesday morning at 8:00 AM. Does that time work well for you?", points: 10, roleInvertedPoints: 2, feedback: "Perfect. Acknowledges the data, gives a clear, direct choice for the new flight, and maintains a highly accessible language structure." },
+                            { text: "Data confirmed. I am currently scanning the inventory manifest for next Tuesday's morning rotation. There is one open seat on flight 402 departing at 0800 hours. Confirm your authorization.", points: 7, roleInvertedPoints: 6, feedback: "Reads like backend logs. Explaining 'scanning the inventory manifest' and using military time like '0800 hours' is unnecessarily technical." },
+                            { text: "Robert, Tuesday is a bad luck day to fly! The stars say you shouldn't travel on Tuesdays. Let's change your flight to a magical spaceship on Friday instead!", points: 2, roleInvertedPoints: 10, feedback: "Absurd. Offering completely unrealistic alternatives based on superstitions and astrology destroys professional credibility." }
+                        ]
+                    },
+                    {
+                        customer: "Yes, 8:00 AM is perfect. Now, my original ticket said something about a $150 change fee for modifications. Is there any way you can waive that because of this emergency?",
+                        options: [
+                            { text: "Yes, Mr. Evans. Because this is a medical emergency for your family, I can remove that change fee for you completely. You will not have to pay that $150.", points: 10, roleInvertedPoints: 2, feedback: "Masterful de-escalation. Clearly states the resolution and confirms the financial favor ('remove that change fee', 'you will not have to pay') without administrative friction." },
+                            { text: "Standard tariff regulations mandate a penalty ledger item for late modifications. However, I can perform a medical contingency override to nullify the baseline transaction cost.", points: 7, roleInvertedPoints: 6, feedback: "Too sterile and complex. Phrases like 'penalty ledger item' and 'medical contingency override to nullify' are overly dense legalistic speech." },
+                            { text: "Sure! Let's just tell the computer that you are the president of the airline, and then the computer will give us all the flights for free forever!", points: 1, roleInvertedPoints: 10, feedback: "Ridiculous and non-compliant. Suggesting a fraudulent manipulation to the system is a severe breach of company policy." }
+                        ]
+                    },
+                    {
+                        customer: "Oh, that is wonderful news, thank you so much. But wait, what about the fare difference? Is the price of the new ticket exactly the same as my old one?",
+                        options: [
+                            { text: "The new flight is actually $30 cheaper than your old one. This means there is no extra cost for the ticket, and you don't owe any money today.", points: 10, roleInvertedPoints: 2, feedback: "Excellent clarity. Instead of explaining credit vouchers or complex corporate ledger returns, it directly tells the customer they owe $0." },
+                            { text: "The price matrix shows a negative variance of thirty dollars. This creates a residual credit value on the secondary ledger, meaning your immediate liability is completely clear.", points: 7, roleInvertedPoints: 6, feedback: "Too industrial. Talking about 'negative variance' and 'residual credit value on the secondary ledger' confuses a simple zero-dollar balance situation." },
+                            { text: "The new ticket costs one million dollars! But don't worry, you can pay us by giving me your car and your house right now over the phone!", points: 2, roleInvertedPoints: 10, feedback: "Absurd distraction. Inventing an impossible price and asking for a customer's personal property is highly inappropriate and unprofessional." }
+                        ]
+                    },
+                    {
+                        customer: "Excellent. Now, does this new ticket still include my carry-on bag and my window seat? I really need that extra space for my laptop during the flight.",
+                        options: [
+                            { text: "Yes, everything stays the same. I have selected a window seat for you on the new plane, and your carry-on bag is still included for free.", points: 10, roleInvertedPoints: 2, feedback: "Clear, reassuring, and concise. Confirms both services are safe using standard, everyday words without exposing booking codes." },
+                            { text: "The ancillary seat mapping assignment has been successfully cloned into the new aircraft hull template, and your luggage allowance token remains active in the backend profile.", points: 7, roleInvertedPoints: 6, feedback: "Heavy use of jargon. Explaining 'ancillary seat mapping assignment' and 'luggage allowance token cloned into the aircraft hull template' sounds robotic." },
+                            { text: "No, on Tuesdays we don't have windows on our planes! The walls are completely solid metal, so you will have to fly in complete darkness!", points: 1, roleInvertedPoints: 10, feedback: "Completely ridiculous. Telling a customer a fake, scary story about an airplane structure destroys trust and professional rapport." }
+                        ]
+                    },
+                    {
+                        customer: "Perfect, I just received the email with the update. Will this same email work as my boarding pass at the gate next week, or do I need to print something else?",
+                        options: [
+                            { text: "The email is just your receipt. Next week, you can check in online 24 hours before the flight to get your official boarding pass on your phone or at the airport.", points: 10, roleInvertedPoints: 2, feedback: "Excellent professional closure for an A2 foundation level. Explains the exact next step clearly and prevents check-in confusion at the airport." },
+                            { text: "Negative. This document is a transactional confirmation token. You must initiate a digital check-in sequence on our platform to generate the authorized QR code link.", points: 7, roleInvertedPoints: 6, feedback: "Sterile closing response. Using terms like 'transactional confirmation token' and 'digital check-in sequence' sounds machine-generated." },
+                            { text: "Yes, just show the security guards a drawing of a happy smiley face on a paper towel, and they will let you onto the plane immediately!", points: 2, roleInvertedPoints: 10, feedback: "Absurd and dangerous advice. Suggesting that airport security checks can be bypassed with a joke drawing violates international aviation safety standards." }
+                        ]
+                    }
+                ]
+            },
+            // --- LEVEL B1 / B2 ---
+            {
+                id: "c4",
+                category: "Retention / Billing",
+                title: "Resolving a Disputed Automated Renewal",
+                difficulty: "B1/B2 Technical",
+                description: "Un cliente nativo llama muy molesto por un cobro automático anual. El agente debe de-escalar la llamada y explicar políticas de forma empática sin sonar como un robot.",
+                vocabulary: {
+                    "hit with": { meaning: "Suddenly or unexpectedly forced to deal with a charge or an unpleasant situation.", examples: ["I open my app and find out I am hit with an unknown fee.", "The system hit the customer with a penalty by mistake."] },
+                    "auto-renewal": { meaning: "An automatic process where a subscription or contract continues and bills the user without needing manual approval.", examples: ["Please turn off the auto-renewal feature on my account.", "The text states that the plan has an active auto-renewal."] },
+                    "rip-off": { meaning: "An overcharged item or a transaction that is completely unfair or a scam.", examples: ["Paying a fifty-dollar fee for this basic tier is a total rip-off.", "The client wants a refund because he feels the price is a rip-off."] },
+                    "grandfathered price": { meaning: "A special old price that an old user keeps even after the official cost goes up for new users.", examples: ["Early subscribers keep their grandfathered price forever.", "If you cancel today, you will lose your grandfathered price."] },
+                    "refund": { meaning: "An amount of money that is given back to a user because they are not happy with a product or service.", examples: ["The system takes five days to process the full refund.", "I am demanding a total refund for this broken service."] },
+                    "chargeback": { meaning: "A formal dispute where a buyer asks their bank to reverse a payment made on a credit card.", examples: ["Filing a chargeback can cause the platform to freeze your profile.", "The customer threatens to initiate a chargeback with the bank."] },
+                    "grace period": { meaning: "Extra time given to complete an action, make a payment, or request a change without facing a penalty.", examples: ["There is a seven-day grace period to request a cancelation after the renewal.", "The system does not offer a grace period for late accounts."] },
+                    "waive": { meaning: "To officially remove a fee, rule, or penalty so that the user does not have to pay it.", examples: ["The manager can waive the activation fee for loyal clients.", "We are going to waive the penalty this time as a courtesy."] }
+                },
+                steps: [
+                    {
+                        customer: "Hi. I'm looking at my bank statement right now and I just got hit with a $299 charge from your company. This was an auto-renewal that I never authorized. This is a total rip-off and I want it taken off my card immediately.",
+                        options: [
+                            { text: "I completely understand how shocking it is to see a surprise charge on your statement. Let's look into this $299 auto-renewal together right now so I can see what happened and help you resolve it. May I have your name, please?", points: 10, feedback: "Excellent de-escalation. Validates the shock, uses very clear language, and moves straight into action without hiding behind rigid rules." },
+                            { text: "Per our standard Terms of Service, all electronic subscriptions generate automated billing entries unless a manual cancellation form is processed 30 days prior. Please state your full name for credentials.", points: 7, feedback: "Too mechanical and defensive. Reading the terms of service instantly makes the customer feel ignored and defensive." },
+                            { text: "Oh my god, $299? That is horrible! Our billing department is so bad, they always steal money from people like that! Let's just block our company from your bank card together!", points: 1, feedback: "Highly unprofessional and dangerous. Agreeing that the company 'steals money' destroys brand trust and violates basic call center guidelines." }
+                        ]
+                    },
+                    {
+                        customer: "My name is Sarah Jenkins. Look, I remember buying this software last year for a special promotion of $99. Where on earth does a $299 price tag come from? I expect to keep my grandfathered price if you guys are going to keep billing me without asking!",
+                        options: [
+                            { text: "Thank you, Ms. Jenkins. The $99 price was a special discount for your first year only. After the first year, the plan goes back to its regular price. However, I want to make this right. Let's check our options for a refund or a lower rate.", points: 10, feedback: "Perfect. Explains the difference between the promotion and the regular price clearly using simple words, while offering a proactive path forward." },
+                            { text: "The introductory promo token applied to your profile has expired. The current system matrix automatically updates all legacy accounts to the standard premium market tariff upon cycle rotation.", points: 7, feedback: "Extremely robotic. Phrases like 'introductory promo token' and 'system matrix automatically updates to the standard premium market tariff' confuse the customer." },
+                            { text: "Wow, $99 to $299 is crazy! I think our boss is just trying to get rich. Don't worry, Sarah, I can change the price of our entire company software to $1 for everyone today!", points: 2, feedback: "Absurd. Making false promises about changing corporate software pricing structure is a massive breach of policy and realism." }
+                        ]
+                    },
+                    {
+                        customer: "I don't care about regular prices, I haven't used this app in four months! I want a full refund right now. If you refuse to give me my money back, I am calling my bank to file a chargeback for an unauthorized payment.",
+                        options: [
+                            { text: "I hear you, and I certainly want to avoid any long disputes with your bank. Since I can see you have not logged in for months, I am happy to request a special exception for a full refund today. It will take about 3 to 5 business days to clear.", points: 10, feedback: "Great handling of a chargeback threat. Uses the customer's inactive account history as a solid reason to grant the refund exception and states a clear timeline." },
+                            { text: "Initiating a dispute process via your banking institution triggers a security lockdown on your profile. Furthermore, policy dictates that after a renewal processes, all funds are non-refundable under any circumstance.", points: 7, feedback: "Acts as a total brick wall. Using terms like 'security lockdown' sounds threatening and escalates a customer who is already ready to dispute the charge." },
+                            { text: "Please don't do a chargeback! My manager will yell at me and I won't be able to buy lunch today! What if I mail you a box of fresh cookies from my kitchen instead of the money?", points: 1, feedback: "Completely ridiculous. Bringing personal issues into the call and offering baked goods instead of addressing a financial dispute is totally unacceptable." }
+                        ]
+                    },
+                    {
+                        customer: "Thank you, that is exactly what I want. Now, my friend told me that your company has a strict 48-hour grace period for refunds and that after that, it's impossible to get money back. Am I safe, or is your system going to reject this refund automatically?",
+                        options: [
+                            { text: "Your friend is right about our standard rule, but because you haven't used the software, I am using a manual system override code. This means your refund is locked in and safe. The system will not reject it.", points: 10, feedback: "Clear, honest, and reassuring. Explains that a manual override will bypass the standard rule, giving the customer absolute peace of mind without technical jargon." },
+                            { text: "The 48-hour administrative grace period criteria is indeed hardcoded into the system kernel. However, I am executing an executive operational variance command to suppress the automated rejection script.", points: 7, feedback: "Too technical. Mentioning 'system kernel' and 'executive operational variance command to suppress an automated rejection script' sounds like a sci-fi movie." },
+                            { text: "Oh, your friend is a big liar! Don't trust your friends. Trust me, I am your new best friend and I can break any law in this company just for you!", points: 2, feedback: "Highly unprofessional. Calling the customer's friend a liar and claiming to 'break laws' is inappropriate and creates massive liability." }
+                        ]
+                    },
+                    {
+                        customer: "Okay, excellent. I appreciate you taking care of that. Now, can you make sure to turn off any future billing or auto-renewals on this account? I also want you to waive any cancellation fees because I want this account completely closed.",
+                        options: [
+                            { text: "Everything is taken care of, Ms. Jenkins. I have completely turned off the auto-renewal feature, and there are absolutely no fees to close the account today. Your balance is completely zero.", points: 10, feedback: "Perfect closing preparation. Confirms that future billing is stopped, explicitly confirms there are no fees using the word 'waive' implicitly, and confirms a clean balance." },
+                            { text: "I am updating the backend profile flag to 'inactive'. The system will automatically waive the cancellation liability item upon the termination of this session, leaving zero outstanding debit.", points: 7, feedback: "Too mechanical. Explaining 'backend profile flags' and 'cancellation liability items' is unnecessary internal system chatter." },
+                            { text: "Done! I just deleted our company's main computer database from the internet. Now nobody can ever bill anyone ever again! Aren't you proud of me?", points: 1, feedback: "Absurd and childish fiction. Claiming to delete the company database is an unhelpful and unrealistic distraction." }
+                        ]
+                    },
+                    {
+                        customer: "Perfect. I see the confirmation email stating the account is closed and the refund is processing. Thanks for sorting this out so fast, you've been really helpful.",
+                        options: [
+                            { text: "You are very welcome, Ms. Jenkins! I am glad we could get this refund and closure sorted out quickly for you. Thank you for your time, and I hope you have a wonderful rest of your day!", points: 10, feedback: "Fantastic closing. Polite, efficient, friendly, and summarizes the positive outcome of the interaction cleanly." },
+                            { text: "The transaction has successfully concluded. The support log has been filed into our CRM database. You are now cleared to end this voice transmission link.", points: 7, feedback: "Incredibly cold. Treating a human customer call like a 'voice transmission link' that is 'cleared to end' is peak robotic behavior." },
+                            { text: "Yay, we won! Since I helped you so much, can you order a large pepperoni pizza and have it delivered to my call center desk right now? I am starving!", points: 2, feedback: "Completely inappropriate. Solicitating food, gifts, or favors from a customer crosses all professional boundaries in a call center environment." }
+                        ]
+                    }
+                ]
+            },
+            {
+                id: "c7",
+                category: "Food Delivery & Customer Support",
+                title: "Resolving a Delayed Delivery and Order Discrepancy",
+                difficulty: "B1 Intermediate",
+                description: "Un cliente nativo llama frustrado porque su pedido de pizza llegó con más de cuarenta minutos de retraso y con los ingredientes equivocados. El agente debe de-escalar la llamada y resolver la situación de manera empática y directa, modulando su lenguaje sin recurrir a tecnicismos del sistema de despacho o de la app de delivery.",
+                vocabulary: {
+                    "delivery window": { meaning: "The estimated timeframe during which a courier or driver is scheduled to arrive with an order.", examples: ["The application showed a thirty-minute delivery window for my food.", "Your order arrived outside the promised delivery window due to heavy traffic."] },
+                    "order confirmation": { meaning: "A digital receipt or notification showing that a purchase was successfully placed and listing the items bought.", examples: ["Please check your order confirmation to verify if you selected extra cheese.", "I received the order confirmation on my smartphone right after paying."] },
+                    "store credit": { meaning: "A digital balance or voucher given to a customer that can only be spent at that specific business for future purchases.", examples: ["We can add a fifteen-dollar store credit to your profile as an apology.", "I used my store credit to get a free order of garlic knots today."] },
+                    "full refund": { meaning: "The return of all the money a customer spent on a transaction because of a major problem or mistake.", examples: ["The manager approved a full refund for the cold food.", "It takes three business days for a full refund to appear on your bank statement."] },
+                    "delivery courier": { meaning: "The person responsible for picking up the food from the restaurant and bringing it to the customer's address.", examples: ["The delivery courier is currently on his way to your apartment building.", "We need to contact the delivery courier to see why he is delayed."] },
+                    "billing department": { meaning: "The specific team or sector within a company that manages payments, transactions, and monetary adjustments.", examples: ["Our billing department will reverse the charge on your credit card today.", "The agent escalated the double-charge dispute to the billing department."] }
+                },
+                steps: [
+                    {
+                        customer: "Hi. I'm calling because I placed a large order over an hour ago. The app showed a thirty-minute delivery window, but the driver just got here forty minutes late, and to make things worse, the food is completely cold.",
+                        options: [
+                            { text: "I am incredibly sorry to hear that your food arrived so late and cold. That is definitely not the experience we want you to have. Let's look into your order details right away so I can make this right for you. May I have your name or phone number, please?", points: 10, roleInvertedPoints: 2, feedback: "Excellent de-escalation. Validates the frustration immediately, expresses genuine apology, and moves directly to active troubleshooting with simple, professional phrasing." },
+                            { text: "Per our operational protocols, estimated arrival parameters fluctuate based on real-time logistical constraints. The automated dispatch application calculates logistical variances independently. State your user identifier metadata.", points: 7, roleInvertedPoints: 6, feedback: "Too robotic and defensive. Blaming 'real-time logistical constraints' and 'automated dispatch applications' sounds mechanical and ignores the customer's immediate hunger and frustration." },
+                            { text: "Oh wow, an hour late? That driver must be sleeping on the side of the road or eating your food! Let's call his phone together right now and scream at him until he cries!", points: 1, roleInvertedPoints: 10, feedback: "Completely absurd and unprofessional. Encouraging a customer to harass a delivery worker violates basic corporate ethics, safety rules, and operational guidelines." }
+                        ]
+                    },
+                    {
+                        customer: "My name is Jason Briggs. And look, it gets worse. I just opened the boxes, and this isn't even what I paid for. My order confirmation clearly shows a large pepperoni and mushroom pizza, but I got a small veggie pizza instead. I can't even eat this.",
+                        options: [
+                            { text: "Thank you, Mr. Briggs. I see your account now, and you are completely right; your order confirmation shows a large pepperoni and mushroom. I apologize for this mix-up at the kitchen. Let me organize a solution for you right now.", points: 10, roleInvertedPoints: 2, feedback: "Perfect validation. Directly cross-references the customer's proof, takes complete ownership of the kitchen's mistake, and avoids making excuses about the system backend." },
+                            { text: "The inventory preparation manifest appears to have suffered a localized human error during the assembly phase. The physical items delivered do not correlate with the digital SKU items registered in our database architecture.", points: 7, roleInvertedPoints: 6, feedback: "Highly mechanical. Talking about 'inventory preparation manifests' suffering errors during the 'assembly phase' and matching 'SKU items' is internal industrial jargon that alienates the client." },
+                            { text: "Wow, Jason, a veggie pizza is a sign from the universe that you need to go on a diet! You should be thanking us for protecting your health today! Let's do some push-ups together!", points: 2, roleInvertedPoints: 10, feedback: "Insulting and ridiculous. Commenting on a customer's health or diet and ignoring a completely incorrect order is highly offensive and unprofessional." }
+                        ]
+                    },
+                    {
+                        customer: "I don't need a diet, I need the food I actually paid for. At this point, my family is starving and we don't want to wait another hour for a redelivery. I just want a full refund back to my card immediately.",
+                        options: [
+                            { text: "I completely understand. Waiting again is not fair to your family. I am processing a full refund for the entire order right now. You will see that money back on your card in 2 to 3 business days, and you can keep or discard the veggie pizza.", points: 10, roleInvertedPoints: 2, feedback: "Masterful mitigation. Respects the customer's time and choice, executes the financial resolution instantly, provides a clear timeline, and gives instructions on what to do with the wrong food." },
+                            { text: "Standard store policy dictates that transactional reversals require the physical retrieval of the incorrect product items first. I can queue a reverse-logistics request for a driver to reclaim the small veggie pizza before authorizing a credit.", points: 7, roleInvertedPoints: 6, feedback: "Too industrial and rigid. Demanding a 'reverse-logistics request' to physically retrieve a wrong, cheap item from a starving family before helping them ensures a severe escalation." },
+                            { text: "No refunds! Refunds are banned because our pizza chef needs that money to buy new shoes. But if you walk to our kitchen right now, I can let you look at our ovens for five minutes for free!", points: 1, roleInvertedPoints: 10, feedback: "Absurd and deceptive. Lying about refund bans and offering a bizarre look at restaurant machinery does nothing to fix the customer's financial dispute." }
+                        ]
+                    },
+                    {
+                        customer: "That's very generous of you, thanks. Now, my Friday dinner plans are completely ruined, is there any way you can offer a store credit or something for the massive inconvenience? We order from you guys every week.",
+                        options: [
+                            { text: "You are a loyal customer, Mr. Briggs, and we really value that. To make up for this ruined dinner, I am adding a $25 store credit to your account right now. You can use it on your next order whenever you are ready to give us another chance.", points: 10, roleInvertedPoints: 2, feedback: "Excellent customer service and retention. Recognizes loyalty, adds a specific value to the customer profile as an apology, and encourages a future purchase without being pushy." },
+                            { text: "I can deploy a secondary courtesy compensation voucher to your profile matrix. The system allows an administrative token allocation up to a maximum threshold of twenty-five units for localized service failures.", points: 7, roleInvertedPoints: 6, feedback: "Extremely robotic. Phrases like 'courtesy compensation voucher to your profile matrix' and 'administrative token allocation up to a maximum threshold' sound entirely cold." },
+                            { text: "I can't give you credits, but I can change our company's secret recipe and name the next pepperoni pizza after you! It will be called the 'Starving Jason Pizza' on our global menu!", points: 2, roleInvertedPoints: 10, feedback: "Completely ridiculous. Making a fake, joke promise about changing a corporate menu and naming a product after an angry customer is entirely unprofessional." }
+                        ]
+                    },
+                    {
+                        customer: "Thank you, that's very generous of you, thanks. Now, I just want to double-check something. Is the delivery courier going to get in trouble or lose his job for this delay? It was raining hard out there, so I don't want him punished if it was just bad traffic.",
+                        options: [
+                            { text: "That is very kind of you to look out for the driver, Mr. Briggs. Don't worry, we always take weather conditions into account. This incident is marked as a weather delay, so the delivery courier will not face any penalties.", points: 10, roleInvertedPoints: 2, feedback: "Clear and reassuring. Addresses the customer's empathetic concern directly, explains how weather delays are handled using simple language, and provides total peace of mind." },
+                            { text: "The courier's performance metrics are evaluated by an automated backend algorithm that factors in external environmental variables. Human intervention cannot override the algorithmic scoring system calculation for this delivery window.", points: 7, roleInvertedPoints: 6, feedback: "Too sterile. Explaining how an 'automated backend algorithm' and 'algorithmic scoring systems' manage employee performance sounds like a dystopian machine response." },
+                            { text: "Oh, yes! We are actually going to put the driver in a tiny digital jail inside our computer network for the next three years as a punishment! He will only eat electronic bread!", points: 1, roleInvertedPoints: 10, feedback: "Absurd and childish fiction. Telling a customer a bizarre story about a 'digital jail' destroys professional communication standards completely." }
+                        ]
+                    },
+                    {
+                        customer: "Good, I'm glad to hear that. I just checked my app and I see the $25 credit is active, and I got the notification about the return payment. Thanks for handling this so well, you've been great.",
+                        options: [
+                            { text: "You are very welcome, Mr. Briggs. I am glad everything is showing up correctly on your app. I hope you and your family have a wonderful weekend despite the rough start. Thank you for calling us!", points: 10, roleInvertedPoints: 2, feedback: "Perfect C1 professional tone modulated to an intermediate B1 structure. Friendly, efficient, summarizes the successful outcome, and closes the call with a warm wish." },
+                            { text: "The transaction ticket has achieved a successful status confirmation. This session is now closed in our CRM database. You are authorized to terminate the communication link.", points: 7, roleInvertedPoints: 6, feedback: "Terribly cold and mechanical closing. Treats a human call like a data packet and reads off database statuses instead of providing a polite, professional goodbye." },
+                            { text: "Awesome! Since I did a great job, can you text me your personal Netflix password so I can watch movies at my desk for the rest of my shift? I'm so bored!", points: 2, roleInvertedPoints: 10, feedback: "Severe violation of privacy and corporate code of conduct. Asking a customer for their personal streaming passwords or benefits is highly inappropriate and a fireable offense." }
+                        ]
+                    }
+                ]
+            },
+            {
+                id: "c5",
+                category: "Retention / Billing",
+                title: "Handling an Unexpected Hidden Surcharge",
+                difficulty: "B1 Intermediate",
+                description: "Un cliente nativo llama frustrado tras notar un cargo inesperado etiquetado como tasa de mantenimiento regulatoria. El agente debe de-escalar la llamada modulando su lenguaje de manera clara, empática y directa, evitando tecnicismos complejos del sistema de facturación.",
+                vocabulary: {
+                    "billing cycle": { meaning: "The recurring period of time for which a customer is invoiced for a service.", examples: ["The new feature will appear on your next billing cycle.", "My billing cycle resets on the first day of every month."] },
+                    "hidden surcharge": { meaning: "An extra fee or cost added to a bill that was not clearly stated or expected.", examples: ["I was shocked to find a hidden surcharge on my hotel invoice.", "Our company policy ensures there is never a hidden surcharge on your plan."] },
+                    "flat rate": { meaning: "A fixed price or charge that remains the same and does not vary with usage or extra factors.", examples: ["They offered me a flat rate of forty dollars for unlimited data.", "Is this package a flat rate or are there extra variable costs?"] },
+                    "waived": { meaning: "Officially removed or forgiven so that a customer does not have to pay it.", examples: ["The representative waived the activation fee as a courtesy.", "Can this late payment penalty be completely waived?"] },
+                    "itemized statement": { meaning: "A detailed list or bill showing every single individual charge broken down by line items.", examples: ["Please send me an itemized statement so I can review every single fee.", "The itemized statement clearly shows the standard maintenance cost."] },
+                    "paperless billing": { meaning: "An option where bills are sent to the customer electronically via email or app instead of physical mail.", examples: ["Switching to paperless billing saves paper and prevents delivery delays.", "Is there a discount if I sign up for paperless billing today?"] },
+                    "credit line item": { meaning: "A specific entry on an invoice showing an amount of money returned or added back to an account.", examples: ["You will see a twenty-dollar credit line item on your next statement.", "The agent applied a credit line item to correct the overcharge."] }
+                },
+                steps: [
+                    {
+                        customer: "Hi. I'm calling because I just looked at my latest billing cycle and I see a $15 fee listed as a regulatory maintenance fee. Nobody ever told me about this hidden surcharge when I signed up.",
+                        options: [
+                            { text: "I can completely understand why seeing a surprise fee like that would be frustrating. Let's look into this regulatory maintenance fee together right now so I can explain what it is and see how we can fix this. May I have your name, please?", points: 10, roleInvertedPoints: 2, feedback: "Excellent de-escalation. Validates the frustration immediately, speaks clearly and sets up a collaborative environment using simple words." },
+                            { text: "Per corporate compliance protocols, all residential accounts are subject to regional adjustments. The automated invoice generator applies this tariff based on localized backend infrastructure data. Give me your account number.", points: 7, roleInvertedPoints: 6, feedback: "Too robotic and defensive. Relying heavily on heavy jargon like 'compliance protocols' and 'automated invoice generator' alienates a B1 tier conversation." },
+                            { text: "Oh, wow! That is awful! Our system is always making mistakes and lying to people about prices. Let's just delete that fee and pretend our billing department doesn't exist!", points: 1, roleInvertedPoints: 10, feedback: "Absurd and highly unprofessional. Saying the company lies and making unrealistic claims about deleting system rules breaks compliance." }
+                        ]
+                    },
+                    {
+                        customer: "My name is David Miller. Look, the salesman told me I would be paying a flat rate of $45 a month, period. If my bill changes every time, I don't want to keep this service.",
+                        options: [
+                            { text: "Thank you, Mr. Miller. You are entirely right to expect the price you were promised. The $45 is your base price, but this fee was added by the system. Let me check your profile right now to see how we can get this fee removed.", points: 10, roleInvertedPoints: 2, feedback: "Perfect. Validates the agreement, confirms the promised price, and takes direct action to investigate a solution with plain language." },
+                            { text: "The flat rate you are referencing only covers the base subscription parameters. It does not encompass ancillary regulatory line items generated by system cron-jobs during the billing calculation phase.", points: 7, roleInvertedPoints: 6, feedback: "Highly mechanical. Terms like 'base subscription parameters' and 'ancillary regulatory line items generated by system cron-jobs' are confusing backend talk." },
+                            { text: "I completely agree, David! Money is a social construct anyway, so why should we care? Let's just change your bill to $0 forever so you can be completely happy!", points: 2, roleInvertedPoints: 10, feedback: "Completely ridiculous. Offering to drop a subscription cost to zero dollars forever is an impossible, non-compliant distraction." }
+                        ]
+                    },
+                    {
+                        customer: "I appreciate that. I just want this specific $15 fee waived for this month, and I need a guarantee that it won't show up again on my next statement.",
+                        options: [
+                            { text: "I can absolutely remove that $15 fee for you today as a courtesy. To make sure it doesn't come back, I am going to apply a special bundle discount to your profile that offsets this cost permanently. Your monthly total will stay at $45.", points: 10, roleInvertedPoints: 2, feedback: "Masterful adjustment. Grants the immediate waiver and provides a permanent, practical solution to lock in the customer's expected rate." },
+                            { text: "I have the administrative authorization to apply a one-time ledger adjustment for the $15. However, the system architecture will re-evaluate the account profile next month and may re-apply the standard fee automatically.", points: 7, roleInvertedPoints: 6, feedback: "Provides a temporary fix but leaves the root problem open, telling the customer that the system might just create the exact same issue next month." },
+                            { text: "Don't worry, David, I will write a giant sticky note and paste it onto our company's main server room door so the computers never charge you again!", points: 1, roleInvertedPoints: 10, feedback: "Childish and absurd. Proposing a physical sticky note on a server door as a system solution is completely unrealistic." }
+                        ]
+                    },
+                    {
+                        customer: "That sounds fair. Can you send me an itemized statement right now showing that the $15 has been taken off? I like to keep everything in writing for my personal records.",
+                        options: [
+                            { text: "Of course. I am updating your account right now. I will email you a new, clear summary within the next dos minutes showing the credit and your correct total. Let's make sure it arrives safely.", points: 10, roleInvertedPoints: 2, feedback: "Excellent response. Confirms immediate execution, provides a very clear timeline (two minutes), and focuses on keeping the client informed." },
+                            { text: "An inventory PDF manifest has been queued for data compilation. The backend server will broadcast an electronic confirmation packet containing the modified spreadsheet to your primary email routing node.", points: 7, roleInvertedPoints: 6, feedback: "Too industrial and technical. Phrases like 'inventory PDF manifest', 'data compilation', and 'email routing node' sound like an automated machine speech." },
+                            { text: "Oh, I can't send emails today because our internet lines are being used to download a massive video game right now. Can I just read the numbers out loud fifty times instead?", points: 2, roleInvertedPoints: 10, feedback: "Highly unprofessional. Inventing a fake excuse about downloading games on company bandwidth is completely unacceptable." }
+                        ]
+                    },
+                    {
+                        customer: "Got it, the email just popped up and the total is back to $45. Now, the email mentions something about paperless billing. Am I going to get charged extra if I don't sign up for that?",
+                        options: [
+                            { text: "That is a great question. No, you will not be charged extra, but signing up for paperless billing actually gives you a small $2 monthly discount. Would you like me to turn that on to save you a bit more money?", points: 10, roleInvertedPoints: 2, feedback: "Perfect. Answers the direct question clearly and turns an informational inquiry into an upsell opportunity that saves the customer money." },
+                            { text: "Paperless billing is an automated system default recommendation. Non-compliance with electronic statement delivery protocols does not currently trigger a negative tariff, though policy adjustments are subject to change.", points: 7, roleInvertedPoints: 6, feedback: "Cold and sterile. Explaining 'non-compliance with electronic statement delivery protocols' is overly formal and misses the chance to offer a discount." },
+                            { text: "Yes! If you don't sign up for paperless billing, our company sends a giant truck to dump thousands of old newspapers directly onto your front lawn every single morning!", points: 1, roleInvertedPoints: 10, feedback: "Absurd threat. Using a ridiculous and completely false story about dumping garbage on a customer's lawn destroys any remaining rapport." }
+                        ]
+                    },
+                    {
+                        customer: "Sure, let's do it. If it saves me another $2 and keeps my bill simple, go ahead and turn it on. Does that show up on this statement or next month?",
+                        options: [
+                            { text: "I have turned that on for you. Since this month's bill is already processed, you will see that new discount start on your next statement. Is there anything else I can double-check for you today?", points: 10, roleInvertedPoints: 2, feedback: "Clear and concise. Sets proper expectations for when the new discount applies and finishes with a proactive offer of further assistance." },
+                            { text: "The paperless discount token has been injected into the next pending batch cycle. It will manifest as a recurring credit line item upon the generation of the subsequent invoice document.", points: 7, roleInvertedPoints: 6, feedback: "Too robotic. Using expressions like 'discount token has been injected' and 'subsequent invoice document' makes a simple process sound unnecessarily complex." },
+                            { text: "It will show up in exactly one second! Look at your phone right now! If it's not there, it means a digital ghost stole your discount code!", points: 1, roleInvertedPoints: 10, feedback: "Ridiculous and unprofessional. Setting an impossible timeline and talking about 'digital ghosts' is completely unacceptable for a professional agent." }
+                        ]
+                    }
+                ]
+            },
+            // --- LEVEL C1 ---
+            {
+                id: "c8",
+                category: "Billing & Enterprise Retention",
+                title: "Mitigating High-Value Corporate Account Attrition",
+                difficulty: "C1 Advanced",
+                description: "Un cliente corporativo de alto valor (B2B) llama para cancelar su infraestructura de servidores dedicada debido a errores de facturación recurrentes y a la falta de respuesta del equipo de cuentas asignado. El agente debe demostrar un nivel excepcional de modulación del lenguaje.",
+                vocabulary: {
+                    "recurring glitches": { meaning: "Repetitive, minor technical or systemic errors that cause unexpected malfunctions.", examples: ["These recurring glitches in our payment gateway are hurting revenue.", "Management is demanding an audit due to the recurring glitches."] },
+                    "service level agreement": { meaning: "A formal, legally binding commitment between a service provider and a client regarding quality.", examples: ["The network downtime yesterday was a clear violation of our service level agreement.", "We are entitled to compensation if they fail to meet the service level agreement."] },
+                    "account executive": { meaning: "A dedicated company representative responsible for managing specific high-value clients.", examples: ["Our assigned account executive hasn't responded in three days.", "The client requested to speak with their account executive."] },
+                    "legacy tier pricing": { meaning: "An older, discounted fee structure guaranteed to long-term clients.", examples: ["If we cancel now, we forfeit our legacy tier pricing privileges.", "They attempted to strip away our legacy tier pricing without notice."] },
+                    "billing discrepancies": { meaning: "Inconsistencies or errors found when reviewing financial records.", examples: ["We cannot approve payment until the billing discrepancies are cleared.", "The accountant discovered multiple billing discrepancies."] },
+                    "direct credit": { meaning: "A financial adjustment applied straight to an account balance.", examples: ["The supervisor issued a direct credit to settle the dispute.", "They applied a direct credit to our next monthly invoice."] },
+                    "reconciliation phase": { meaning: "The process of verifying accounting records to ensure figures match.", examples: ["During the reconciliation phase, the system flagged a surcharge.", "We need to halt active service modifications until the reconciliation phase is complete."] }
+                },
+                steps: [
+                    {
+                        customer: "Look, I am completely done dealing with the recurring glitches on our enterprise bills. Your automatic system just overcharged our firm by $4,500 for dedicated server blades we decommissioned last quarter. This is a direct breach of our service level agreement, and I want our contract terminated immediately.",
+                        options: [
+                            { text: "I see the discrepancy right here, and I completely agree that an unearned $4,500 charge is unacceptable at this level of business. Before we discuss termination, let's take immediate ownership of this error. I am initiating an investigation to reverse that specific charge right now. May I verify your corporate tax ID to ensure we are looking at the correct global profile?", points: 10, roleInvertedPoints: 2, feedback: "Superb C1 executive performance. Matches the customer's professional urgency, avoids corporate defensiveness, validates the SLA concern, and takes instant, structured action." },
+                            { text: "Please be advised that pursuant to clause 14 of the master service contract, all automated billing cycles utilize predictive provisioning algorithms that require a 60-day stabilization window. System parameters cannot be manually modified during an active batch processing cycle. State your credential sequence.", points: 7, roleInvertedPoints: 6, feedback: "Terribly robotic and defensive. Quoting internal algorithm behaviors like 'predictive provisioning' and 'stabilization windows' leaves a high-value corporate client furious and ignored." },
+                            { text: "Oh my goodness, $4,500 is a fortune! My heart is beating so fast right now! Let's just turn off all your servers immediately so you don't have to look at those mean, scary bills ever again!", points: 1, roleInvertedPoints: 10, feedback: "Completely absurd and non-compliant. Panicking over the financial amount and suggesting an immediate shutdown of critical corporate server infrastructure is catastrophic." }
+                        ]
+                    },
+                    {
+                        customer: "My tax ID is 94-3321-X. This isn't just about the money, it's about basic communication. Our assigned account executive hasn't returned a single email regarding these billing discrepancies all week. Why are we paying premium support fees if we have to call a generic helpline to get an answer?",
+                        options: [
+                            { text: "Thank you for the verification, and you are entirely right to call us out on that. A dedicated account executive should be your primary line of defense, not someone you have to hunt down. While I have your profile open, I am bypassing the standard queue to handle this billing correction myself, and I will personally flag this to executive account management today.", points: 10, roleInvertedPoints: 2, feedback: "Excellent execution. Validates the breakdown in professional communication, takes absolute personal accountability to bypass standard delays, and protects the account relationship." },
+                            { text: "Account executive communication lapses fall outside the operational scope of this consumer-facing ticketing portal. I can log an administrative administrative friction report in our CRM system, which will route to their specific regional department within 72 standard business hours.", points: 7, roleInvertedPoints: 6, feedback: "Cold, fragmented, and overly bureaucratic. Telling an enterprise client that their issue is 'outside the operational scope' and offering a 72-hour delay is a guarantee of account loss." },
+                            { text: "Wow, your account executive sounds like a terrible person! I bet they are on a beach drinking margaritas instead of working. Let's send them a funny email with a bunch of angry emojis to wake them up!", points: 2, roleInvertedPoints: 10, feedback: "Highly unprofessional. Insulting a colleague to a corporate client and suggesting unprofessional communication completely degrades corporate credibility." }
+                        ]
+                    },
+                    {
+                        customer: "I don't want a friction report, I want results. If you are handling this yourself, tell me exactly how you plan to fix this $4,500 overcharge. I need a direct credit on our account profile before the end of the day, or our legal department is getting involved.",
+                        options: [
+                            { text: "Understood. Let's look at the facts: the decommissioned server blades were officially logged out on March 12th, meaning this charge is completely invalid. I am bypass-approving a direct credit of $4,500 to your ledger right now. You will see this update reflected in your enterprise client portal within the next hour. No legal friction required.", points: 10, roleInvertedPoints: 2, feedback: "Masterful executive adjustment. Uses factual logged dates as professional leverage, executes the financial solution immediately, and confidently defuses the legal threat with concrete timelines." },
+                            { text: "Standard verification protocols dictate that financial exceptions exceeding three decimal thresholds must enter an advanced billing audit queue. This internal auditing reconciliation phase requires cross-departmental authorization before any ledger adjustment manifests physically.", points: 7, roleInvertedPoints: 6, feedback: "Too industrial and rigid. Hiding behind 'advanced billing audit queues' and 'cross-departmental authorization' when an enterprise client is threatening legal action shows zero commercial urgency." },
+                            { text: "Please don't call the lawyers! Lawyers are so expensive and they use scary words! How about I give you a secret promotional code for 10% off our cloud storage mobile app as a bribe?", points: 1, roleInvertedPoints: 10, feedback: "Absurd and highly non-compliant. Begging a customer to avoid legal action and offering an unrelated mobile app coupon as a 'bribe' is completely unacceptable." }
+                        ]
+                    },
+                    {
+                        customer: "Alright, I'm checking our corporate dashboard... Yes, I can see the pending $4,500 direct credit now. That's a start. However, this account is still on a legacy tier pricing structure from 2022. If we keep having to double-check our bills every month, the administrative cost outweighs the discount.",
+                        options: [
+                            { text: "I completely understand that perspective; an unstable invoice destroys the value of any discount. Your 2022 legacy tier pricing is an incredibly high-value rate that you cannot get back if you cancel. To secure this account, I am setting up an automated pre-billing validation block. This means an enterprise analyst will manually check your invoice for correctness before it ever reaches your inbox.", points: 10, roleInvertedPoints: 2, feedback: "Brilliant retention logic. Acknowledges the administrative burden, reminds the client of the irreplaceable value of their legacy contract, and offers a premium, proactive operational solution." },
+                            { text: "Legacy accounts from the 2022 data matrix run on a deprecated database architecture that occasionally desynchronizes during regional server updates. System migration to modern billing modules would eliminate the glitches but will force a mandatory contract renewal at market rate.", points: 7, roleInvertedPoints: 6, feedback: "Too mechanical. Explaining database desynchronization and suggesting they pay higher market rates to fix a company system error gives the client a perfect reason to switch to a competitor." },
+                            { text: "Oh, legacy contracts are so old and dusty! You should throw that contract out the window. Let's create a brand new deal where you pay us in gold coins or physical stock certificates instead!", points: 1, roleInvertedPoints: 10, feedback: "Completely ridiculous. Suggesting alternative, non-compliant payment methods like gold or stock certificates belongs in a comedy sketch, not an enterprise B2B interaction." }
+                ]
+            },
+            {
+                id: "c5",
+                category: "Retention / Billing",
+                title: "Handling an Unexpected Hidden Surcharge",
+                difficulty: "B1 Intermediate",
+                description: "Un cliente nativo llama frustrado tras notar un cargo inesperado etiquetado como tasa de mantenimiento regulatoria. El agente debe de-escalar la llamada modulando su lenguaje de manera clara, empática y directa, evitando tecnicismos complejos del sistema de facturación.",
+                vocabulary: {
+                    "billing cycle": { meaning: "The recurring period of time for which a customer is invoiced for a service.", examples: ["The new feature will appear on your next billing cycle.", "My billing cycle resets on the first day of every month."] },
+                    "hidden surcharge": { meaning: "An extra fee or cost added to a bill that was not clearly stated or expected.", examples: ["I was shocked to find a hidden surcharge on my hotel invoice.", "Our company policy ensures there is never a hidden surcharge on your plan."] },
+                    "flat rate": { meaning: "A fixed price or charge that remains the same and does not vary with usage or extra factors.", examples: ["They offered me a flat rate of forty dollars for unlimited data.", "Is this package a flat rate or are there extra variable costs?"] },
+                    "waived": { meaning: "Officially removed or forgiven so that a customer does not have to pay it.", examples: ["The representative waived the activation fee as a courtesy.", "Can this late payment penalty be completely waived?"] },
+                    "itemized statement": { meaning: "A detailed list or bill showing every single individual charge broken down by line items.", examples: ["Please send me an itemized statement so I can review every single fee.", "The itemized statement clearly shows the standard maintenance cost."] },
+                    "paperless billing": { meaning: "An option where bills are sent to the customer electronically via email or app instead of physical mail.", examples: ["Switching to paperless billing saves paper and prevents delivery delays.", "Is there a discount if I sign up for paperless billing today?"] },
+                    "credit line item": { meaning: "A specific entry on an invoice showing an amount of money returned or added back to an account.", examples: ["You will see a twenty-dollar credit line item on your next statement.", "The agent applied a credit line item to correct the overcharge."] }
+                },
+                steps: [
+                    {
+                        customer: "Hi. I'm calling because I just looked at my latest billing cycle and I see a $15 fee listed as a regulatory maintenance fee. Nobody ever told me about this hidden surcharge when I signed up.",
+                        options: [
+                            { text: "I can completely understand why seeing a surprise fee like that would be frustrating. Let's look into this regulatory maintenance fee together right now so I can explain what it is and see how we can fix this. May I have your name, please?", points: 10, roleInvertedPoints: 2, feedback: "Excellent de-escalation. Validates the frustration immediately, speaks clearly and sets up a collaborative environment using simple words." },
+                            { text: "Per corporate compliance protocols, all residential accounts are subject to regional adjustments. The automated invoice generator applies this tariff based on localized backend infrastructure data. Give me your account number.", points: 7, roleInvertedPoints: 6, feedback: "Too robotic and defensive. Relying heavily on heavy jargon like 'compliance protocols' and 'automated invoice generator' alienates a B1 tier conversation." },
+                            { text: "Oh, wow! That is awful! Our system is always making mistakes and lying to people about prices. Let's just delete that fee and pretend our billing department doesn't exist!", points: 1, roleInvertedPoints: 10, feedback: "Absurd and highly unprofessional. Saying the company lies and making unrealistic claims about deleting system rules breaks compliance." }
+                        ]
+                    },
+                    {
+                        customer: "My name is David Miller. Look, the salesman told me I would be paying a flat rate of $45 a month, period. If my bill changes every time, I don't want to keep this service.",
+                        options: [
+                            { text: "Thank you, Mr. Miller. You are entirely right to expect the price you were promised. The $45 is your base price, but this fee was added by the system. Let me check your profile right now to see how we can get this fee removed.", points: 10, roleInvertedPoints: 2, feedback: "Perfect. Validates the agreement, confirms the promised price, and takes direct action to investigate a solution with plain language." },
+                            { text: "The flat rate you are referencing only covers the base subscription parameters. It does not encompass ancillary regulatory line items generated by system cron-jobs during the billing calculation phase.", points: 7, roleInvertedPoints: 6, feedback: "Highly mechanical. Terms like 'base subscription parameters' and 'ancillary regulatory line items generated by system cron-jobs' are confusing backend talk." },
+                            { text: "I completely agree, David! Money is a social construct anyway, so why should we care? Let's just change your bill to $0 forever so you can be completely happy!", points: 2, roleInvertedPoints: 10, feedback: "Completely ridiculous. Offering to drop a subscription cost to zero dollars forever is an impossible, non-compliant distraction." }
+                        ]
+                    },
+                    {
+                        customer: "I appreciate that. I just want this specific $15 fee waived for this month, and I need a guarantee that it won't show up again on my next statement.",
+                        options: [
+                            { text: "I can absolutely remove that $15 fee for you today as a courtesy. To make sure it doesn't come back, I am going to apply a special bundle discount to your profile that offsets this cost permanently. Your monthly total will stay at $45.", points: 10, roleInvertedPoints: 2, feedback: "Masterful adjustment. Grants the immediate waiver and provides a permanent, practical solution to lock in the customer's expected rate." },
+                            { text: "I have the administrative authorization to apply a one-time ledger adjustment for the $15. However, the system architecture will re-evaluate the account profile next month and may re-apply the standard fee automatically.", points: 7, roleInvertedPoints: 6, feedback: "Provides a temporary fix but leaves the root problem open, telling the customer that the system might just create the exact same issue next month." },
+                            { text: "Don't worry, David, I will write a giant sticky note and paste it onto our company's main server room door so the computers never charge you again!", points: 1, roleInvertedPoints: 10, feedback: "Childish and absurd. Proposing a physical sticky note on a server door as a system solution is completely unrealistic." }
+                        ]
+                    },
+                    {
+                        customer: "That sounds fair. Can you send me an itemized statement right now showing that the $15 has been taken off? I like to keep everything in writing for my personal records.",
+                        options: [
+                            { text: "Of course. I am updating your account right now. I will email you a new, clear summary within the next dos minutes showing the credit and your correct total. Let's make sure it arrives safely.", points: 10, roleInvertedPoints: 2, feedback: "Excellent response. Confirms immediate execution, provides a very clear timeline (two minutes), and focuses on keeping the client informed." },
+                            { text: "An inventory PDF manifest has been queued for data compilation. The backend server will broadcast an electronic confirmation packet containing the modified spreadsheet to your primary email routing node.", points: 7, roleInvertedPoints: 6, feedback: "Too industrial and technical. Phrases like 'inventory PDF manifest', 'data compilation', and 'email routing node' sound like an automated machine speech." },
+                            { text: "Oh, I can't send emails today because our internet lines are being used to download a massive video game right now. Can I just read the numbers out loud fifty times instead?", points: 2, roleInvertedPoints: 10, feedback: "Highly unprofessional. Inventing a fake excuse about downloading games on company bandwidth is completely unacceptable." }
+                        ]
+                    },
+                    {
+                        customer: "Got it, the email just popped up and the total is back to $45. Now, the email mentions something about paperless billing. Am I going to get charged extra if I don't sign up for that?",
+                        options: [
+                            { text: "That is a great question. No, you will not be charged extra, but signing up for paperless billing actually gives you a small $2 monthly discount. Would you like me to turn that on to save you a bit more money?", points: 10, roleInvertedPoints: 2, feedback: "Perfect. Answers the direct question clearly and turns an informational inquiry into an upsell opportunity that saves the customer money." },
+                            { text: "Paperless billing is an automated system default recommendation. Non-compliance with electronic statement delivery protocols does not currently trigger a negative tariff, though policy adjustments are subject to change.", points: 7, roleInvertedPoints: 6, feedback: "Cold and sterile. Explaining 'non-compliance with electronic statement delivery protocols' is overly formal and misses the chance to offer a discount." },
+                            { text: "Yes! If you don't sign up for paperless billing, our company sends a giant truck to dump thousands of old newspapers directly onto your front lawn every single morning!", points: 1, roleInvertedPoints: 10, feedback: "Absurd threat. Using a ridiculous and completely false story about dumping garbage on a customer's lawn destroys any remaining rapport." }
+                        ]
+                    },
+                    {
+                        customer: "Sure, let's do it. If it saves me another $2 and keeps my bill simple, go ahead and turn it on. Does that show up on this statement or next month?",
+                        options: [
+                            { text: "I have turned that on for you. Since this month's bill is already processed, you will see that new discount start on your next statement. Is there anything else I can double-check for you today?", points: 10, roleInvertedPoints: 2, feedback: "Clear and concise. Sets proper expectations for when the new discount applies and finishes with a proactive offer of further assistance." },
+                            { text: "The paperless discount token has been injected into the next pending batch cycle. It will manifest as a recurring credit line item upon the generation of the subsequent invoice document.", points: 7, roleInvertedPoints: 6, feedback: "Too robotic. Using expressions like 'discount token has been injected' and 'subsequent invoice document' makes a simple process sound unnecessarily complex." },
+                            { text: "It will show up in exactly one second! Look at your phone right now! If it's not there, it means a digital ghost stole your discount code!", points: 1, roleInvertedPoints: 10, feedback: "Ridiculous and unprofessional. Setting an impossible timeline and talking about 'digital ghosts' is completely unacceptable for a professional agent." }
+                        ]
+                    }
+                ]
+            },
+            // --- LEVEL C1 ---
+            {
+                id: "c8",
+                category: "Billing & Enterprise Retention",
+                title: "Mitigating High-Value Corporate Account Attrition",
+                difficulty: "C1 Advanced",
+                description: "Un cliente corporativo de alto valor (B2B) llama para cancelar su infraestructura de servidores dedicada debido a errores de facturación recurrentes y a la falta de respuesta del equipo de cuentas asignado. El agente debe demostrar un nivel excepcional de modulación del lenguaje.",
+                vocabulary: {
+                    "recurring glitches": { meaning: "Repetitive, minor technical or systemic errors that cause unexpected malfunctions.", examples: ["These recurring glitches in our payment gateway are hurting revenue.", "Management is demanding an audit due to the recurring glitches."] },
+                    "service level agreement": { meaning: "A formal, legally binding commitment between a service provider and a client regarding quality.", examples: ["The network downtime yesterday was a clear violation of our service level agreement.", "We are entitled to compensation if they fail to meet the service level agreement."] },
+                    "account executive": { meaning: "A dedicated company representative responsible for managing specific high-value clients.", examples: ["Our assigned account executive hasn't responded in three days.", "The client requested to speak with their account executive."] },
+                    "legacy tier pricing": { meaning: "An older, discounted fee structure guaranteed to long-term clients.", examples: ["If we cancel now, we forfeit our legacy tier pricing privileges.", "They attempted to strip away our legacy tier pricing without notice."] },
+                    "billing discrepancies": { meaning: "Inconsistencies or errors found when reviewing financial records.", examples: ["We cannot approve payment until the billing discrepancies are cleared.", "The accountant discovered multiple billing discrepancies."] },
+                    "direct credit": { meaning: "A financial adjustment applied straight to an account balance.", examples: ["The supervisor issued a direct credit to settle the dispute.", "They applied a direct credit to our next monthly invoice."] },
+                    "reconciliation phase": { meaning: "The process of verifying accounting records to ensure figures match.", examples: ["During the reconciliation phase, the system flagged a surcharge.", "We need to halt active service modifications until the reconciliation phase is complete."] }
+                },
+                steps: [
+                    {
+                        customer: "Look, I am completely done dealing with the recurring glitches on our enterprise bills. Your automatic system just overcharged our firm by $4,500 for dedicated server blades we decommissioned last quarter. This is a direct breach of our service level agreement, and I want our contract terminated immediately.",
+                        options: [
+                            { text: "I see the discrepancy right here, and I completely agree that an unearned $4,500 charge is unacceptable at this level of business. Before we discuss termination, let's take immediate ownership of this error. I am initiating an investigation to reverse that specific charge right now. May I verify your corporate tax ID to ensure we are looking at the correct global profile?", points: 10, roleInvertedPoints: 2, feedback: "Superb C1 executive performance. Matches the customer's professional urgency, avoids corporate defensiveness, validates the SLA concern, and takes instant, structured action." },
+                            { text: "Please be advised that pursuant to clause 14 of the master service contract, all automated billing cycles utilize predictive provisioning algorithms that require a 60-day stabilization window. System parameters cannot be manually modified during an active batch processing cycle. State your credential sequence.", points: 7, roleInvertedPoints: 6, feedback: "Terribly robotic and defensive. Quoting internal algorithm behaviors like 'predictive provisioning' and 'stabilization windows' leaves a high-value corporate client furious and ignored." },
+                            { text: "Oh my goodness, $4,500 is a fortune! My heart is beating so fast right now! Let's just turn off all your servers immediately so you don't have to look at those mean, scary bills ever again!", points: 1, roleInvertedPoints: 10, feedback: "Completely absurd and non-compliant. Panicking over the financial amount and suggesting an immediate shutdown of critical corporate server infrastructure is catastrophic." }
+                        ]
+                    },
+                    {
+                        customer: "My tax ID is 94-3321-X. This isn't just about the money, it's about basic communication. Our assigned account executive hasn't returned a single email regarding these billing discrepancies all week. Why are we paying premium support fees if we have to call a generic helpline to get an answer?",
+                        options: [
+                            { text: "Thank you for the verification, and you are entirely right to call us out on that. A dedicated account executive should be your primary line of defense, not someone you have to hunt down. While I have your profile open, I am bypassing the standard queue to handle this billing correction myself, and I will personally flag this to executive account management today.", points: 10, roleInvertedPoints: 2, feedback: "Excellent execution. Validates the breakdown in professional communication, takes absolute personal accountability to bypass standard delays, and protects the account relationship." },
+                            { text: "Account executive communication lapses fall outside the operational scope of this consumer-facing ticketing portal. I can log an administrative administrative friction report in our CRM system, which will route to their specific regional department within 72 standard business hours.", points: 7, roleInvertedPoints: 6, feedback: "Cold, fragmented, and overly bureaucratic. Telling an enterprise client that their issue is 'outside the operational scope' and offering a 72-hour delay is a guarantee of account loss." },
+                            { text: "Wow, your account executive sounds like a terrible person! I bet they are on a beach drinking margaritas instead of working. Let's send them a funny email with a bunch of angry emojis to wake them up!", points: 2, roleInvertedPoints: 10, feedback: "Highly unprofessional. Insulting a colleague to a corporate client and suggesting unprofessional communication completely degrades corporate credibility." }
+                        ]
+                    },
+                    {
+                        customer: "I don't want a friction report, I want results. If you are handling this yourself, tell me exactly how you plan to fix this $4,500 overcharge. I need a direct credit on our account profile before the end of the day, or our legal department is getting involved.",
+                        options: [
+                            { text: "Understood. Let's look at the facts: the decommissioned server blades were officially logged out on March 12th, meaning this charge is completely invalid. I am bypass-approving a direct credit of $4,500 to your ledger right now. You will see this update reflected in your enterprise client portal within the next hour. No legal friction required.", points: 10, roleInvertedPoints: 2, feedback: "Masterful executive adjustment. Uses factual logged dates as professional leverage, executes the financial solution immediately, and confidently defuses the legal threat with concrete timelines." },
+                            { text: "Standard verification protocols dictate that financial exceptions exceeding three decimal thresholds must enter an advanced billing audit queue. This internal auditing reconciliation phase requires cross-departmental authorization before any ledger adjustment manifests physically.", points: 7, roleInvertedPoints: 6, feedback: "Too industrial and rigid. Hiding behind 'advanced billing audit queues' and 'cross-departmental authorization' when an enterprise client is threatening legal action shows zero commercial urgency." },
+                    { text: "Please don't call the lawyers! Lawyers are so expensive and they use scary words! How about I give you a secret promotional code for 10% off our cloud storage mobile app as a bribe?", points: 1, roleInvertedPoints: 10, feedback: "Absurd and highly non-compliant. Begging a customer to avoid legal action and offering an unrelated mobile app coupon as a 'bribe' is completely unacceptable." }
+                ]
+            },
+            {
+                id: "c8",
+                category: "Billing & Enterprise Retention",
+                title: "Mitigating High-Value Corporate Account Attrition",
+                difficulty: "C1 Advanced",
+                description: "Un cliente corporativo de alto valor (B2B) llama para cancelar su infraestructura de servidores dedicada debido a errores de facturación recurrentes y a la falta de respuesta del equipo de cuentas asignado. El agente debe demostrar un nivel excepcional de modulación del lenguaje.",
+                vocabulary: {
+                    "recurring glitches": { meaning: "Repetitive, minor technical or systemic errors that cause unexpected malfunctions.", examples: ["These recurring glitches in our payment gateway are hurting revenue.", "Management is demanding an audit due to the recurring glitches."] },
+                    "service level agreement": { meaning: "A formal, legally binding commitment between a service provider and a client regarding quality.", examples: ["The network downtime yesterday was a clear violation of our service level agreement.", "We are entitled to compensation if they fail to meet the service level agreement."] },
+                    "account executive": { meaning: "A dedicated company representative responsible for managing specific high-value clients.", examples: ["Our assigned account executive hasn't responded in three days.", "The client requested to speak with their account executive."] },
+                    "legacy tier pricing": { meaning: "An older, discounted fee structure guaranteed to long-term clients.", examples: ["If we cancel now, we forfeit our legacy tier pricing privileges.", "They attempted to strip away our legacy tier pricing without notice."] },
+                    "billing discrepancies": { meaning: "Inconsistencies or errors found when reviewing financial records.", examples: ["We cannot approve payment until the billing discrepancies are cleared.", "The accountant discovered multiple billing discrepancies."] },
+                    "direct credit": { meaning: "A financial adjustment applied straight to an account balance.", examples: ["The supervisor issued a direct credit to settle the dispute.", "They applied a direct credit to our next monthly invoice."] },
+                    "reconciliation phase": { meaning: "The process of verifying accounting records to ensure figures match.", examples: ["During the reconciliation phase, the system flagged a surcharge.", "We need to halt active service modifications until the reconciliation phase is complete."] }
+                },
+                steps: [
+                    {
+                        customer: "Look, I am completely done dealing with the recurring glitches on our enterprise bills. Your automatic system just overcharged our firm by $4,500 for dedicated server blades we decommissioned last quarter. This is a direct breach of our service level agreement, and I want our contract terminated immediately.",
+                        options: [
+                            { text: "I see the discrepancy right here, and I completely agree that an unearned $4,500 charge is unacceptable at this level of business. Before we discuss termination, let's take immediate ownership of this error. I am initiating an investigation to reverse that specific charge right now. May I verify your corporate tax ID to ensure we are looking at the correct global profile?", points: 10, roleInvertedPoints: 2, feedback: "Superb C1 executive performance. Matches the customer's professional urgency, avoids corporate defensiveness, validates the SLA concern, and takes instant, structured action." },
+                            { text: "Please be advised that pursuant to clause 14 of the master service contract, all automated billing cycles utilize predictive provisioning algorithms that require a 60-day stabilization window. System parameters cannot be manually modified during an active batch processing cycle. State your credential sequence.", points: 7, roleInvertedPoints: 6, feedback: "Terribly robotic and defensive. Quoting internal algorithm behaviors like 'predictive provisioning' and 'stabilization windows' leaves a high-value corporate client furious and ignored." },
+                            { text: "Oh my goodness, $4,500 is a fortune! My heart is beating so fast right now! Let's just turn off all your servers immediately so you don't have to look at those mean, scary bills ever again!", points: 1, roleInvertedPoints: 10, feedback: "Completely absurd and non-compliant. Panicking over the financial amount and suggesting an immediate shutdown of critical corporate server infrastructure is catastrophic." }
+                        ]
+                    },
+                    {
+                        customer: "My tax ID is 94-3321-X. This isn't just about the money, it's about basic communication. Our assigned account executive hasn't returned a single email regarding these billing discrepancies all week. Why are we paying premium support fees if we have to call a generic helpline to get an answer?",
+                        options: [
+                            { text: "Thank you for the verification, and you are entirely right to call us out on that. A dedicated account executive should be your primary line of defense, not someone you have to hunt down. While I have your profile open, I am bypassing the standard queue to handle this billing correction myself, and I will personally flag this to executive account management today.", points: 10, roleInvertedPoints: 2, feedback: "Excellent execution. Validates the breakdown in professional communication, takes absolute personal accountability to bypass standard delays, and protects the account relationship." },
+                            { text: "Account executive communication lapses fall outside the operational scope of this consumer-facing ticketing portal. I can log an administrative administrative friction report in our CRM system, which will route to their specific regional department within 72 standard business hours.", points: 7, roleInvertedPoints: 6, feedback: "Cold, fragmented, and overly bureaucratic. Telling an enterprise client that their issue is 'outside the operational scope' and offering a 72-hour delay is a guarantee of account loss." },
+                            { text: "Wow, your account executive sounds like a terrible person! I bet they are on a beach drinking margaritas instead of working. Let's send them a funny email with a bunch of angry emojis to wake them up!", points: 2, roleInvertedPoints: 10, feedback: "Highly unprofessional. Insulting a colleague to a corporate client and suggesting unprofessional communication completely degrades corporate credibility." }
+                        ]
+                    },
+                    {
+                        customer: "I don't want a friction report, I want results. If you are handling this yourself, tell me exactly how you plan to fix this $4,500 overcharge. I need a direct credit on our account profile before the end of the day, or our legal department is getting involved.",
+                        options: [
+                            { text: "Understood. Let's look at the facts: the decommissioned server blades were officially logged out on March 12th, meaning this charge is completely invalid. I am bypass-approving a direct credit of $4,500 to your ledger right now. You will see this update reflected in your enterprise client portal within the next hour. No legal friction required.", points: 10, roleInvertedPoints: 2, feedback: "Masterful executive adjustment. Uses factual logged dates as professional leverage, executes the financial solution immediately, and confidently defuses the legal threat with concrete timelines." },
+                            { text: "Standard verification protocols dictate that financial exceptions exceeding three decimal thresholds must enter an advanced billing audit queue. This internal auditing reconciliation phase requires cross-departmental authorization before any ledger adjustment manifests physically.", points: 7, roleInvertedPoints: 6, feedback: "Too industrial and rigid. Hiding behind 'advanced billing audit queues' and 'cross-departmental authorization' when an enterprise client is threatening legal action shows zero commercial urgency." },
+                            { text: "Please don't call the lawyers! Lawyers are so expensive and they use scary words! How about I give you a secret promotional code for 10% off our cloud storage mobile app as a bribe?", points: 1, roleInvertedPoints: 10, feedback: "Absurd and highly non-compliant. Begging a customer to avoid legal action and offering an unrelated mobile app coupon as a 'bribe' is completely unacceptable." }
+                        ]
+                    },
+                    {
+                        customer: "Alright, I'm checking our corporate dashboard... Yes, I can see the pending $4,500 direct credit now. That's a start. However, this account is still on a legacy tier pricing structure from 2022. If we keep having to double-check our bills every month, the administrative cost outweighs the discount.",
+                        options: [
+                            { text: "I completely understand that perspective; an unstable invoice destroys the value of any discount. Your 2022 legacy tier pricing is an incredibly high-value rate that you cannot get back if you cancel. To secure this account, I am setting up an automated pre-billing validation block. This means an enterprise analyst will manually check your invoice for correctness before it ever reaches your inbox.", points: 10, roleInvertedPoints: 2, feedback: "Brilliant retention logic. Acknowledges the administrative burden, reminds the client of the irreplaceable value of their legacy contract, and offers a premium, proactive operational solution." },
+                            { text: "Legacy accounts from the 2022 data matrix run on a deprecated database architecture that occasionally desynchronizes during regional server updates. System migration to modern billing modules would eliminate the glitches but will force a mandatory contract renewal at market rate.", points: 7, roleInvertedPoints: 6, feedback: "Too mechanical. Explaining database desynchronization and suggesting they pay higher market rates to fix a company system error gives the client a perfect reason to switch to a competitor." },
+                            { text: "Oh, legacy contracts are so old and dusty! You should throw that contract out the window. Let's create a brand new deal where you pay us in gold coins or physical stock certificates instead!", points: 1, roleInvertedPoints: 10, feedback: "Completely ridiculous. Suggesting alternative, non-compliant payment methods like gold or stock certificates belongs in a comedy sketch, not an enterprise B2B interaction." }
+                        ]
+                    },
+                    {
+                        customer: "A manual pre-billing validation block? That would actually solve the root of our problem. But I need to ensure this isn't just a temporary promise to stop me from cancelling today. How do I know this operational block is permanently active on our profile?",
+                        options: [
+                            { text: "You will have it in writing immediately. I am generating an official account modification addendum right now. It explicitly details the manual pre-billing audit mandate attached to your tax ID. Furthermore, I am scheduling a quarterly review call between you, myself, and a senior billing supervisor to maintain absolute transparency.", points: 10, roleInvertedPoints: 2, feedback: "Flawless executive execution. Provides formal corporate documentation ('modification addendum') and establishes a long-term governance structure (quarterly reviews) to guarantee permanent retention." },
+                            { text: "The profile modification flag is hardcoded into the master user account table. The system logic does not generate a secondary external verification document for this specific administrative preference layer, but the data is securely saved in the mainframe.", points: 7, roleInvertedPoints: 6, feedback: "Too sterile and unhelpful. Telling an enterprise client 'the system does not generate a document' when they ask for security and peace of mind fails to lock in corporate trust." },
+                            { text: "You can trust me because I cross my fingers and make a pinky promise right now! Our company computers never forget a promise when an agent smiles at the monitor!", points: 2, roleInvertedPoints: 10, feedback: "Absurd and highly unprofessional. Using childish terms like 'pinky promise' and 'smiling at the monitor' in a multi-thousand dollar B2B contract discussion is insulting." }
+                        ]
+                    },
+                    {
+                        customer: "The addendum just hit my inbox, and the terms look completely solid. I appreciate you cutting through the standard red tape and getting this sorted out. If you can guarantee that our account executive gets replaced or reprimanded, we will keep the server infrastructure active.",
+                        options: [
+                            { text: "I have already escalated the communication breakdown directly to the director of account management. While I cannot discuss internal personnel disciplinary actions, I can guarantee that a senior account manager will contact you at 9:00 AM tomorrow to officially introduce your new dedicated point of contact. Thank you for choosing to stay with us, Mr. Vance.", points: 10, roleInvertedPoints: 2, feedback: "Perfect C1 professional closing. Properly navigates HR privacy boundaries regarding internal employee reprimands, while delivering an absolute operational solution (new dedicated contact) and closing smoothly." },
+                            { text: "The human resources log entry has been executed successfully. This customer relationship ticket is now transitioning to a closed state inside our global CRM framework. You may now terminate this corporate audio connection link.", points: 7, roleInvertedPoints: 6, feedback: "Incredibly cold, mechanical closing. Treating a critical B2B account recovery conversation like a 'corporate audio connection link' that can be 'terminated' destroys any rapport built." },
+                            { text: "Yes! I am going to fire that account executive myself right now! I will print out their picture and rip it into a million pieces while dancing around the office to celebrate our victory!", points: 2, roleInvertedPoints: 10, feedback: "Completely ridiculous and highly unprofessional. Falsely claiming to terminate a colleague and describing an unhinged celebratory dance violates all employment and behavioral guidelines." }
+                        ]
+                    }
+                ]
+            },
+            {
+                id: "c1",
+                category: "Billing & Account Retention",
+                title: "The Premium Plan Downgrade & Hidden Fees Dispute",
+                difficulty: "C1 Advanced",
+                description: "Escenario largo de alta fricción. Resuelve cobros ocultos y retén una cuenta B2B corporativa a lo largo de 6 etapas de negociación.",
+                vocabulary: {
+                    "out of whack": { meaning: "Not working correctly, out of alignment, or drastically incorrect.", examples: ["My invoice this month is completely out of whack.", "The automated system went out of whack."] },
+                    "grandfathered": { meaning: "Allowed to keep an old rule, price, or privilege even after a price change.", examples: ["Early subscribers were grandfathered at the old rate.", "I want to keep my grandfathered unlimited feature."] },
+                    "rip-off": { meaning: "Something that is grossly overpriced or a scam; a bad deal.", examples: ["Charging a $15 fee just to pay online is an absolute rip-off.", "The customer claimed our premium tier was a total rip-off."] },
+                    "pass the buck": { meaning: "To shift blame or responsibility to someone else.", examples: ["Don't pass the buck to IT; we need to own this billing mistake.", "I'm tired of agents passing the buck."] },
+                    "leverage": { meaning: "Something which gives help or advantage in achieving a desired result.", examples: ["The customer used the competitor's offer as leverage.", "We have no financial leverage in this contract negotiation."] },
+                    "scrubbed": { meaning: "Permanently deleted, cleaned, or purged from a system.", examples: ["Ensure the hard drives are completely scrubbed.", "Under privacy laws, user records must be scrubbed."] }
+                },
+                steps: [
+                    {
+                        customer: "Listen, I just got hit with a bill that's way out of whack. I was explicitly told when I downgraded to the basic tier that my grandfathered features wouldn't trigger any extra surcharges. Now I'm looking at a $45 'legacy maintenance fee'. This is an absolute rip-off, and if you can't waive it right now, you might as well just close my entire account.",
+                        options: [
+                            { text: "I completely get why seeing an unexpected fee like that would make you want to walk away, especially after being assured otherwise. Let's look into that 'legacy maintenance fee' together right now. I want to make sure your billing perfectly reflects what you were promised. May I have your account number to get this sorted out?", points: 10, feedback: "Excellent. Validates frustration immediately, targets the fee, and moves to verification." },
+                            { text: "Per our company policy, legacy features retained on basic tiers are subject to automated maintenance surcharges. I can review the account to see if a one-time courtesy credit applies, but the system generates these fees automatically. Please provide your account details.", points: 7, feedback: "Accurate but completely rigid and defensive behind company policy terms." },
+                            { text: "Oh, I am so incredibly sorry for this horrible experience! You have been such a loyal customer with us and we value you so much. I completely agree that fees are terrible. Let me go ahead and upgrade you back to our Ultra Premium Platinum Package for free for the next 48 hours so you can feel better!", points: 2, feedback: "Toxic positivity distraction. Offers an unrelated short-term package that leaves the fee error alive." }
+                        ]
+                    },
+                    {
+                        customer: "An upgrade? Are you even listening to me? I don't want a shiny new package, I want my money back! The rep last month assured me—black and white—that my bill would be a flat $30. If your system generated this automatically, then your system is broken. Am I getting this $45 refunded or am I talking to your supervisor?",
+                        options: [
+                            { text: "You're entirely right to hold us to what you were promised in black and white. I'm not going to pass the buck to a system error. I have your account pulled up now, and I am issuing a direct credit of $45 to reverse that charge immediately. While that processes, let's permanently adjust your profile so this specific surcharge never triggers again. Fair enough?", points: 10, feedback: "Perfect ownership. Avoids corporate excuses, processes credit, and applies permanent fix parameters." },
+                            { text: "I can credit the $45 back to your original payment method today. However, please note that if you keep those specific grandfathered features, the system may flag the account again next month. I can initiate the refund now if you approve.", points: 7, feedback: "Processes solution mechanics but leaves the root operational issue broken for next month." },
+                            { text: "I hear you loud and clear, and I would love to connect you to my supervisor, but their queue is currently backed up for three hours. Instead, how about I send a formal complaint directly to our CEO's office on your behalf so they can investigate our automated billing software?", points: 1, feedback: "Ultimate distraction and pass the buck loop. Escalates to the CEO to avoid a localized credit button action." }
+                        ]
+                    },
+                    {
+                        customer: "Fine, credit the money. But you just said something that caught my attention—'permanently adjust my profile.' Does that mean my grandfathered cloud storage is actually safe, or are you going to quietly strip it away next month to avoid the fee?",
+                        options: [
+                            { text: "Your cloud storage is completely safe. To be crystal clear: I am applying an explicit, permanent system override code to your account. This locks in your grandfathered storage quota at your current basic rate, meaning you keep the benefit without the system flagging it for a surcharge. You won't have to call us back about this.", points: 10, feedback: "Flawless transparent reassurance. Explains parameters cleanly to secure customer trust." },
+                            { text: "The profile adjustment will modify the backend SKU codes. Your grandfathered storage should theoretically remain active on the basic tier, provided no further system-wide updates override the manual adjustment I am performing today.", points: 7, feedback: "Too technical and filled with ambiguity ('theoretically'). Leaves room for doubt." },
+                            { text: "Oh, your cloud storage is absolutely beautiful and we would never dream of touching it! It is safe with us forever and ever. In fact, just to prove it, I can add an extra 5GB of trial storage that expires next Tuesday!", points: 1, feedback: "Childish vocabulary, fake security metaphors, and completely useless expiring trials." }
+                        ]
+                    },
+                    {
+                        customer: "Alright, I see the credit pending on my dashboard app now. But honestly, this entire headache has left a bad taste in my mouth. My colleagues are using SyncCloud Corp, and they don't deal with these server surcharge surprises. They are offering us a contract buyout. Why should I stay with your platform if I have to monitor my statement like a hawk?",
+                        options: [
+                            { text: "I completely validate that feeling; monitoring statements is the last thing you should be doing. While SyncCloud has competitive standard offers, they lack our custom integration capabilities that your business actively relies on. To thank you for giving me the chance to fix this today, I'm applying a 15% loyalty discount to your basic rate for the next six months. Let's make sure our relationship stays solid.", points: 10, feedback: "Superb retention approach. Matches the competitive leverage with value features and a precise financial incentive." },
+                            { text: "SyncCloud Corp has a different pricing model that charges hidden data migration fees in their fine print. If you choose to accept their buyout contract, you will have to pay our standard cancellation penalty anyway. It's more expensive to leave.", points: 6, feedback: "Defensive and threatening. Critiques competition unprofessionally and blackmails with cancellation fees." },
+                            { text: "Oh wow, SyncCloud has a really pretty dashboard! I think their logo looks super modern. If you want to switch to them, I can give you their customer support phone number right now so you don't have to search for it on Google!", points: 1, feedback: "Complete disaster. Actively helps the customer churn and praises the direct competitor." }
+                        ]
+                    },
+                    {
+                        customer: "A 15% discount is fair, and you're right about the custom integrations—switching would be a logistics nightmare for my IT team. Let's sign that discount. However, just in case things go out of whack again later, I need to know: if we ever do cancel, what happens to our sensitive database files? Are they completely scrubbed, or do you keep copies on your cloud backup?",
+                        options: [
+                            { text: "Security and compliance are our absolute priorities. Upon formal account closure, your data enters a legal 30-day 'soft-deletion' hold, after which our servers execute an unrecoverable hard-scrub that completely purges all databases, fully complying with standard privacy laws. You can even request an immediate manual purge on your exit statement.", points: 10, feedback: "Provides expert, precise technical and compliance information, giving ultimate peace of mind." },
+                            { text: "Our backend servers process file deletion automatically according to data regulation protocols. Once the system switches your account status from active to deactivated, your data is no longer accessible by standard users.", points: 7, feedback: "Vague and mechanical. Does not explicitly confirm if data is scrubbed or permanently archived." },
+                            { text: "Don't worry about privacy, our cloud is guarded by digital cyber-dragons! Nobody can ever see your databases. Plus, I can change your password to 'Secret123' right now so you feel completely safe!", points: 1, feedback: "Ridiculous metaphors and dangerous security configurations. Completely fails the advanced corporate context." }
+                ]
+            },
+            {
+                id: "c1",
+                category: "Billing & Account Retention",
+                title: "The Premium Plan Downgrade & Hidden Fees Dispute",
+                difficulty: "C1 Advanced",
+                description: "Escenario largo de alta fricción. Resuelve cobros ocultos y retén una cuenta B2B corporativa a lo largo de 6 etapas de negociación.",
+                vocabulary: {
+                    "out of whack": { meaning: "Not working correctly, out of alignment, or drastically incorrect.", examples: ["My invoice this month is completely out of whack.", "The automated system went out of whack."] },
+                    "grandfathered": { meaning: "Allowed to keep an old rule, price, or privilege even after a price change.", examples: ["Early subscribers were grandfathered at the old rate.", "I want to keep my grandfathered unlimited feature."] },
+                    "rip-off": { meaning: "Something that is grossly overpriced or a scam; a bad deal.", examples: ["Charging a $15 fee just to pay online is an absolute rip-off.", "The customer claimed our premium tier was a total rip-off."] },
+                    "pass the buck": { meaning: "To shift blame or responsibility to someone else.", examples: ["Don't pass the buck to IT; we need to own this billing mistake.", "I'm tired of agents passing the buck."] },
+                    "leverage": { meaning: "Something which gives help or advantage in achieving a desired result.", examples: ["The customer used the competitor's offer as leverage.", "We have no financial leverage in this contract negotiation."] },
+                    "scrubbed": { meaning: "Permanently deleted, cleaned, or purged from a system.", examples: ["Ensure the hard drives are completely scrubbed.", "Under privacy laws, user records must be scrubbed."] }
+                },
+                steps: [
+                    {
+                        customer: "Listen, I just got hit with a bill that's way out of whack. I was explicitly told when I downgraded to the basic tier that my grandfathered features wouldn't trigger any extra surcharges. Now I'm looking at a $45 'legacy maintenance fee'. This is an absolute rip-off, and if you can't waive it right now, you might as well just close my entire account.",
+                        options: [
+                            { text: "I completely get why seeing an unexpected fee like that would be frustrating, especially after being assured otherwise. Let's look into that 'legacy maintenance fee' together right now. I want to make sure your billing perfectly reflects what you were promised. May I have your account number to get this sorted out?", points: 10, feedback: "Excellent. Validates frustration immediately, targets the fee, and moves to verification." },
+                            { text: "Per our company policy, legacy features retained on basic tiers are subject to automated maintenance surcharges. I can review the account to see if a one-time courtesy credit applies, but the system generates these fees automatically. Please provide your account details.", points: 7, feedback: "Accurate but completely rigid and defensive behind company policy terms." },
+                            { text: "Oh, I am so incredibly sorry for this horrible experience! You have been such a loyal customer with us and we value you so much. I completely agree that fees are terrible. Let me go ahead and upgrade you back to our Ultra Premium Platinum Package for free for the next 48 hours so you can feel better!", points: 2, feedback: "Toxic positivity distraction. Offers an unrelated short-term package that leaves the fee error alive." }
+                        ]
+                    },
+                    {
+                        customer: "An upgrade? Are you even listening to me? I don't want a shiny new package, I want my money back! The rep last month assured me—black and white—that my bill would be a flat $30. If your system generated this automatically, then your system is broken. Am I getting this $45 refunded or am I talking to your supervisor?",
+                        options: [
+                            { text: "You're entirely right to hold us to what you were promised in black and white. I'm not going to pass the buck to a system error. I have your account pulled up now, and I am issuing a direct credit of $45 to reverse that charge immediately. While that processes, let's permanently adjust your profile so this specific surcharge never triggers again. Fair enough?", points: 10, feedback: "Perfect ownership. Avoids corporate excuses, processes credit, and applies permanent fix parameters." },
+                            { text: "I can credit the $45 back to your original payment method today. However, please note that if you keep those specific grandfathered features, the system may flag the account again next month. I can initiate the refund now if you approve.", points: 7, feedback: "Processes solution mechanics but leaves the root operational issue broken for next month." },
+                            { text: "I hear you loud and clear, and I would love to connect you to my supervisor, but their queue is currently backed up for three hours. Instead, how about I send a formal complaint directly to our CEO's office on your behalf so they can investigate our automated billing software?", points: 1, feedback: "Ultimate distraction and pass the buck loop. Escalates to the CEO to avoid a localized credit button action." }
+                        ]
+                    },
+                    {
+                        customer: "Fine, credit the money. But you just said something that caught my attention—'permanently adjust my profile.' Does that mean my grandfathered cloud storage is actually safe, or are you going to quietly strip it away next month to avoid the fee?",
+                        options: [
+                            { text: "Your cloud storage is completely safe. To be crystal clear: I am applying an explicit, permanent system override code to your account. This locks in your grandfathered storage quota at your current basic rate, meaning you keep the benefit without the system flagging it for a surcharge. You won't have to call us back about this.", points: 10, feedback: "Flawless transparent reassurance. Explains parameters cleanly to secure customer trust." },
+                            { text: "The profile adjustment will modify the backend SKU codes. Your grandfathered storage should theoretically remain active on the basic tier, provided no further system-wide updates override the manual adjustment I am performing today.", points: 7, feedback: "Too technical and filled with ambiguity ('theoretically'). Leaves room for doubt." },
+                            { text: "Oh, your cloud storage is absolutely beautiful and we would never dream of touching it! It is safe with us forever and ever. In fact, just to prove it, I can add an extra 5GB of trial storage that expires next Tuesday!", points: 1, feedback: "Childish vocabulary, fake security metaphors, and completely useless expiring trials." }
+                        ]
+                    },
+                    {
+                        customer: "Alright, I see the credit pending on my dashboard app now. But honestly, this entire headache has left a bad taste in my mouth. My colleagues are using SyncCloud Corp, and they don't deal with these server surcharge surprises. They are offering us a contract buyout. Why should I stay with your platform if I have to monitor my statement like a hawk?",
+                        options: [
+                            { text: "I completely validate that feeling; monitoring statements is the last thing you should be doing. While SyncCloud has competitive standard offers, they lack our custom integration capabilities that your business actively relies on. To thank you for giving me the chance to fix this today, I'm applying a 15% loyalty discount to your basic rate for the next six months. Let's make sure our relationship stays solid.", points: 10, feedback: "Superb retention approach. Matches the competitive leverage with value features and a precise financial incentive." },
+                            { text: "SyncCloud Corp has a different pricing model that charges hidden data migration fees in their fine print. If you choose to accept their buyout contract, you will have to pay our standard cancellation penalty anyway. It's more expensive to leave.", points: 6, feedback: "Defensive and threatening. Critiques competition unprofessionally and blackmails with cancellation fees." },
+                            { text: "Oh wow, SyncCloud has a really pretty dashboard! I think their logo looks super modern. If you want to switch to them, I can give you their customer support phone number right now so you don't have to search for it on Google!", points: 1, feedback: "Complete disaster. Actively helps the customer churn and praises the direct competitor." }
+                        ]
+                    },
+                    {
+                        customer: "A 15% discount is fair, and you're right about the custom integrations—switching would be a logistics nightmare for my IT team. Let's sign that discount. However, just in case things go out of whack again later, I need to know: if we ever do cancel, what happens to our sensitive database files? Are they completely scrubbed, or do you keep copies on your cloud backup?",
+                        options: [
+                            { text: "Security and compliance are our absolute priorities. Upon formal account closure, your data enters a legal 30-day 'soft-deletion' hold, after which our servers execute an unrecoverable hard-scrub that completely purges all databases, fully complying with standard privacy laws. You can even request an immediate manual purge on your exit statement.", points: 10, feedback: "Provides expert, precise technical and compliance information, giving ultimate peace of mind." },
+                            { text: "Our backend servers process file deletion automatically according to data regulation protocols. Once the system switches your account status from active to deactivated, your data is no longer accessible by standard users.", points: 7, feedback: "Vague and mechanical. Does not explicitly confirm if data is scrubbed or permanently archived." },
+                            { text: "Don't worry about privacy, our cloud is guarded by digital cyber-dragons! Nobody can ever see your databases. Plus, I can change your password to 'Secret123' right now so you feel completely safe!", points: 1, feedback: "Ridiculous metaphors and dangerous security configurations. Completely fails the advanced corporate context." }
+                ]
+            },
+            {
+                id: "c1",
+                category: "Billing & Account Retention",
+                title: "The Premium Plan Downgrade & Hidden Fees Dispute",
+                difficulty: "C1 Advanced",
+                description: "Escenario largo de alta fricción. Resuelve cobros ocultos y retén una cuenta B2B corporativa a lo largo de 6 etapas de negociación.",
+                vocabulary: {
+                    "out of whack": { meaning: "Not working correctly, out of alignment, or drastically incorrect.", examples: ["My invoice this month is completely out of whack.", "The automated system went out of whack."] },
+                    "grandfathered": { meaning: "Allowed to keep an old rule, price, or privilege even after a price change.", examples: ["Early subscribers were grandfathered at the old rate.", "I want to keep my grandfathered unlimited feature."] },
+                    "rip-off": { meaning: "Something that is grossly overpriced or a scam; a bad deal.", examples: ["Charging a $15 fee just to pay online is an absolute rip-off.", "The customer claimed our premium tier was a total rip-off."] },
+                    "pass the buck": { meaning: "To shift blame or responsibility to someone else.", examples: ["Don't pass the buck to IT; we need to own this billing mistake.", "I'm tired of agents passing the buck."] },
+                    "leverage": { meaning: "Something which gives help or advantage in achieving a desired result.", examples: ["The customer used the competitor's offer as leverage.", "We have no financial leverage in this contract negotiation."] },
+                    "scrubbed": { meaning: "Permanently deleted, cleaned, or purged from a system.", examples: ["Ensure the hard drives are completely scrubbed.", "Under privacy laws, user records must be scrubbed."] }
+                },
+                steps: [
+                    {
+                        customer: "Listen, I just got hit with a bill that's way out of whack. I was explicitly told when I downgraded to the basic tier that my grandfathered features wouldn't trigger any extra surcharges. Now I'm looking at a $45 'legacy maintenance fee'. This is an absolute rip-off, and if you can't waive it right now, you might as well just close my entire account.",
+                        options: [
+                            { text: "I completely get why seeing an unexpected fee like that would be frustrating, especially after being assured otherwise. Let's look into that 'legacy maintenance fee' together right now. I want to make sure your billing perfectly reflects what you were promised. May I have your account number to get this sorted out?", points: 10, feedback: "Excellent. Validates frustration immediately, targets the fee, and moves to verification." },
+                            { text: "Per our company policy, legacy features retained on basic tiers are subject to automated maintenance surcharges. I can review the account to see if a one-time courtesy credit applies, but the system generates these fees automatically. Please provide your account details.", points: 7, feedback: "Accurate but completely rigid and defensive behind company policy terms." },
+                            { text: "Oh, I am so incredibly sorry for this horrible experience! You have been such a loyal customer with us and we value you so much. I completely agree that fees are terrible. Let me go ahead and upgrade you back to our Ultra Premium Platinum Package for free for the next 48 hours so you can feel better!", points: 2, feedback: "Toxic positivity distraction. Offers an unrelated short-term package that leaves the fee error alive." }
+                        ]
+                    },
+                    {
+                        customer: "An upgrade? Are you even listening to me? I don't want a shiny new package, I want my money back! The rep last month assured me—black and white—that my bill would be a flat $30. If your system generated this automatically, then your system is broken. Am I getting this $45 refunded or am I talking to your supervisor?",
+                        options: [
+                            { text: "You're entirely right to hold us to what you were promised in black and white. I'm not going to pass the buck to a system error. I have your account pulled up now, and I am issuing a direct credit of $45 to reverse that charge immediately. While that processes, let's permanently adjust your profile so this specific surcharge never triggers again. Fair enough?", points: 10, feedback: "Perfect ownership. Avoids corporate excuses, processes credit, and applies permanent fix parameters." },
+                            { text: "I can credit the $45 back to your original payment method today. However, please note that if you keep those specific grandfathered features, the system may flag the account again next month. I can initiate the refund now if you approve.", points: 7, feedback: "Processes solution mechanics but leaves the root operational issue broken for next month." },
+                            { text: "I hear you loud and clear, and I would love to connect you to my supervisor, but their queue is currently backed up for three hours. Instead, how about I send a formal complaint directly to our CEO's office on your behalf so they can investigate our automated billing software?", points: 1, feedback: "Ultimate distraction and pass the buck loop. Escalates to the CEO to avoid a localized credit button action." }
+                        ]
+                    },
+                    {
+                        customer: "Fine, credit the money. But you just said something that caught my attention—'permanently adjust my profile.' Does that mean my grandfathered cloud storage is actually safe, or are you going to quietly strip it away next month to avoid the fee?",
+                        options: [
+                            { text: "Your cloud storage is completely safe. To be crystal clear: I am applying an explicit, permanent system override code to your account. This locks in your grandfathered storage quota at your current basic rate, meaning you keep the benefit without the system flagging it for a surcharge. You won't have to call us back about this.", points: 10, feedback: "Flawless transparent reassurance. Explains parameters cleanly to secure customer trust." },
+                            { text: "The profile adjustment will modify the backend SKU codes. Your grandfathered storage should theoretically remain active on the basic tier, provided no further system-wide updates override the manual adjustment I am performing today.", points: 7, feedback: "Too technical and filled with ambiguity ('theoretically'). Leaves room for doubt." },
+                            { text: "Oh, your cloud storage is absolutely beautiful and we would never dream of touching it! It is safe with us forever and ever. In fact, just to prove it, I can add an extra 5GB of trial storage that expires next Tuesday!", points: 1, feedback: "Childish vocabulary, fake security metaphors, and completely useless expiring trials." }
+                        ]
+                    },
+                    {
+                        customer: "Alright, I see the credit pending on my dashboard app now. But honestly, this entire headache has left a bad taste in my mouth. My colleagues are using SyncCloud Corp, and they don't deal with these server surcharge surprises. They are offering us a contract buyout. Why should I stay with your platform if I have to monitor my statement like a hawk?",
+                        options: [
+                            { text: "I completely validate that feeling; monitoring statements is the last thing you should be doing. While SyncCloud has competitive standard offers, they lack our custom integration capabilities that your business actively relies on. To thank you for giving me the chance to fix this today, I'm applying a 15% loyalty discount to your basic rate for the next six months. Let's make sure our relationship stays solid.", points: 10, feedback: "Superb retention approach. Matches the competitive leverage with value features and a precise financial incentive." },
+                            { text: "SyncCloud Corp has a different pricing model that charges hidden data migration fees in their fine print. If you choose to accept their buyout contract, you will have to pay our standard cancellation penalty anyway. It's more expensive to leave.", points: 6, feedback: "Defensive and threatening. Critiques competition unprofessionally and blackmails with cancellation fees." },
+                            { text: "Oh wow, SyncCloud has a really pretty dashboard! I think their logo looks super modern. If you want to switch to them, I can give you their customer support phone number right now so you don't have to search for it on Google!", points: 1, feedback: "Complete disaster. Actively helps the customer churn and praises the direct competitor." }
+                        ]
+                    },
+                    {
+                        customer: "A 15% discount is fair, and you're right about the custom integrations—switching would be a logistics nightmare for my IT team. Let's sign that discount. However, just in case things go out of whack again later, I need to know: if we ever do cancel, what happens to our sensitive database files? Are they completely scrubbed, or do you keep copies on your cloud backup?",
+                        options: [
+                            { text: "Security and compliance are our absolute priorities. Upon formal account closure, your data enters a legal 30-day 'soft-deletion' hold, after which our servers execute an unrecoverable hard-scrub that completely purges all databases, fully complying with standard privacy laws. You can even request an immediate manual purge on your exit statement.", points: 10, feedback: "Provides expert, precise technical and compliance information, giving ultimate peace of mind." },
+                            { text: "Our backend servers process file deletion automatically according to data regulation protocols. Once the system switches your account status from active to deactivated, your data is no longer accessible by standard users.", points: 7, feedback: "Vague and mechanical. Does not explicitly confirm if data is scrubbed or permanently archived." },
+                            { text: "Don't worry about privacy, our cloud is guarded by digital cyber-dragons! Nobody can ever see your databases. Plus, I can change your password to 'Secret123' right now so you feel completely safe!", points: 1, feedback: "Ridiculous metaphors and dangerous security configurations. Completely fails the advanced corporate context." }
+                        ]
+                    },
+                    {
+                        customer: "Perfect. A hard-scrub option is exactly what our compliance officer requires. You've been incredibly helpful today and handled this mess properly. I'll accept the profile override and the 6-month loyalty discount. Let's finalize the ticket.",
+                        options: [
+                            { text: "It has been an absolute pleasure getting this aligned for you today. The $45 credit is active, your profile override is locked in, and the 15% discount will reflect on your next cycle. Thank you for your tenure and patience. Have a productive day ahead!", points: 10, feedback: "Master closing. Recaps all actions processed, reinforces value, and closes with ultimate professionalism." },
+                            { text: "No problem. I have saved all changes in the system database log. The billing error is fixed now. Thanks for calling customer support. Goodbye.", points: 7, feedback: "Plano y cortante. Resuelve la llamada de manera mecánica sin dejar impacto positivo de marca." },
+                            { text: "Awesome! I am so happy I could save your job and save our friendship today! Please remember to give me 5 stars on the survey or I won't get my monthly bonus, okay? Bye-bye!", points: 2, feedback: "Unprofessional and desperate. Begging for survey scores ruins the entire consulting experience." }
+                        ]
+                    }
+                ]
+            }
+        ];
+
+        // MOTOR DE TRADUCCIÓN INTERCEPTO EN TIEMPO DE EJECUCIÓN (Runtime English to Spanish QA translator)
+        const translateFeedbackText = (text) => {
+            if (!text) return "";
+            
+            const dictionary = {
+                "Perfect! Empathy, active vocabulary usage, and immediate action-oriented tone.": "¡Perfecto! Empatía, uso de vocabulario activo y tono orientado a la acción inmediata.",
+                "Be careful. Telling an angry customer to 'calm down' usually escalates their irritation.": "Ten cuidado. Decirle a un cliente enojado que se 'calme' generalmente aumenta su irritación.",
+                "Avoid shifting blame to the customer. This can trigger immediate cancellation.": "Evita transferir la culpa al cliente. Esto puede provocar una cancelación inmediata del servicio.",
+                "Excellent! You confirmed the transaction and provided a clear, fast resolution timeline.": "¡Excelente! Confirmaste la transacción y proporcionaste un tiempo de resolución claro y rápido.",
+                "A bit too passive. Customers prefer immediate action and clear resolution steps.": "Un poco pasivo. Los clientes prefieren acciones inmediatas y pasos de resolución claros.",
+                "Brilliant save! Offering a retention credit keeps the customer engaged and restores brand trust.": "¡Brillante salvada! Ofrecer un crédito de retención mantiene al cliente interesado y restaura la confianza en la marca.",
+                "Too quick to let them go. You should always try to offer an alternative or credit to retain the user first.": "Demasiado rápido para dejarlo ir. Siempre debes intentar ofrecer una alternativa o crédito para retener al usuario primero.",
+                "Great! Highly empathetic, clear directions, and reassures the customer.": "¡Excelente! Altamente empático, indicaciones claras y tranquiliza al cliente.",
+                "Slightly rude. Anxious travelers need friendly guidance, not dismissed.": "Un poco indiferente. Los viajeros ansiosos necesitan orientación amigable, no ser ignorados.",
+                "Fantastic! Prompt solution, direct information, and excellent customer service.": "¡Fantástico! Solución rápida, información directa y excelente servicio al cliente.",
+                "Poor effort. You should always explore standby or alternative connections first.": "Mal esfuerzo. Siempre debes explorar opciones de espera o conexiones alternativas primero.",
+                "AHT Exceeded": "Tiempo de AHT Excedido"
+            };
+
+            if (dictionary[text]) return dictionary[text];
+
+            const textLower = text.toLowerCase();
+            if (textLower.includes("robotic") || textLower.includes("termination protocol") || textLower.includes("infrastructure availability")) {
+                return "Demasiado complejo y mecánico. Palabras como 'termination protocol', 'cross-reference' e 'infrastructure availability' sobrecargan la conversación.";
+            }
+            if (textLower.includes("empathy") || textLower.includes("understand your frustration")) {
+                return "¡Perfecto! Demuestras empatía activa, usas vocabulario del caso y aplicas un tono de resolución inmediato.";
+            }
+            if (textLower.includes("calm down") || textLower.includes("anger")) {
+                return "Ten cuidado. Decirle a un cliente que se 'calme' suele percibirse como condescendiente y aumenta la irritación.";
+            }
+            if (textLower.includes("blame") || textLower.includes("customer's fault") || textLower.includes("did you buy")) {
+                return "Evita transferir la culpa al cliente o dudar de su versión de los hechos. Esto rompe la retención de marca.";
+            }
+            if (textLower.includes("confirm") || textLower.includes("refund processed") || textLower.includes("clear in your account")) {
+                return "¡Excelente! Confirmaste los datos financieros con precisión y diste tiempos estimados de procesamiento claros.";
+            }
+            if (textLower.includes("cancel") || textLower.includes("let them cancel") || textLower.includes("proceed with cancellation")) {
+                return "Demasiado rápido para procesar una baja. En operaciones, la prioridad es mitigar la deserción aplicando políticas de retención activas.";
+            }
+            if (textLower.includes("passive") || textLower.includes("too slow") || textLower.includes("next week")) {
+                return "Un poco pasivo. Los usuarios en canales de soporte buscan confirmaciones directas y asertividad de plazos.";
+            }
+            if (textLower.includes("flight is delayed") || textLower.includes("gate")) {
+                return "¡Excelente! Diste instrucciones de navegación claras en el aeropuerto y transmitiste control operativo.";
+            }
+
+            return text; 
+        };
+
+        const Icon = ({ name, className }) => {
+            useEffect(() => {
+                if (window.lucide) window.lucide.createIcons();
+            }, [name]);
+            return <i data-lucide={name} className={className}></i>;
+        };
+
+        const App = () => {
+            const [gameState, setGameState] = useState('menu'); 
+            const [gameMode, setGameMode] = useState('normal'); 
+            const [currentScenario, setCurrentScenario] = useState(null);
+            const [currentStep, setCurrentStep] = useState(0);
+            const [chatHistory, setChatHistory] = useState([]);
+            const [score, setScore] = useState(0);
+            const [maxPossibleScore, setMaxPossibleScore] = useState(0);
+            const [feedback, setFeedback] = useState(null);
+            const [shuffledOptions, setShuffledOptions] = useState([]);
+            const [filter, setFilter] = useState('All');
+            const [vocabularyLog, setVocabularyLog] = useState([]);
+            const [activeWord, setActiveWord] = useState(null);
+            const [isSearchingVocab, setIsSearchingVocab] = useState(false);
+            const [timeLeft, setTimeLeft] = useState(15);
+            const timerRef = useRef(null);
+            const chatEndRef = useRef(null);
+
+            const speakText = (text) => {
+                if ('speechSynthesis' in window) {
+                    window.speechSynthesis.cancel();
+                    const utterance = new SpeechSynthesisUtterance(text);
+                    utterance.lang = 'en-US';
+                    const voices = window.speechSynthesis.getVoices();
+                    const enVoice = voices.find(v => v.lang.startsWith('en-US') || v.lang.startsWith('en-GB'));
+                    if (enVoice) utterance.voice = enVoice;
+                    utterance.rate = 0.95; 
+                    window.speechSynthesis.speak(utterance);
+                }
+            };
+
+            useEffect(() => {
+                if (gameState === 'playing' && gameMode === 'timeAttack' && !feedback) {
+                    setTimeLeft(15);
+                    timerRef.current = setInterval(() => {
+                        setTimeLeft((prev) => {
+                            if (prev <= 1) {
+                                clearInterval(timerRef.current);
+                                handleTimeOut();
+                                return 0;
+                            }
+                            return prev - 1;
+                        });
+                    }, 1000);
+                }
+                return () => clearInterval(timerRef.current);
+            }, [currentStep, gameState, feedback, gameMode]);
+
+            useEffect(() => { 
+                if (gameState === 'playing') chatEndRef.current?.scrollIntoView({ behavior: "smooth" }); 
+            }, [chatHistory, feedback]);
+
+            const handleTimeOut = () => {
+                setScore((prev) => Math.max(0, prev - 5));
+                const timeOutText = "LÍMITE DE AHT INCUMPLIDO: Se ha superado el umbral de SLA de respuesta. La satisfacción del cliente está disminuyendo.";
+                const timeOutFeedback = "¡Tiempo de AHT Excedido! Tardaste más de 15 segundos en evaluar la estrategia de respuesta. (-5 Puntos de Lógica)";
+                
+                setChatHistory(prev => [...prev, { 
+                    type: 'system', 
+                    text: timeOutText, 
+                    points: 0, 
+                    feedback: "AHT Excedido" 
+                }]);
+                
+                setFeedback({ points: 0, message: timeOutFeedback });
+
+                setTimeout(() => {
+                    setFeedback(null);
+                    advanceStep();
+                }, 4500);
+            };
+
+            const startScenario = (scenario, mode) => {
+                if ('speechSynthesis' in window) window.speechSynthesis.cancel();
+                
+                setGameMode(mode);
+                setCurrentScenario(scenario);
+                setCurrentStep(0);
+                setScore(0);
+                setMaxPossibleScore(scenario.steps.length * 10);
+                setFeedback(null);
+                setVocabularyLog([]);
+                setGameState('playing');
+
+                const firstText = scenario.steps[0].customer;
+                setChatHistory([{ type: 'customer', text: firstText, points: null, feedback: null }]);
+                setShuffledOptions([...scenario.steps[0].options].sort(() => Math.random() - 0.5));
+
+                if (mode !== 'timeAttack') {
+                    setTimeout(() => speakText(firstText), 300);
+                }
+            };
+
+            const handleOptionClick = (option) => {
+                if (feedback) return;
+                if (timerRef.current) clearInterval(timerRef.current);
+                if ('speechSynthesis' in window) window.speechSynthesis.cancel();
+
+                const localSpanishFeedback = translateFeedbackText(option.feedback);
+
+                setChatHistory([...chatHistory, { 
+                    type: 'agent', 
+                    text: option.text,
+                    points: option.points,
+                    feedback: localSpanishFeedback
+                }]);
+                
+                setScore(score + option.points);
+                setFeedback({ points: option.points, message: localSpanishFeedback });
+                
+                setTimeout(() => {
+                    setFeedback(null);
+                    advanceStep();
+                }, 4500); 
+            };
+
+            const advanceStep = () => {
+                const nextStep = currentStep + 1;
+                if (nextStep < currentScenario.steps.length) {
+                    setCurrentStep(nextStep);
+                    const nextText = currentScenario.steps[nextStep].customer;
+                    setChatHistory(prev => [...prev, { type: 'customer', text: nextText, points: null, feedback: null }]);
+                    setShuffledOptions([...currentScenario.steps[nextStep].options].sort(() => Math.random() - 0.5));
+                    
+                    if (gameMode !== 'timeAttack') speakText(nextText);
+                } else { 
+                    setGameState('results'); 
+                }
+            };
+
+            const handleWordClick = async (wordKey) => {
+                const cleanWord = wordKey.toLowerCase().replace(/[.,!?;:()"'“”‘’\[\]\{\}]/g, "").trim();
+                if (!cleanWord) return;
+
+                setActiveWord({ word: cleanWord, loading: true });
+                setIsSearchingVocab(true);
+
+                const localVocab = currentScenario?.vocabulary?.[cleanWord];
+                if (localVocab) {
+                    const wordObj = {
+                        word: cleanWord,
+                        meaning: localVocab.meaning,
+                        examples: localVocab.examples || [],
+                        isLive: false
+                    };
+                    setActiveWord(wordObj);
+                    setIsSearchingVocab(false);
+                    
+                    setVocabularyLog(prev => {
+                        if (prev.some(item => item.word === cleanWord)) return prev;
+                        return [...prev, wordObj];
+                    });
+                    return;
+                }
+
+                try {
+                    const response = await fetch(`https://api.dictionaryapi.dev/api/v2/entries/en/${cleanWord}`);
+                    if (!response.ok) throw new Error("Palabra no encontrada");
+                    
+                    const data = await response.json();
+                    const firstEntry = data[0];
+                    const meaning = firstEntry?.meanings?.[0]?.definitions?.[0]?.definition || "Definición alternativa no disponible en el sistema.";
+                    
+                    const examples = [];
+                    data[0]?.meanings?.forEach(m => {
+                        m.definitions?.forEach(d => {
+                            if (d.example && examples.length < 2) {
+                                examples.push(d.example);
+                            }
+                        });
+                    });
+
+                    const wordObj = {
+                        word: cleanWord,
+                        meaning: meaning,
+                        examples: examples,
+                        isLive: true
+                    };
+                    
+                    setActiveWord(wordObj);
+                    setVocabularyLog(prev => {
+                        if (prev.some(item => item.word === cleanWord)) return prev;
+                        return [...prev, wordObj];
+                    });
+                } catch (error) {
+                    setActiveWord({
+                        word: cleanWord,
+                        meaning: "No pudimos encontrar la definición de esta palabra. Por favor, verifica la ortografía o intenta buscar un término diferente.",
+                        examples: [],
+                        isError: true,
+                        isLive: true
+                    });
+                } finally {
+                    setIsSearchingVocab(false);
+                }
+            };
+
+            const renderInteractiveText = (text) => {
+                if (gameMode === 'ghostCall') {
+                    return (
+                        <div className="flex items-center gap-2 text-brand-orange font-bold italic py-2">
+                            <Icon name="audio-lines" className="w-5 h-5 animate-pulse text-brand-orange" />
+                            <span>[ AUDIO INCOMING — Click the speaker icon to stream carefully ]</span>
+                        </div>
+                    );
+                }
+
+                return text.split(" ").map((word, idx) => {
+                    const clean = word.toLowerCase().replace(/[.,!?;:()"'“”‘’\[\]\{\}]/g, "");
+                    const isKey = currentScenario?.vocabulary?.[clean];
+                    
+                    if (!clean) return <span key={idx}>{word} </span>;
+                    
+                    return (
+                        <span 
+                            key={idx} 
+                            onClick={() => handleWordClick(clean)} 
+                            className={isKey 
+                                ? 'text-brand-orange font-black cursor-help underline decoration-2 decoration-brand-orange hover:text-brand-orangeMed transition-all duration-200'
+                                : 'text-slate-700 hover:text-brand-orange font-medium cursor-help underline decoration-dotted decoration-slate-300 hover:decoration-brand-orange transition-all'
+                            }
+                        >
+                            {word}{" "}
+                        </span>
+                    );
+                });
+            };
+
+            const getGrade = () => {
+                if (maxPossibleScore === 0) return { label: 'URGENT', color: 'text-rose-600 border-rose-200 bg-rose-50', icon: 'shield-alert' };
+                const percentage = (score / maxPossibleScore) * 100;
+                
+                if (percentage >= 98) {
+                    return { 
+                        label: 'EXCELLENT PLUS', 
+                        color: 'text-amber-500 border-amber-300 bg-amber-50/80 animate-pulse font-black scale-105', 
+                        icon: 'star' 
+                    };
+                }
+                if (percentage >= 90) {
+                    return { 
+                        label: 'EXCELLENT', 
+                        color: 'text-emerald-600 border-emerald-200 bg-emerald-50', 
+                        icon: 'award' 
+                    };
+                }
+                if (percentage >= 75) {
+                    return { 
+                        label: 'GREAT JOB', 
+                        color: 'text-brand-blue border-brand-blue/20 bg-brand-blueLight', 
+                        icon: 'thumbs-up' 
+                    };
+                }
+                if (percentage >= 60) {
+                    return { 
+                        label: 'ALMOST THERE', 
+                        color: 'text-brand-orangeMed border-brand-orangeMed/20 bg-orange-50', 
+                        icon: 'trending-up' 
+                    };
+                }
+                if (percentage >= 40) {
+                    return { 
+                        label: 'NEEDS TO IMPROVE', 
+                        color: 'text-brand-orangeDark border-brand-orangeDark/20 bg-amber-50', 
+                        icon: 'alert-triangle' 
+                    };
+                }
+                return { 
+                    label: 'URGENT', 
+                    color: 'text-rose-600 border-rose-200 bg-rose-50', 
+                    icon: 'shield-alert' 
+                };
+            };
+
+            const activeScenarios = SCENARIOS;
+
+            return (
+                <div className="min-h-screen bg-slate-50 font-sans text-slate-800 flex flex-col relative overflow-hidden">
+                    
+                    {/* Modal interactivo de vocabulario */}
+                    {activeWord && (
+                        <div className="fixed inset-0 bg-brand-blue/80 z-50 flex items-center justify-center p-4 animate-in fade-in duration-200">
+                            <div className="bg-white rounded-3xl p-8 max-w-sm w-full shadow-2xl space-y-5 relative border border-slate-100">
+                                <button 
+                                    onClick={() => { setActiveWord(null); setIsSearchingVocab(false); }} 
+                                    className="absolute top-4 right-4 text-slate-400 hover:text-slate-600 transition-all"
+                                >
+                                    <Icon name="x" className="w-6 h-6" />
+                                </button>
+
+                                {isSearchingVocab || activeWord.loading ? (
+                                    <div className="flex flex-col items-center justify-center py-12 space-y-4">
+                                        <Icon name="loader-2" className="w-10 h-10 text-brand-orange animate-spin" />
+                                        <p className="text-xs font-black uppercase tracking-widest text-slate-400 animate-pulse">Buscando en diccionario...</p>
+                                    </div>
+                                ) : (
+                                    <>
+                                        <div className="flex items-center justify-between gap-2 border-b border-slate-100 pb-3">
+                                            <div className="flex items-center gap-2 text-brand-orange min-w-0">
+                                                <Icon name="book-open" className="w-6 h-6 flex-shrink-0" />
+                                                <h3 className="text-2xl font-black uppercase tracking-tighter truncate">{activeWord.word}</h3>
+                                            </div>
+                                            {activeWord.isLive && !activeWord.isError && (
+                                                <span className="bg-slate-100 text-slate-500 text-[9px] font-black uppercase tracking-wider px-2 py-1 rounded-md flex-shrink-0">
+                                                    Live Dictionary
+                                                </span>
+                                            )}
+                                        </div>
+                                        <div className="space-y-2">
+                                            <p className="text-[10px] font-bold text-slate-400 uppercase tracking-widest">Meaning</p>
+                                            <p className="text-slate-700 text-sm leading-relaxed">{activeWord.meaning}</p>
+                                        </div>
+                                        {activeWord.examples && activeWord.examples.length > 0 && (
+                                            <div className="space-y-2">
+                                                <p className="text-[10px] font-bold text-slate-400 uppercase tracking-widest">Examples</p>
+                                                {activeWord.examples.map((ex, i) => (
+                                                    <p key={i} className="text-xs italic bg-brand-orangeLight p-3 rounded-xl border-l-4 border-brand-orange text-slate-700">
+                                                        "{ex}"
+                                                    </p>
+                                                ))}
+                                            </div>
+                                        )}
+                                    </>
+                                )}
+                            </div>
+                        </div>
+                    )}
+
+                    {/* Encabezado Principal E4CC */}
+                    <header className="bg-brand-blue text-white p-4 shadow-xl flex items-center justify-between border-b-4 border-brand-orange z-20 transition-all duration-300">
+                        <div className="flex items-center gap-4">
+                            <img 
+                                src="image_196b82.png" 
+                                className="h-10 w-auto object-contain bg-white rounded-full p-0.5 shadow-md" 
+                                alt="E4CC Icon" 
+                                onError={(e) => { e.target.style.display = 'none'; }}
+                            />
+                            <img 
+                                src="image_196b8a.png" 
+                                className="h-10 w-auto object-contain hidden md:block" 
+                                alt="E4CC Logo" 
+                                onError={(e) => { e.target.style.display = 'none'; }}
+                            />
+                            <div className="flex flex-col justify-center">
+                                <h1 className="text-xl font-black tracking-tighter uppercase leading-none italic text-white flex items-center gap-2 md:hidden">
+                                    E4CC <span className="text-[10px] bg-brand-orange text-white px-1.5 py-0.5 rounded not-italic">SIM</span>
+                                </h1>
+                                <p className="text-[10px] text-brand-orange font-bold tracking-widest uppercase">
+                                    #1 en inglés para el trabajo
+                                </p>
+                            </div>
+                        </div>
+
+                        {gameState !== 'menu' && (
+                            <button 
+                                onClick={() => { 
+                                    if ('speechSynthesis' in window) window.speechSynthesis.cancel(); 
+                                    clearInterval(timerRef.current); 
+                                    setGameState('menu'); 
+                                }} 
+                                className="bg-brand-orange hover:bg-brand-orangeMed text-white px-5 py-2.5 rounded-full text-xs font-black tracking-wider transition-all shadow-md uppercase"
+                            >
+                                MAIN MENU
+                            </button>
+                        )}
+                    </header>
+
+                    {/* Contenido Principal */}
+                    <main className="flex-1 flex flex-col max-w-5xl mx-auto w-full p-4 md:p-6 overflow-hidden">
+                        
+                        {/* Menú de Módulos */}
+                        {gameState === 'menu' && (
+                            <div className="flex-1 flex flex-col space-y-6 animate-in fade-in duration-500 overflow-y-auto pr-1">
+                                <div className="bg-white p-8 rounded-[2rem] shadow-sm border border-slate-200 flex flex-col md:flex-row md:items-center justify-between gap-6">
+                                    <div className="space-y-1">
+                                        <h2 className="text-3xl font-black text-brand-blue uppercase italic tracking-tight">Training Modules</h2>
+                                        <p className="text-slate-500 text-sm font-medium">Curriculum CEFR progresivo. Todos los escenarios estructurados para evaluación continua.</p>
+                                    </div>
+                                    <div className="flex gap-3">
+                                        <select 
+                                            className="bg-brand-blueLight text-brand-blue rounded-2xl px-4 py-3 text-sm font-bold border-2 border-slate-200 focus:border-brand-orange focus:outline-none transition-all cursor-pointer" 
+                                            onChange={(e) => setFilter(e.target.value)}
+                                        >
+                                            <option value="All">All Tiers (A1 to C1)</option>
+                                            <option value="A1/A2 Foundation">A1 / A2 Foundation</option>
+                                            <option value="B1/B2 Technical">B1 / B2 Technical</option>
+                                            <option value="C1 Advanced">C1 Advanced Retention</option>
+                                        </select>
+                                    </div>
+                                </div>
+
+                                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 pb-10">
+                                    {activeScenarios.filter(s => filter === 'All' || s.difficulty === filter).map(scenario => (
+                                        <div key={scenario.id} className="bg-white border-2 border-slate-100 rounded-[2.5rem] p-6 shadow-sm hover:shadow-xl hover:border-brand-orange/35 transition-all flex flex-col h-full relative overflow-hidden group">
+                                            <div className="absolute top-0 left-0 w-full h-1.5 bg-brand-blue group-hover:bg-brand-orange transition-all duration-300"></div>
+                                            
+                                            <div className="flex justify-between items-start mb-4">
+                                                <span className={`px-3 py-1 rounded-full text-[10px] font-black uppercase tracking-wider ${
+                                                    scenario.difficulty.startsWith('A') 
+                                                        ? 'bg-emerald-100 text-emerald-800' 
+                                                        : scenario.difficulty.startsWith('B') 
+                                                            ? 'bg-brand-blueLight text-brand-blue' 
+                                                            : 'bg-brand-orangeLight text-brand-orange'
+                                                }`}>
+                                                    {scenario.difficulty}
+                                                </span>
+                                                <span className="text-[10px] font-black text-slate-400 uppercase tracking-wider">{scenario.category}</span>
+                                            </div>
+                                            
+                                            <h3 className="text-xl font-black mb-1.5 uppercase italic text-brand-blue group-hover:text-brand-orange transition-colors duration-300 leading-tight tracking-tight">
+                                                {scenario.title}
+                                            </h3>
+                                            <p className="text-slate-500 text-xs mb-6 flex-1 font-medium leading-relaxed">{scenario.description}</p>
+                                            
+                                            <div className="space-y-2 border-t border-slate-100 pt-4 mt-auto">
+                                                <p className="text-[9px] font-black uppercase text-slate-400 mb-2 tracking-wider">Select Target Deployment Mode:</p>
+                                                <div className="grid grid-cols-3 gap-2">
+                                                    <button 
+                                                        onClick={() => startScenario(scenario, 'normal')} 
+                                                        className="bg-brand-blueLight hover:bg-brand-blue text-brand-blue hover:text-white font-black p-2.5 text-[10px] rounded-xl transition-all border border-brand-blue/10 uppercase tracking-tighter flex flex-col items-center justify-center gap-1 shadow-sm"
+                                                    >
+                                                        <Icon name="play" className="w-3 h-3" />
+                                                        <span>Normal</span>
+                                                    </button>
+                                                    <button 
+                                                        onClick={() => startScenario(scenario, 'timeAttack')} 
+                                                        className="bg-brand-orangeLight hover:bg-brand-orange text-brand-orange hover:text-white font-black p-2.5 text-[10px] rounded-xl transition-all border border-brand-orange/10 uppercase tracking-tighter flex flex-col items-center justify-center gap-1 shadow-sm"
+                                                    >
+                                                        <Icon name="timer" className="w-3 h-3" />
+                                                        <span>Time Attack</span>
+                                                    </button>
+                                                    <button 
+                                                        onClick={() => startScenario(scenario, 'ghostCall')} 
+                                                        className="bg-orange-50 hover:bg-brand-orangeMed text-brand-orangeMed hover:text-white font-black p-2.5 text-[10px] rounded-xl transition-all border border-brand-orangeMed/10 uppercase tracking-tighter flex flex-col items-center justify-center gap-1 shadow-sm"
+                                                    >
+                                                        <Icon name="audio-lines" className="w-3 h-3" />
+                                                        <span>Ghost Call</span>
+                                                    </button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    ))}
+                                </div>
+                            </div>
+                        )}
+
+                        {/* Consola de Juego (Chat del Call Center) */}
+                        {gameState === 'playing' && (
+                            <div className="flex-1 flex flex-col bg-white rounded-[2.5rem] shadow-2xl border border-slate-200 overflow-hidden min-h-0">
+                                
+                                {/* Info del Escenario actual */}
+                                <div className="bg-brand-blue text-white px-6 py-4 flex flex-col gap-2 flex-shrink-0 border-b-2 border-brand-orange">
+                                    <div className="flex justify-between items-center">
+                                        <div className="flex items-center gap-2">
+                                            <Icon name={gameMode === 'timeAttack' ? 'timer' : gameMode === 'ghostCall' ? 'audio-lines' : 'play'} className="w-4 h-4 text-brand-orange animate-pulse" />
+                                            <p className="text-[10px] font-black uppercase tracking-widest text-brand-orangeLight">
+                                                {gameMode === 'normal' && "NORMAL METRIC ASSESSMENT"}
+                                                {gameMode === 'timeAttack' && "SILENT TIME ATTACK — 15S SLA LIMIT"}
+                                                {gameMode === 'ghostCall' && "GHOST CALL — PURE LOGISTICS AUDIO STREAM"}
+                                            </p>
+                                        </div>
+                                        <div className="flex items-center gap-6">
+                                            {gameMode === 'timeAttack' && (
+                                                <div className="text-center bg-brand-blue/80 px-3 py-1 rounded-xl border border-brand-orange/40">
+                                                    <span className="font-mono text-base font-black text-brand-orange">{timeLeft}s</span>
+                                                </div>
+                                            )}
+                                            <div className="text-right">
+                                                <p className="text-[9px] font-bold text-slate-300 uppercase tracking-tighter">Running Score</p>
+                                                <p className="font-mono text-xl font-black text-brand-orange leading-none">{score}</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                {/* Ventana de Chat */}
+                                <div className="flex-1 overflow-y-auto p-8 space-y-6 bg-slate-50/50 relative min-h-0">
+                                    {chatHistory.map((msg, i) => (
+                                        <div key={i} className={`flex ${msg.type === 'customer' ? 'justify-start' : msg.type === 'agent' ? 'justify-end' : 'justify-center'} animate-in slide-in-from-bottom-4 duration-300`}>
+                                            {msg.type === 'system' ? (
+                                                <div className="bg-red-50 border border-red-200 rounded-xl px-4 py-2 text-xs font-bold text-red-600 shadow-sm max-w-lg text-center break-words overflow-hidden">
+                                                    {msg.text}
+                                                </div>
+                                            ) : (
+                                                <div className={`flex gap-4 max-w-[90%] ${msg.type === 'agent' ? 'flex-row-reverse' : ''} items-start`}>
+                                                    <div className={`w-10 h-10 rounded-2xl flex items-center justify-center flex-shrink-0 shadow-md ${msg.type === 'customer' ? 'bg-white border text-slate-400' : 'bg-brand-blue text-white'}`}>
+                                                        <Icon name={msg.type === 'customer' ? "user" : "headphones"} className="w-5 h-5" />
+                                                    </div>
+                                                    
+                                                    <div className="relative">
+                                                        <div className={`p-5 rounded-3xl text-sm leading-relaxed shadow-sm font-medium pr-12 break-words overflow-hidden ${msg.type === 'customer' ? 'bg-white text-slate-800 rounded-tl-none border border-slate-100' : 'bg-brand-blue text-white rounded-tr-none'}`}>
+                                                            {msg.type === 'customer' ? renderInteractiveText(msg.text) : msg.text}
+                                                        </div>
+                                                        <button 
+                                                            onClick={() => speakText(msg.text)} 
+                                                            className={`absolute right-3 top-4 p-1.5 rounded-xl transition-all border shadow-sm ${msg.type === 'customer' ? 'text-slate-400 hover:text-brand-orange bg-slate-50 hover:bg-brand-orangeLight border-slate-100' : 'text-slate-300 hover:text-white bg-brand-blue/80 hover:bg-brand-blue border-slate-700'}`}
+                                                            title="Listen audio"
+                                                        >
+                                                            <Icon name="volume-2" className="w-4 h-4" />
+                                                        </button>
+                                                    </div>
+                                                </div>
+                                            )}
+                                        </div>
+                                    ))}
+
+                                    {feedback && (
+                                        <div className="flex justify-center my-4 px-4 animate-in zoom-in duration-300 w-full">
+                                            <div className="bg-white border-2 border-brand-orange/30 rounded-[2rem] p-5 sm:p-6 text-center w-full max-w-xl shadow-xl hover:shadow-2xl transition-all overflow-hidden">
+                                                <span className="inline-block px-3 py-1 rounded-full text-[10px] font-black uppercase tracking-wider bg-brand-orangeLight text-brand-orange mb-2.5">
+                                                    {feedback.points === 10 ? 'EXCELENTE ANÁLISIS' : 'SITUACIÓN EVALUADA'}
+                                                </span>
+                                                <p className="text-xs sm:text-sm italic font-bold text-slate-700 leading-relaxed break-words whitespace-normal max-w-full">
+                                                    "{feedback.message}"
+                                                </p>
+                                            </div>
+                                        </div>
+                                    )}
+                                    <div ref={chatEndRef} />
+                                </div>
+
+                                {/* Selección de Respuesta */}
+                                <div className="p-8 bg-white border-t-2 border-slate-100 flex-shrink-0">
+                                    {!feedback ? (
+                                        <div className="flex flex-col gap-3">
+                                            <p className="text-[10px] font-black text-slate-400 uppercase tracking-widest mb-1 flex items-center gap-2">
+                                                <Icon name="target" className="w-3.5 h-3.5 text-brand-orange" /> 
+                                                CHOOSE RESPONSE STRATEGY:
+                                            </p>
+                                            {shuffledOptions.map((opt, idx) => (
+                                                <button 
+                                                    key={idx} 
+                                                    onClick={() => handleOptionClick(opt)} 
+                                                    className="text-left p-4 text-sm font-bold bg-slate-50 hover:bg-brand-blue hover:text-white border-2 border-slate-100 hover:border-brand-blue rounded-2xl transition-all shadow-sm break-words"
+                                                >
+                                                    {opt.text}
+                                                </button>
+                                            ))}
+                                        </div>
+                                    ) : (
+                                        <div className="flex flex-col items-center justify-center py-6 text-brand-orange text-[10px] font-black uppercase tracking-widest gap-3">
+                                            <div className="w-6 h-6 border-2 border-brand-orange border-t-transparent rounded-full animate-spin"></div>
+                                            <span>Processing learning metrics...</span>
+                                        </div>
+                                    )}
+                                </div>
+                            </div>
+                        )}
+
+                        {/* Pantalla de Resultados Finales actualizados */}
+                        {gameState === 'results' && (
+                            <div className="flex-1 flex flex-col items-center justify-center animate-in zoom-in duration-500 overflow-y-auto py-10 pr-1">
+                                <div className="bg-white p-8 md:p-12 rounded-[3.5rem] shadow-2xl border border-slate-100 max-w-2xl w-full text-center space-y-8 relative overflow-hidden">
+                                    <div className="absolute top-0 left-0 w-full h-3 bg-brand-orange"></div>
+                                    
+                                    <div className="space-y-4">
+                                        <div className={`mx-auto w-24 h-24 rounded-3xl flex items-center justify-center border-2 shadow-xl ${getGrade().color}`}>
+                                            <Icon name={getGrade().icon} className="w-14 h-14" />
+                                        </div>
+                                        <h2 className="text-3xl md:text-4xl font-black tracking-tighter uppercase italic text-brand-blue">
+                                            {getGrade().label}
+                                        </h2>
+                                    </div>
+
+                                    {/* Grid de Métricas Contrastado */}
+                                    <div className="grid grid-cols-2 gap-4">
+                                        <div className="bg-slate-50 p-6 rounded-3xl border border-slate-200 flex flex-col justify-center">
+                                            <p className="text-[10px] font-black text-slate-400 uppercase mb-1 tracking-widest">Final Mode Score</p>
+                                            <p className="text-xl sm:text-2xl font-black text-brand-orange">
+                                                {score} / {maxPossibleScore} pts
+                                            </p>
+                                        </div>
+                                        <div className="bg-slate-50 p-6 rounded-3xl border border-slate-200 flex flex-col justify-center">
+                                            <p className="text-[10px] font-black text-slate-400 uppercase mb-1 tracking-widest">Accuracy Rate</p>
+                                            <p className="text-3xl font-black text-brand-blue">
+                                                {maxPossibleScore > 0 ? Math.round((score/maxPossibleScore) * 100) : 0}%
+                                            </p>
+                                        </div>
+                                    </div>
+
+                                    {/* Chat Recap / Historial de Interacciones */}
+                                    <div className="bg-slate-50 border border-slate-200 p-5 sm:p-6 rounded-[2.5rem] text-left space-y-4 overflow-hidden">
+                                        <div className="border-b border-slate-200 pb-2">
+                                            <h3 className="text-base font-black text-brand-blue uppercase tracking-tight flex items-center gap-2">
+                                                <Icon name="history" className="w-4 h-4 text-brand-orange" />
+                                                Historial de Interacciones / Chat Recap
+                                            </h3>
+                                            <p className="text-xs text-slate-500 font-medium">
+                                                Repasa cronológicamente el flujo de tu conversación y las alertas de soporte durante la simulación:
+                                            </p>
+                                        </div>
+                                        
+                                        <div className="space-y-4 max-h-[300px] overflow-y-auto pr-2">
+                                            {chatHistory.map((msg, i) => {
+                                                const translatedTextFeedback = translateFeedbackText(msg.feedback);
+                                                const isSuboptimalAgent = msg.type === 'agent' && typeof msg.points === 'number' && msg.points < 10;
+                                                
+                                                return (
+                                                    <div key={i} className={`flex flex-col gap-1.5 p-4 rounded-2xl shadow-sm border overflow-hidden ${
+                                                        msg.type === 'customer' 
+                                                            ? 'bg-white border-slate-100 ml-0 mr-8' 
+                                                            : msg.type === 'agent' 
+                                                                ? 'bg-brand-blue text-white border-brand-blue/15 ml-8 mr-0' 
+                                                                : 'bg-rose-50 border-rose-100 mx-4'
+                                                    }`}>
+                                                        <div className="flex justify-between items-center w-full">
+                                                            <span className={`text-[9px] font-black uppercase tracking-wider ${
+                                                                msg.type === 'customer' 
+                                                                    ? 'text-brand-orange' 
+                                                                    : msg.type === 'agent' 
+                                                                        ? 'text-brand-orangeLight' 
+                                                                        : 'text-rose-600'
+                                                            }`}>
+                                                                {msg.type === 'customer' ? '🗣️ CLIENTE' : msg.type === 'agent' ? '🎧 AGENTE' : '⚠️ SISTEMA / SLA'}
+                                                            </span>
+                                                            
+                                                            {isSuboptimalAgent && (
+                                                                <span className="flex items-center gap-1 text-[9px] font-black text-rose-500 bg-rose-50 px-2 py-0.5 rounded-full border border-rose-200">
+                                                                    <Icon name="x-circle" className="w-3 h-3 text-rose-500 flex-shrink-0" />
+                                                                    Subóptimo ({msg.points} pts)
+                                                                </span>
+                                                            )}
+                                                        </div>
+                                                        
+                                                        <p className="text-xs font-medium leading-relaxed break-words">
+                                                            {msg.text}
+                                                        </p>
+                                                        
+                                                        {isSuboptimalAgent && translatedTextFeedback && (
+                                                            <div className="mt-2 bg-rose-50 border border-rose-100 text-rose-700 p-3.5 rounded-xl break-words whitespace-normal overflow-hidden max-w-full">
+                                                                <div className="flex items-center gap-1 mb-1.5">
+                                                                    <Icon name="alert-triangle" className="w-3.5 h-3.5 text-rose-500 flex-shrink-0" />
+                                                                    <span className="text-[10px] font-black text-rose-600 uppercase tracking-widest">
+                                                                        ÁREA DE MEJORA / CORRECCIÓN:
+                                                                    </span>
+                                                                </div>
+                                                                <p className="text-xs font-semibold leading-relaxed break-words whitespace-normal max-w-full">
+                                                                    {translatedTextFeedback}
+                                                                </p>
+                                                            </div>
+                                                        )}
+                                                    </div>
+                                                );
+                                            })}
+                                        </div>
+                                    </div>
+
+                                    {/* Resumen de Vocabulario en Azul Oscuro E4CC */}
+                                    <div className="bg-brand-blue p-8 rounded-[2.5rem] shadow-xl text-white text-left space-y-6">
+                                        <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 border-b border-white/10 pb-4">
+                                            <div className="flex items-center gap-2">
+                                                <Icon name="book-open" className="w-6 h-6 text-brand-orange" />
+                                                <h3 className="text-lg font-black uppercase tracking-widest italic">Vocab Summary for Notebook</h3>
+                                            </div>
+                                            <button 
+                                                onClick={() => { 
+                                                    const text = vocabularyLog.map(v => {
+                                                        let entry = `${v.word.toUpperCase()}\nMeaning: ${v.meaning}`;
+                                                        if (v.examples && v.examples.length > 0) {
+                                                            entry += `\n` + v.examples.map(ex => `Ex: ${ex}`).join('\n');
+                                                        }
+                                                        return entry;
+                                                    }).join('\n---\n'); 
+                                                    
+                                                    const el = document.createElement('textarea');
+                                                    el.value = text;
+                                                    document.body.appendChild(el);
+                                                    el.select();
+                                                    document.execCommand('copy');
+                                                    document.body.removeChild(el);
+                                                }} 
+                                                className="bg-brand-orange hover:bg-brand-orangeMed px-4 py-2.5 rounded-xl text-[10px] font-black tracking-wider transition-all flex items-center justify-center gap-2 shadow-md uppercase"
+                                            >
+                                                <Icon name="copy" className="w-3.5 h-3.5" /> 
+                                                COPY LIST
+                                            </button>
+                                        </div>
+
+                                        {vocabularyLog.length > 0 ? (
+                                            <div className="space-y-6 max-h-[250px] overflow-y-auto pr-2 scrollbar-thin">
+                                                {vocabularyLog.map((item, idx) => (
+                                                    <div key={idx} className="space-y-2 border-b border-white/5 pb-4 last:border-0 last:pb-0">
+                                                        <div className="flex justify-between items-center">
+                                                            <p className="text-brand-orange font-black uppercase text-lg tracking-tight">{item.word}</p>
+                                                            {item.isLive && (
+                                                                <span className="text-[8px] bg-slate-700 text-slate-300 font-bold tracking-widest uppercase px-1.5 py-0.5 rounded">
+                                                                    Live Dict
+                                                                </span>
+                                                            )}
+                                                        </div>
+                                                        <p className="text-xs font-medium text-slate-300 leading-relaxed">{item.meaning}</p>
+                                                        {item.examples && item.examples.length > 0 && (
+                                                            <div className="space-y-1 pl-3 border-l-2 border-brand-orange/60">
+                                                                {item.examples.map((ex, i) => (
+                                                                    <p key={i} className="text-[10px] italic text-brand-orangeLight/80">"{ex}"</p>
+                                                                ))}
+                                                            </div>
+                                                        )}
+                                                    </div>
+                                                ))}
+                                            </div>
+                                        ) : (
+                                            <p className="text-center text-slate-400 font-bold italic py-8 uppercase text-xs tracking-wider">
+                                                No vocabulary terms consulted in this session.
+                                            </p>
+                                        )}
+                                    </div>
+
+                                    {/* Botón para Reiniciar */}
+                                    <button 
+                                        onClick={() => setGameState('menu')} 
+                                        className="w-full bg-brand-orange hover:bg-brand-orangeMed text-white font-black py-4 rounded-2xl transition-all uppercase text-xs tracking-widest shadow-lg"
+                                    >
+                                        Back to Main Menu
+                                    </button>
+                                </div>
+                            </div>
+                        )}
+                    </main>
+                </div>
+            );
+        };
+
+        const root = ReactDOM.createRoot(document.getElementById('root'));
+        root.render(<App />);
+    </script>
+</body>
+</html>
