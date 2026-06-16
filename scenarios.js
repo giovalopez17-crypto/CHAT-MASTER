@@ -1,4 +1,4 @@
-const SCENARIOS = [
+window.SCENARIOS = [
     // --- LEVEL A1/A2 FOUNDATION ---
     {
         id: "c3",
